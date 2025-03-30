@@ -40,7 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        onGround = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, isGround);
+        Vector3 tmpPos = transform.position;
+        tmpPos.y = transform.position.y + 2.2f; //2.2 is a magical number dont change
+        onGround = Physics.Raycast(tmpPos, Vector3.down, playerHeight*0.5f + 0.2f, isGround);
 
         MyInput();
         dragCheck();
@@ -50,8 +52,7 @@ public class PlayerMovement : MonoBehaviour
     private void dragCheck()
     {
         if(onGround){
-            Debug.Log("here");
-            rb.linearDamping = groundDrag;
+            //rb.linearDamping = groundDrag;
         }
         else{
             rb.linearDamping = 0;
@@ -67,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        //Debug.Log(onGround);
         if(Input.GetKey(jumpKey) && canJump && onGround){
             canJump = false;
             jump();
@@ -98,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void jump(){
-        Debug.Log("here");
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
