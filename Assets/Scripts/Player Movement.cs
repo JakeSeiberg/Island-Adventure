@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
 
-    [Header("Ground Stuff")]
+    [Header("Ground Variables")]
     public float groundDrag;
     public float playerHeight;
     public LayerMask isGround;
@@ -99,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void jump(){
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
