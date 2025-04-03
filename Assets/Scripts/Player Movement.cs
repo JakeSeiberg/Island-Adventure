@@ -22,8 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask isGround;
     bool onGround;
 
-
-
+    [Header("Other")]
     public Transform orientation;
 
     float horizontalInput;
