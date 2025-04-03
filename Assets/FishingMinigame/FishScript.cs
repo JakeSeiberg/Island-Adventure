@@ -1,0 +1,215 @@
+using UnityEngine;
+using System.Collections;
+
+public class FishScript : MonoBehaviour
+{
+    private Vector3 direction;
+    private Vector3 targetDirection;
+    private float turnSpeed = 1f;
+
+    private float fishSpeed = 15f;
+    private float fishSpeedMultiplier = 1;
+    private float fishDefaultAnimationSpeed = 1f;
+
+    private float changeDirectionTime = 2f;
+    private float timer;
+
+    private Vector3 storedDirection;
+    private Quaternion storedRotation; 
+
+    public bool fishDead = false;
+
+    public static int fishHitCount = 0;
+
+    private bool canHitSpeedUpArea = true;
+    private Animator fishAnimation;
+
+    public Material deadMaterial;
+
+    
+    
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        fishSpeed = Random.Range(12f, 20f);
+        fishDefaultAnimationSpeed = fishSpeed / 15f;
+
+
+        fishAnimation = GetComponentInChildren<Animator>();
+        SpawnFish();
+    }
+
+    void SpawnFish()
+    {
+        float leftX = -98f;
+        float rightX = 98f;
+        float bottomZ = -45f;
+        float topZ = 48f;
+        
+        float topSpawnZ = 65f;
+        float minXAtTop = -95f;
+        float maxXAtTop = 95f;
+
+        float minY = -10f;
+        float maxY = 10f;
+
+        // Define the target box area (where fish should face)
+        float targetMinX = -23f;
+        float targetMaxX = 23f;
+        float targetMinZ = -12f;
+        float targetMaxZ = 23f;
+
+        float xPos, zPos;
+        
+        // Randomly decide if the fish spawns on the vertical or horizontal perimeter
+        int spawnEdge = Random.Range(0, 2); // 0 = left/right, 1 = top
+
+        if (spawnEdge == 0) 
+        {
+            // Spawn on left or right edge
+            xPos = (Random.Range(0, 2) == 0) ? leftX : rightX;
+            zPos = Random.Range(bottomZ, topZ);
+        }
+        else 
+        {
+            // Spawn on the top edge
+            zPos = topSpawnZ;
+            xPos = Random.Range(minXAtTop, maxXAtTop);
+        }
+
+        // Random y position
+        float yPos = Random.Range(minY, maxY);
+
+        // Set the fish's position
+        transform.position = new Vector3(xPos, yPos, zPos);
+
+        // Pick a random target point inside the box
+        Vector3 targetPoint = new Vector3(
+            Random.Range(targetMinX, targetMaxX),
+            yPos,  // Keep the same Y-level
+            Random.Range(targetMinZ, targetMaxZ)
+        );
+
+        // Make the fish face the target point
+        transform.LookAt(targetPoint);
+    }
+
+    void FixedUpdate()
+    {
+        timer += Time.deltaTime;
+
+        // If the timer exceeds the set time, choose a new direction
+        if (timer >= changeDirectionTime)
+        {
+            SetNewDirection();
+            timer = 0;
+        }
+
+        // Smoothly adjust the direction over time
+        direction = Vector3.Lerp(direction, targetDirection, Time.deltaTime * turnSpeed).normalized;
+
+        // Smoothly rotate towards the new direction
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+        }
+
+        // Move the fish forward in the direction it is facing
+        transform.position += transform.forward * (fishSpeed * fishSpeedMultiplier) * Time.deltaTime;
+        
+        
+    }
+
+    void SetNewDirection()
+    {
+        targetDirection = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;
+        changeDirectionTime = Random.Range(1f, 5f); // Pick a new duration before changing again
+    }
+
+    public void HitBySpear()
+    {
+        fishHitCount++;
+        fishDead = true;
+        //delete fish
+        Renderer childRenderer = GetComponentInChildren<Renderer>();
+        childRenderer.material = deadMaterial;
+        fishSpeedMultiplier = 0.5f;
+        fishAnimation.speed = fishDefaultAnimationSpeed / 2f;
+
+        StartCoroutine(KillFish());
+
+    }
+
+    private IEnumerator KillFish()
+    {
+
+        yield return new WaitForSeconds(1f);
+
+        fishDead = true;
+        Destroy(gameObject);
+    }
+
+    //Speed up fish method
+    public void FishAreaHit()
+    {
+        if (!fishDead && canHitSpeedUpArea)
+        {
+            //Debug.Log("Fish area hit! ");
+            canHitSpeedUpArea = false;
+
+            StartCoroutine(FishSpeedUp());
+        }
+    }
+
+    private IEnumerator FishSpeedUp()
+    {
+        //Debug.Log("FISH SPEED UP");
+
+        float duration = .3f; // Duration of the ramp-up
+        float elapsedTime = 0f;
+
+        float initialSpeedMultiplier = 1f;
+        float targetSpeedMultiplier = 5f;
+
+        float initialAnimationSpeed = fishDefaultAnimationSpeed;
+        float targetAnimationSpeed = fishDefaultAnimationSpeed * 4f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Lerp the speed multiplier and animation speed
+            fishSpeedMultiplier = Mathf.Lerp(initialSpeedMultiplier, targetSpeedMultiplier, elapsedTime / duration);
+            fishAnimation.speed = Mathf.Lerp(initialAnimationSpeed, targetAnimationSpeed, elapsedTime / duration);
+            yield return null; // Wait for the next frame
+        }
+
+        yield return new WaitForSeconds(3f);
+
+        duration = 1f;
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Lerp the speed multiplier and animation speed
+            fishSpeedMultiplier = Mathf.Lerp(targetSpeedMultiplier, initialSpeedMultiplier, elapsedTime / duration);
+            fishAnimation.speed = Mathf.Lerp(targetAnimationSpeed, initialAnimationSpeed, elapsedTime / duration);
+            yield return null; // Wait for the next frame
+        }
+
+        fishSpeedMultiplier = initialSpeedMultiplier;
+        fishAnimation.speed = initialAnimationSpeed;
+        canHitSpeedUpArea = true;
+
+        //Debug.Log("Fish speed reset to normal.");
+    }
+
+
+
+
+
+}
