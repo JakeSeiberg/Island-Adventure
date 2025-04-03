@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags:
   - Fish
   - Platform
   - FishTarget
   - Spear
   - FishAreaCollider
+=======
+  tags: []
+>>>>>>> a992b30d9e675a7345c8636feea0897ce645c512
   layers:
   - Default
   - TransparentFX
@@ -20,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - isGround
   - 
   - 
   - 
