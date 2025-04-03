@@ -26,7 +26,7 @@ public class FishManager : MonoBehaviour
     {
         StopCoroutine(SpawnFish());
         StartCoroutine(SpawnFish());
-        Debug.Log("Fish spawning restarted");
+        //Debug.Log("Fish spawning restarted");
     }
 
     private IEnumerator SpawnFish()
