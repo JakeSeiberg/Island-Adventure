@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 468342348}
   m_Layer: 0
   m_Name: Worm Detection
-  m_TagString: interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3275,7 +3275,7 @@ GameObject:
   - component: {fileID: 1204352302}
   m_Layer: 0
   m_Name: Fishing Detection
-  m_TagString: interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
