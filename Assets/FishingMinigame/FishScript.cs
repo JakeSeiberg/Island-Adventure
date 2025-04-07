@@ -42,19 +42,18 @@ public class FishScript : MonoBehaviour
 
     void SpawnFish()
     {
-        float leftX = -98f;
-        float rightX = 98f;
-        float bottomZ = -45f;
-        float topZ = 48f;
+        float leftX = -120f;
+        float rightX = 120f;
+        float bottomZ = -35f;
+        float topZ = 60f;
         
-        float topSpawnZ = 65f;
+        float topSpawnZ = 82f;
         float minXAtTop = -95f;
         float maxXAtTop = 95f;
 
         float minY = -10f;
         float maxY = 10f;
 
-        // Define the target box area (where fish should face)
         float targetMinX = -23f;
         float targetMaxX = 23f;
         float targetMinZ = -12f;
@@ -62,7 +61,6 @@ public class FishScript : MonoBehaviour
 
         float xPos, zPos;
         
-        // Randomly decide if the fish spawns on the vertical or horizontal perimeter
         int spawnEdge = Random.Range(0, 2); // 0 = left/right, 1 = top
 
         if (spawnEdge == 0) 
