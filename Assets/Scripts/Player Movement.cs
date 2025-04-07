@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector3 tmpPos = transform.position;
-        tmpPos.y = transform.position.y + 3f; //dont change 2.2
+        tmpPos.y = transform.position.y + 3f; //dont change 3
         onGround = Physics.Raycast(tmpPos, Vector3.down, playerHeight*0.5f + 0.2f, isGround);
 
         MyInput();
