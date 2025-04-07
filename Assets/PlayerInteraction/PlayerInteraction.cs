@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float rayDistance = 2f;
+    public float rayDistance = 3f;
     public Transform playerPosition; 
     public Transform playerCamera;
 
@@ -34,10 +35,15 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
             Debug.Log("Raycast hit: " + hit.collider.name);
-            if (hit.collider.CompareTag("Worm")) // Check if the object has the "Worm" tag
+            if (hit.collider.CompareTag("Worm")) 
             {
-                wormInteract.wormCollected(); // Make sure Worm class has this static method
+                wormInteract.wormCollected(); 
                 Debug.Log("Worm collected!");
+            }
+            if (hit.collider.CompareTag("SpearInteractable")) 
+            {
+                Debug.Log("Spear clicked!");
+                SceneManager.LoadScene("FishingMinigame", LoadSceneMode.Additive);
             }
         }
     }
