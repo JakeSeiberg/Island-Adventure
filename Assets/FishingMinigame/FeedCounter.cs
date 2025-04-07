@@ -14,7 +14,7 @@ public class FeedCounter : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        feedCounterText.text = $": {WormManager.wormCount}";
+        feedCounterText.text = $": {playerData.wormCount}";
 
         
     }

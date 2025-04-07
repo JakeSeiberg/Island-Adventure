@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 public class PlayerInteraction : MonoBehaviour
 {
     public float rayDistance = 3f;
-    public Transform playerPosition; 
+    public Transform playerPosition;
     public Transform playerCamera;
 
     public LayerMask interactableLayer;
-    
 
     void Start()
     {
@@ -37,13 +36,18 @@ public class PlayerInteraction : MonoBehaviour
             Debug.Log("Raycast hit: " + hit.collider.name);
             if (hit.collider.CompareTag("Worm")) 
             {
-                wormInteract.wormCollected(); 
-                Debug.Log("Worm collected!");
+                wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
+                if (wormScript != null)
+                {
+                    wormScript.wormCollected(); // Call a method in the worm's script
+                }
             }
             if (hit.collider.CompareTag("SpearInteractable")) 
             {
                 Debug.Log("Spear clicked!");
-                SceneManager.LoadScene("FishingMinigame", LoadSceneMode.Additive);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadScene("FishingMinigame");
             }
         }
     }

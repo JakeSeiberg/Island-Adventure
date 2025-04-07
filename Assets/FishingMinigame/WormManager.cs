@@ -5,7 +5,6 @@ public class WormManager : MonoBehaviour
 {
     public GameObject wormPrefab; // Prefab for the worm
     private bool canSpawnWorms = true;
-    public static int wormCount = 5;
     public static float wormMultiplier = 1f;
     public static float wormSpawnMultiplier = 1f;
 
@@ -15,11 +14,11 @@ public class WormManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canSpawnWorms && wormCount > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && canSpawnWorms && playerData.wormCount > 0)
         {
             StartCoroutine(summonWorms());
             StartCoroutine(wormBoost());
-            wormCount--;
+            playerData.wormCount--;
             canSpawnWorms = false;
 
         }

@@ -15,7 +15,16 @@ public class PlayerCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
+
+        Vector3 initialLookRotation = playerData.playerRotation;
+
+        transform.rotation = Quaternion.Euler(initialLookRotation);
+
+        orientation.rotation = Quaternion.Euler(initialLookRotation.x, initialLookRotation.y, 0f);
+
+        xRotation = initialLookRotation.x;
+        yRotation = initialLookRotation.y;
+        }
 
     // Update is called once per frame
     void Update()
