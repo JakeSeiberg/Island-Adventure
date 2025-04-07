@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Platform
+  - Fish
+  - FishTarget
+  - FishAreaCollider
+  - Spear
+  - Worm
   layers:
   - Default
   - TransparentFX
