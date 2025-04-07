@@ -3,21 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
-  tags:
-  - interactable
-=======
-<<<<<<< HEAD
-  tags:
-  - Fish
-  - Platform
-  - FishTarget
-  - Spear
-  - FishAreaCollider
-=======
   tags: []
->>>>>>> a992b30d9e675a7345c8636feea0897ce645c512
->>>>>>> 69291825f46bd883088846f2bcf3db40f2374c97
   layers:
   - Default
   - TransparentFX
@@ -29,7 +15,7 @@ TagManager:
   - 
   - 
   - 
-  - isGround
+  - 
   - 
   - 
   - 
@@ -57,10 +43,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
