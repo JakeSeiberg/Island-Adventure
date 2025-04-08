@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float rayDistance = 3f;
+    private float rayDistance = 3.3f;
     public Transform playerPosition;
     public Transform playerCamera;
 
@@ -34,11 +34,13 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.CompareTag("Worm")) 
             {
+                Debug.Log("Distance to worm: " + hit.distance + " units");
+
                 wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
                 if (wormScript != null)
                 {
                     playerData.hasPickedUpAWorm = true;
-                    wormScript.wormCollected(); // Call a method in the worm's script
+                    wormScript.wormCollected();
                 }
             }
             if (hit.collider.CompareTag("SpearInteractable")) 
@@ -49,6 +51,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 playerData.playerPosition = PlayerMovement.currentPlayerPos;
                 playerData.playerRotation = PlayerCamera.currentRotation;
+                toolTips.changeScene();
                 playerData.curScene = "Fishing";
                 SceneManager.LoadScene("Fishing");
             }

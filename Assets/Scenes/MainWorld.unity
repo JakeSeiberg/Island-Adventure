@@ -2567,7 +2567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28726bc8a225481da8056127849a19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 10
   playerPosition: {fileID: 767609029}
   playerCamera: {fileID: 767609029}
   interactableLayer:
@@ -4923,7 +4922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey
+  m_text: A+ pls jorge
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 764176629d99d45108fa5380cb807917, type: 2}
   m_sharedMaterial: {fileID: -6228865728045891614, guid: 764176629d99d45108fa5380cb807917, type: 2}

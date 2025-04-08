@@ -16,8 +16,13 @@ public class toolTips : MonoBehaviour
 
     private bool toolTipActive = false;
 
+    private Image image;
+    private TMP_Text text;
+
     void Awake()
     {
+        image = GetComponent<Image>();
+        text = GetComponentInChildren<TMP_Text>();
 
         Instance = this;
 
@@ -34,7 +39,11 @@ public class toolTips : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = hiddenPosition; 
         tooltipText = GetComponentInChildren<TMP_Text>();
-        StartCoroutine(startOfGameTip());
+        if (playerData.startOfGame)
+        {
+            StartCoroutine(startOfGameTip());
+            playerData.startOfGame = false;
+        }
         StartCoroutine(spearTooltip());
         StartCoroutine(fishingToolTip());
     }
@@ -50,21 +59,23 @@ public class toolTips : MonoBehaviour
     {
         if (!Instance.toolTipActive)
         {
-            Instance.StartCoroutine(Instance.ShowToolTip(input, waitTime));
             Instance.toolTipActive = true;
+            Instance.show();
+            Instance.StartCoroutine(Instance.ShowToolTip(input, waitTime));
         }
     }
 
     private IEnumerator ShowToolTip(string input, float waitTime)
     {
-        
         tooltipText.text = input;
+        
         yield return StartCoroutine(AnimatePosition(rectTransform, hiddenPosition, visiblePosition, animationDuration));
 
         yield return new WaitForSeconds(waitTime);
 
         yield return StartCoroutine(AnimatePosition(rectTransform, visiblePosition, hiddenPosition, animationDuration));
         Instance.toolTipActive = false;
+        Instance.hide();
     }
 
     private IEnumerator AnimatePosition(RectTransform rect, Vector3 start, Vector3 end, float duration)
@@ -97,16 +108,18 @@ public class toolTips : MonoBehaviour
         rect.anchoredPosition = end; 
     }
 
-
     private IEnumerator spearTooltip()
     {
         while (playerData.hasPickedUpAWorm == false)
         {
+            Debug.Log("worm check");
             yield return new WaitForSeconds(5f);
+            Debug.Log("worm check after");
         }
-        Debug.Log("Has picked up worm. 10s timer started.");
+        Debug.Log("worm picked up- spear tooltip loaded");
 
         yield return new WaitForSeconds(10f);
+        Debug.Log("Spear tooltip started");
         
 
         while (!playerData.hasGoneFishing)
@@ -137,11 +150,31 @@ public class toolTips : MonoBehaviour
         {
             toolTips.tip("Aim with your mouse to aim the spear. Hold click to pull back spear, and release to throw it",8);
 
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(10f);
 
             toolTips.tip("Press spacebar to throw your worms. They might attract more fish",7);
 
             yield return new WaitForSeconds(20f);
+
+            toolTips.tip("Press Escape to stop fishing",5);
         }
+    }
+
+    public static void changeScene()
+    {
+        Instance.hide();
+        Instance.toolTipActive = false;
+    }
+
+    private void hide()
+    {
+        image.enabled = false; 
+        text.enabled = false;
+    }
+
+    private void show()
+    {
+        image.enabled = true; 
+        text.enabled = true;
     }
 }
