@@ -52,6 +52,16 @@ public class PlayerInteraction : MonoBehaviour
                 playerData.playerRotation = PlayerCamera.currentRotation;
                 SceneManager.LoadScene("FishingMinigame");
             }
+            if (hit.collider.CompareTag("Tree")) 
+            {
+                Debug.Log("Tree clicked!");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                playerData.playerRotation = PlayerCamera.currentRotation;
+                SceneManager.LoadScene("________");
+            }
         }
     }
 }
