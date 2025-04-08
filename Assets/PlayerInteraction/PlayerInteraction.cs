@@ -20,7 +20,6 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             interact();
-            Debug.Log("e hit");
         }
     }
 
@@ -33,33 +32,34 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
-            Debug.Log("Raycast hit: " + hit.collider.name);
             if (hit.collider.CompareTag("Worm")) 
             {
                 wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
                 if (wormScript != null)
                 {
+                    playerData.hasPickedUpAWorm = true;
                     wormScript.wormCollected(); // Call a method in the worm's script
                 }
             }
             if (hit.collider.CompareTag("SpearInteractable")) 
             {
-                Debug.Log("Spear clicked!");
+                playerData.hasGoneFishing = true;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
                 playerData.playerPosition = PlayerMovement.currentPlayerPos;
                 playerData.playerRotation = PlayerCamera.currentRotation;
-                SceneManager.LoadScene("FishingMinigame");
+                playerData.curScene = "Fishing";
+                SceneManager.LoadScene("Fishing");
             }
             if (hit.collider.CompareTag("Tree")) 
             {
-                Debug.Log("Tree clicked!");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
                 playerData.playerPosition = PlayerMovement.currentPlayerPos;
                 playerData.playerRotation = PlayerCamera.currentRotation;
+                playerData.curScene = "Tree";
                 SceneManager.LoadScene("________");
             }
         }

@@ -16,6 +16,7 @@ public class sceneSwitcher : MonoBehaviour
         //when escape is pressed, switch scene to "TYLER NEW SCENE"
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            playerData.curScene = "MainWorld";
             SceneManager.LoadScene("MainWorld"); 
         }
     }
