@@ -47,12 +47,13 @@ public class PlayerMovement : MonoBehaviour
 
         // Optional but good practice
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        currentPlayerPos = rb.position;
             
-        }
+    }
 
     void Update()
     {
-        
+        currentPlayerPos = rb.position;
         Vector3 tmpPos = transform.position;
         tmpPos.y = transform.position.y + 3f; //dont change 3
         onGround = Physics.Raycast(tmpPos, Vector3.down, playerHeight*0.5f + 0.2f, isGround);
