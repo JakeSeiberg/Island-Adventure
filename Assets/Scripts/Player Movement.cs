@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void checkAnimation(){
-        if(Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0){
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0){
             playerAnimator.SetBool("isWalking", true);
             Debug.Log("here");
         }
