@@ -8,6 +8,12 @@ public class ChopCounter : MonoBehaviour
     public SpriteRenderer checkmarkSprite;
     public SpriteRenderer xmarkSprite;
 
+    public GameObject bambooFrame;
+    public GameObject completionText;
+    public GameObject blackPlane;
+
+    public AxeScript axeController;
+
     public int hits = 0;
     public int hitsNeeded = 5;
 
@@ -16,6 +22,11 @@ public class ChopCounter : MonoBehaviour
         checkmarkSprite.enabled = false;
         xmarkSprite.enabled = false;
         counterText.text = hits + "/" + hitsNeeded;
+
+        // ✅ Hide end-game UI at start
+        bambooFrame.SetActive(false);
+        completionText.SetActive(false);
+        blackPlane.SetActive(false);
     }
 
     public void RegisterHit()
@@ -32,7 +43,16 @@ public class ChopCounter : MonoBehaviour
         if (hits == hitsNeeded)
         {
             Debug.Log("Tree chopped!");
-            // TODO: Trigger end logic here
+            playerData.woodCount++;
+
+            // ✅ Show the UI elements
+            bambooFrame.SetActive(true);
+            completionText.SetActive(true);
+            blackPlane.SetActive(true);
+
+            // ✅ Disable the axe controller
+            if (axeController != null)
+                axeController.enabled = false;
         }
     }
 

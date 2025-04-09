@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AxeController3D : MonoBehaviour
+public class AxeScript : MonoBehaviour
 {
     public Transform accuracyBar;             // Moving white bar
     public Transform accuracyMeterGreen;      // Green zone transform
