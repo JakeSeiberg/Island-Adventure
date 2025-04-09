@@ -5,7 +5,6 @@ public class WormManager : MonoBehaviour
 {
     public GameObject wormPrefab; // Prefab for the worm
     private bool canSpawnWorms = true;
-    public static int wormCount = 5;
     public static float wormMultiplier = 1f;
     public static float wormSpawnMultiplier = 1f;
 
@@ -15,11 +14,9 @@ public class WormManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canSpawnWorms && wormCount > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && canSpawnWorms && playerData.wormCount > 0)
         {
             StartCoroutine(summonWorms());
-            StartCoroutine(wormBoost());
-            wormCount--;
             canSpawnWorms = false;
 
         }
@@ -27,33 +24,53 @@ public class WormManager : MonoBehaviour
 
     private IEnumerator summonWorms()
     {
+        int wormsThrowing;
+        if (playerData.wormCount > 3)
+        {
+            wormsThrowing = 3;
+        }
+        else
+        {
+            wormsThrowing = playerData.wormCount;
+        }
+        playerData.wormCount -= wormsThrowing;
+        StartCoroutine(wormBoost(wormsThrowing));
+
         GameObject worm1 = Instantiate(wormPrefab);
         PhysicalWormScript wormScript1 = worm1.GetComponent<PhysicalWormScript>();
         if (wormScript1 != null)
         {
-            wormScript1.Initialize(-30f, -15f); // Set min and max angles
+            wormScript1.Initialize(-30f, -15f); 
         }
+        wormsThrowing--;
         yield return new WaitForSeconds(.2f);
 
-        GameObject worm2 = Instantiate(wormPrefab);
-        PhysicalWormScript wormScript2 = worm2.GetComponent<PhysicalWormScript>();
-        if (wormScript2 != null)
+        if (wormsThrowing > 0)
         {
-            wormScript2.Initialize(-15f, 15f); // Set min and max angles
+            GameObject worm2 = Instantiate(wormPrefab);
+            PhysicalWormScript wormScript2 = worm2.GetComponent<PhysicalWormScript>();
+            if (wormScript2 != null)
+            {
+                wormScript2.Initialize(-15f, 15f);
+            }
+            yield return new WaitForSeconds(.2f);
+            wormsThrowing--;
         }
-        yield return new WaitForSeconds(.2f);
 
-        GameObject worm3 = Instantiate(wormPrefab);
-        PhysicalWormScript wormScript3 = worm3.GetComponent<PhysicalWormScript>();
-        if (wormScript3 != null)
+        if (wormsThrowing > 0)
         {
-            wormScript3.Initialize(15f, 30f); // Set min and max angles
+            GameObject worm3 = Instantiate(wormPrefab);
+            PhysicalWormScript wormScript3 = worm3.GetComponent<PhysicalWormScript>();
+            if (wormScript3 != null)
+            {
+                wormScript3.Initialize(15f, 30f);
+            }
         }
     }
 
-    private IEnumerator wormBoost()
+    private IEnumerator wormBoost(int wormsThrowing)
     {
-        wormMultiplier = 5f;
+        wormMultiplier = (wormsThrowing * 5/3f);
         wormSpawnMultiplier = 2f;
         fishManager.restartFishSpawning();
         yield return new WaitForSeconds(12f);

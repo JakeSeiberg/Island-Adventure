@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,22 +26,36 @@ public class PlayerMovement : MonoBehaviour
     [Header("Other")]
     public Transform orientation;
 
-    public Animator playerAnimator;
+    //public Animator playerAnimator;
 
     float horizontalInput;
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
 
+    public static Vector3 currentPlayerPos;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        canJump = true;
+
+        // Teleport the player
+        rb.position = playerData.playerPosition;
+
+        // Clear any initial velocity just in case
+        rb.linearVelocity = Vector3.zero;
+
+        // Optional but good practice
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        currentPlayerPos = rb.position;
+            
     }
 
     void Update()
     {
+        
+        currentPlayerPos = rb.position;
         Vector3 tmpPos = transform.position;
         tmpPos.y = transform.position.y + 3f; //dont change 3
         onGround = Physics.Raycast(tmpPos, Vector3.down, playerHeight*0.5f + 0.2f, isGround);
@@ -49,9 +64,10 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         dragCheck();
         limitSpeed();
-        checkAnimation();
+        //checkAnimation();
     }
-
+    
+    /*
     private void checkAnimation(){
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0){
             playerAnimator.SetBool("isWalking", true);
@@ -60,8 +76,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             playerAnimator.SetBool("isWalking", false);
         }
-    }
-
+    }*/
+    
+    
     private void dragCheck()
     {
         if(onGround){
@@ -118,5 +135,5 @@ public class PlayerMovement : MonoBehaviour
     private void resetJump(){
         canJump = true;
     }
-
+    
 }

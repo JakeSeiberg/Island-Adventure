@@ -59,11 +59,14 @@ public class SpearUIScript : MonoBehaviour
             if ((Input.GetMouseButtonUp(0) && isHoldingMouse) || forceShoot)
             {
                 isHoldingMouse = false;
+                if (holdTime >= 1.28f)
+                {
+                    playerData.hasThrownStrongSpear = true; 
+                }
                 ShootSpear(); // Start the shooting process
                 forceShoot = false;
             }
 
-            // Move the spear if the mouse is being held down
             if (isHoldingMouse)
             {
                 MoveSpearToPullback();
@@ -74,7 +77,6 @@ public class SpearUIScript : MonoBehaviour
 
         if (transform.position.y < -60f) // Adjust the Y threshold as needed
         {
-//            Debug.Log("Spear fell below the threshold. Resetting...");
             resetSpear();
         }
     }
@@ -187,8 +189,7 @@ public class SpearUIScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-//        Debug.Log("Spear collided with: " + other.gameObject.name);
-        //check tag of the collided object
+
         if (other.CompareTag("Platform"))
         {
             rb.linearVelocity = Vector3.zero; // Stop the Rigidbody's velocity
@@ -225,6 +226,5 @@ public class SpearUIScript : MonoBehaviour
         yield return new WaitForSeconds(delay); // Wait for the specified delay
         resetSpear(); // Call the resetSpear method
     }
-
 
 }

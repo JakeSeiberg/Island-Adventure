@@ -11,10 +11,22 @@ public class PlayerCamera : MonoBehaviour
     float xRotation;
     float yRotation;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public static Vector3 currentRotation;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        Vector3 initialLookRotation = playerData.playerRotation;
+
+        transform.rotation = Quaternion.Euler(initialLookRotation);
+
+        orientation.rotation = Quaternion.Euler(initialLookRotation.x, initialLookRotation.y, 0f);
+
+        xRotation = initialLookRotation.x;
+        yRotation = initialLookRotation.y;
     }
 
     // Update is called once per frame
@@ -30,6 +42,8 @@ public class PlayerCamera : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+        currentRotation = transform.rotation.eulerAngles;
     }
 
 }

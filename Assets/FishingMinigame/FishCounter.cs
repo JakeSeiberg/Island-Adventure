@@ -14,7 +14,7 @@ public class FishCounter : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        fishCounterText.text = $": {FishScript.fishHitCount}";
+        fishCounterText.text = $": {playerData.fishCount}";
 
         
     }
