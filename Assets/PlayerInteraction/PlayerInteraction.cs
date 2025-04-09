@@ -4,12 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float rayDistance = 3f;
-    public Transform playerPosition; 
+    private float rayDistance = 3.3f;
+    public Transform playerPosition;
     public Transform playerCamera;
 
     public LayerMask interactableLayer;
-    
 
     void Start()
     {
@@ -21,7 +20,6 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             interact();
-            Debug.Log("e hit");
         }
     }
 
@@ -34,18 +32,39 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
-            Debug.Log("Raycast hit: " + hit.collider.name);
             if (hit.collider.CompareTag("Worm")) 
             {
-                wormInteract.wormCollected(); 
-                Debug.Log("Worm collected!");
+                Debug.Log("Distance to worm: " + hit.distance + " units");
+
+                wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
+                if (wormScript != null)
+                {
+                    playerData.hasPickedUpAWorm = true;
+                    wormScript.wormCollected();
+                }
             }
             if (hit.collider.CompareTag("SpearInteractable")) 
             {
-                Debug.Log("Spear clicked!");
-                SceneManager.LoadScene("FishingMinigame", LoadSceneMode.Additive);
+                playerData.hasGoneFishing = true;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                playerData.playerRotation = PlayerCamera.currentRotation;
+                toolTips.changeScene();
+                playerData.curScene = "Fishing";
+                SceneManager.LoadScene("Fishing");
+            }
+            if (hit.collider.CompareTag("Tree")) 
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                playerData.playerRotation = PlayerCamera.currentRotation;
+                playerData.curScene = "Tree";
+                SceneManager.LoadScene("________");
             }
         }
     }
-
 }

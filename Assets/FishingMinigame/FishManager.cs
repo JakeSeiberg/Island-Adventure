@@ -36,11 +36,8 @@ public class FishManager : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(10f / WormManager.wormMultiplier, 25f / WormManager.wormMultiplier));
             if (fishCount <= (3 * WormManager.wormSpawnMultiplier))
             {
-                
                 Instantiate(fishPrefab);
-                
             }
-            
         }
     }
 
@@ -67,7 +64,6 @@ public class FishManager : MonoBehaviour
                 }
             }
         }
-
         return count;
     }
 }

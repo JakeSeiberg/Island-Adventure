@@ -26,6 +26,12 @@ public class FishScript : MonoBehaviour
 
     public Material deadMaterial;
 
+    private float despawnTimer = 0f;
+
+    private int despawnAfter = 10;
+
+    private Camera mainCamera;
+
     
     
 
@@ -38,6 +44,9 @@ public class FishScript : MonoBehaviour
 
         fishAnimation = GetComponentInChildren<Animator>();
         SpawnFish();
+
+        mainCamera = Camera.main;
+        StartCoroutine(fishDespawn());
     }
 
     void SpawnFish()
@@ -129,7 +138,6 @@ public class FishScript : MonoBehaviour
 
     public void HitBySpear()
     {
-        fishHitCount++;
         fishDead = true;
         //delete fish
         Renderer childRenderer = GetComponentInChildren<Renderer>();
@@ -147,6 +155,7 @@ public class FishScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         fishDead = true;
+        playerData.fishCount++;
         Destroy(gameObject);
     }
 
@@ -206,8 +215,34 @@ public class FishScript : MonoBehaviour
         //Debug.Log("Fish speed reset to normal.");
     }
 
+    private IEnumerator fishDespawn()
+    {
+        while(true)
+        {
+            Renderer fishRenderer = GetComponentInChildren<Renderer>();
+            if (fishRenderer != null)
+            {
+                Vector3 viewportPoint = mainCamera.WorldToViewportPoint(fishRenderer.bounds.center);
 
-
-
+                if (viewportPoint.x >= 0 && viewportPoint.x <= 1 &&
+                    viewportPoint.y >= 0 && viewportPoint.y <= 1 &&
+                    viewportPoint.z > 0)
+                {
+                    despawnTimer = 0;
+                }
+                else
+                {
+                    despawnTimer += 1;
+                }
+            }
+            if (despawnTimer >= despawnAfter)
+            {
+                Destroy(gameObject);
+            }
+            yield return new WaitForSeconds(1f);
+            //debug log fish identifier and despawn timer
+            //Debug.Log("Fish ID: " + gameObject.GetInstanceID() + " despawn timer: " + despawnTimer);
+        }
+    }
 
 }
