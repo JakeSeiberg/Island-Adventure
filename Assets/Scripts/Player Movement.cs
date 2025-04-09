@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         // Optional but good practice
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         currentPlayerPos = rb.position;
+
+        canJump = true;
             
     }
 
