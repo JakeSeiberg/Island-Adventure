@@ -63,7 +63,7 @@ public class PlayerInteraction : MonoBehaviour
                 playerData.playerPosition = PlayerMovement.currentPlayerPos;
                 playerData.playerRotation = PlayerCamera.currentRotation;
                 playerData.curScene = "Tree";
-                SceneManager.LoadScene("________");
+                SceneManager.LoadScene("Chopping");
             }
         }
     }

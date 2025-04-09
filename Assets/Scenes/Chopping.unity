@@ -1225,11 +1225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accuracyBar: {fileID: 754877772}
   accuracyMeterGreen: {fileID: 162552361}
-  chopCounter: {fileID: 233025735}
   startRotation: {x: -0.06964406, y: -0.42430082, z: 0.021290885, w: 0.902588}
   halfwayRotation: {x: -0.4637519, y: -0.26524547, z: -0.11489266, w: 0.8374836}
   targetRotation: {x: 0.45517766, y: 0.5668619, z: 0.35871565, w: -0.58549464}
-  swingDuration: 0.4
+  swingDuration: 0.5
+  chopCounter: {fileID: 233025735}
 --- !u!135 &1491669249
 SphereCollider:
   m_ObjectHideFlags: 0
