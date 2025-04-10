@@ -250,6 +250,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
@@ -331,6 +343,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 95.039
@@ -387,6 +411,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,6 +491,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000001
@@ -520,6 +568,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -587,6 +647,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9999999
@@ -648,6 +720,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 124.044
@@ -707,7 +791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 113505879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PalmTreeSingleStraightOneSided_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128232390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PalmTreeDualStraightOneSided_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,6 +930,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -906,6 +1002,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1048,6 +1156,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.005
@@ -1101,6 +1221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 79.41
@@ -1145,6 +1269,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1166,6 +1298,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1224,6 +1368,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 82.917
@@ -1280,6 +1436,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -1346,6 +1514,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
@@ -1408,6 +1588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 102.197
@@ -1452,6 +1636,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1478,6 +1670,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.y
@@ -1684,6 +1888,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeTrioTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 137888, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 137890, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 137892, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 437888, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.682808
@@ -1807,6 +2023,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
@@ -1867,6 +2095,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1935,6 +2175,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60.034
@@ -1991,6 +2243,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -2180,6 +2444,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -2324,6 +2600,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0000001
@@ -2395,6 +2683,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -2464,6 +2764,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -2528,6 +2840,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3077,6 +3401,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.765232
@@ -3262,6 +3598,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -3506,6 +3854,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -3566,6 +3926,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.z
@@ -3628,6 +4000,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.545
@@ -3684,6 +4068,18 @@ PrefabInstance:
     - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalScale.x
@@ -3754,6 +4150,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.y
@@ -3826,6 +4234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -3878,6 +4290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3894,6 +4314,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -3955,6 +4387,18 @@ PrefabInstance:
     - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalScale.x
@@ -4026,6 +4470,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000001
@@ -4091,6 +4547,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 108.848
@@ -4147,6 +4615,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -4255,6 +4735,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.791
@@ -4299,6 +4783,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4315,6 +4807,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -4376,6 +4880,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4485,6 +5001,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999998
@@ -4550,6 +5078,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.343
@@ -4606,6 +5146,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -4664,6 +5216,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60.015
@@ -4708,6 +5264,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4742,7 +5306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012741084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PalmTreeSingleBendedOneSided_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4782,6 +5346,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4844,6 +5420,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -4981,6 +5569,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -5038,6 +5638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0000001
@@ -5089,6 +5693,14 @@ PrefabInstance:
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5152,6 +5764,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 67.452
@@ -5196,6 +5812,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5212,6 +5836,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
@@ -5292,6 +5928,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.3
@@ -5349,6 +5997,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.653
@@ -5402,6 +6062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000001
@@ -5453,6 +6117,14 @@ PrefabInstance:
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5540,6 +6212,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -5827,6 +6511,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 80.328
@@ -5893,6 +6589,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -6036,6 +6744,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.99999994
@@ -6094,9 +6814,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1411795798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trees
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6205,7 +6925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1431697767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PalmTreeDualBendedTwoSided_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6249,6 +6969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0000001
@@ -6296,6 +7020,14 @@ PrefabInstance:
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6402,6 +7134,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -6569,6 +7313,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.99999994
@@ -6640,6 +7396,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.9999999
@@ -6688,6 +7448,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6704,6 +7472,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6761,6 +7541,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -6822,6 +7614,18 @@ PrefabInstance:
     - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
@@ -6954,6 +7758,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000001
@@ -7001,6 +7809,14 @@ PrefabInstance:
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7108,6 +7924,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000001
@@ -7156,6 +7976,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7172,6 +8000,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7231,6 +8071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9999999
@@ -7283,6 +8127,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7299,6 +8151,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7356,6 +8220,18 @@ PrefabInstance:
     - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalScale.y
@@ -7678,6 +8554,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleBendedOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 151538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151540, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 151542, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 451538, guid: b22d7dcea44833b4ab41d64beb6e42c8, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000001
@@ -7738,6 +8626,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -7896,6 +8796,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.x
@@ -8151,6 +9063,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000002
@@ -8206,6 +9122,14 @@ PrefabInstance:
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8409,6 +9333,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualBendedTwoSided
       objectReference: {fileID: 0}
+    - target: {fileID: 119418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119420, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119422, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 419418, guid: 785bfd81c9fb838469851c06eb415f7a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000001
@@ -8475,6 +9411,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.99999994
@@ -8523,6 +9463,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8539,6 +9487,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -8646,6 +9606,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.435
@@ -8699,6 +9671,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0000001
@@ -8747,6 +9723,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8770,6 +9754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
@@ -8818,6 +9806,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8836,6 +9832,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0000002
@@ -8892,6 +9892,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8910,6 +9918,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 128232390}
     m_Modifications:
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3238944284029210797, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
@@ -8958,6 +9970,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8974,6 +9994,18 @@ PrefabInstance:
     - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
+      objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalScale.y
@@ -9106,6 +10138,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTreeSingleStraightOneSided
       objectReference: {fileID: 0}
+    - target: {fileID: 124274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124276, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 124278, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 424274, guid: 20ddc844cd25b244f8005cba06955856, type: 3}
       propertyPath: m_LocalPosition.x
       value: 84.109
@@ -9189,6 +10233,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495922489}
     - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037677277499420742, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -9237,8 +10285,16 @@ PrefabInstance:
       value: PalmTreeDualStraightOneSided
       objectReference: {fileID: 0}
     - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593044535353230773, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5863218847023012096, guid: d6471a9f893474c34bb959e7d0dc0bdc, type: 3}
       propertyPath: m_StaticEditorFlags
