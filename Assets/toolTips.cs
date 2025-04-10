@@ -173,8 +173,11 @@ public class toolTips : MonoBehaviour
             toolTips.tip("Press spacebar to throw your worms. They might attract more fish",7);
 
             yield return new WaitForSeconds(20f);
-
-            toolTips.tip("Press Escape to stop fishing",5);
+            if (playerData.curScene == "Fishing")
+            {
+                toolTips.tip("Press Escape to stop fishing",5);
+            }
+            
         }
     }
 
