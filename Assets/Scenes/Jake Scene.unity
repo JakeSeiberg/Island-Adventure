@@ -8689,6 +8689,7 @@ MonoBehaviour:
   wormNum: {fileID: 881966300}
   woodNum: {fileID: 798245660}
   fishNum: {fileID: 1058679561}
+  spear: {fileID: 1461045427}
 --- !u!114 &1460305456
 MonoBehaviour:
   m_ObjectHideFlags: 0
