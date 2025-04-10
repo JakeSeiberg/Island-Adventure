@@ -10,6 +10,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public LayerMask interactableLayer;
 
+    private float rayHeightOffset = 3.7f;
+
     void Start()
     {
 
@@ -25,16 +27,18 @@ public class PlayerInteraction : MonoBehaviour
 
     private void interact()
     {
-        Ray ray = new Ray(playerPosition.position, playerCamera.forward);
+        Vector3 tempPosition = playerPosition.position;
+        tempPosition.y += rayHeightOffset;
+        Ray ray = new Ray(tempPosition, playerCamera.forward);
         RaycastHit hit;
 
-        Debug.DrawRay(playerPosition.position, playerCamera.forward * rayDistance, Color.red, 1f);
+        Debug.DrawRay(tempPosition, playerCamera.forward * rayDistance, Color.red, 1f);
+
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
             if (hit.collider.CompareTag("Worm")) 
             {
-
                 wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
                 if (wormScript != null)
                 {
@@ -51,6 +55,11 @@ public class PlayerInteraction : MonoBehaviour
                     spear.hasSpear();
                 }
             }
+            if (hit.collider.CompareTag("axeItem")) 
+            {
+                axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
+                axe.hasAxe();
+            }
             if (hit.collider.CompareTag("SpearInteractable")) 
             {
                 playerData.hasGoneFishing = true;
@@ -65,20 +74,23 @@ public class PlayerInteraction : MonoBehaviour
             }
             if (hit.collider.CompareTag("Tree")) 
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                playerData.playerRotation = PlayerCamera.currentRotation;
-                playerData.hasBrokenTree = true;
-                toolTips.changeScene();
-                playerData.curScene = "Tree";
-                if (!playerData.hasPlayedTreeGame)
+                if (playerData.hasAxe)
                 {
-                    toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
-                    playerData.hasPlayedTreeGame = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
+                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                    playerData.playerRotation = PlayerCamera.currentRotation;
+                    playerData.hasEnteredTreeGame = true;
+                    toolTips.changeScene();
+                    playerData.curScene = "Tree";
+                    if (!playerData.hasPlayedTreeGame)
+                    {
+                        toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
+                        playerData.hasPlayedTreeGame = true;
+                    }
+                    SceneManager.LoadScene("Tree");
                 }
-                SceneManager.LoadScene("Tree");
             }
         }
     }

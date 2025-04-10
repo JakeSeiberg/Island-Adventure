@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         currentPlayerPos = rb.position;
 
         canJump = true;
-            
     }
 
     void Update()
@@ -84,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     private void dragCheck()
     {
         if(onGround){
-            rb.linearDamping = groundDrag;
+            //rb.linearDamping = groundDrag;
         }
         else{
             rb.linearDamping = 0;

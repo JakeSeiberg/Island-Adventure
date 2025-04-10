@@ -19,8 +19,9 @@ public class playerData
     public static bool hasPickedUpAWorm = false;
     public static bool hasGoneFishing = false;
     public static bool hasThrownStrongSpear = false;
-    public static bool hasBrokenTree = false;
+    public static bool hasEnteredTreeGame = false;
     public static bool hasPlayedTreeGame = false;
+    public static bool hasAxe = false;
 
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
@@ -40,8 +41,9 @@ public class playerData
         hasPickedUpSpear = false;
         hasGoneFishing = false;
         hasThrownStrongSpear = false;
-        hasBrokenTree = false;
+        hasEnteredTreeGame = false;
         hasPlayedTreeGame = false;
+        hasAxe = false;
         curScene = "MainWorld";
     }
 
