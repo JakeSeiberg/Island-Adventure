@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Fishing.unity
     guid: 5ef0d037b934642a5b52bbce65fd92f9
   - enabled: 1
-    path: Assets/Scenes/Chopping.unity
+    path: Assets/Scenes/Tree.unity
     guid: cba47e256d3114bb4ba2422db4c43a9d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

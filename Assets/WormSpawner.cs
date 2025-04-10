@@ -7,13 +7,13 @@ public class WormSpawner : MonoBehaviour
 
     void Start()
     {
-        SpawnWorms();
+        StartCoroutine(SpawnWorms());
         StartCoroutine(tip());
     }
 
-    private void SpawnWorms()
+    private IEnumerator SpawnWorms()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 200; i++)
         {
             // Generate random positions within the specified bounds
             float randomX = Random.Range(40f, 160f);
@@ -23,6 +23,7 @@ public class WormSpawner : MonoBehaviour
             Vector3 spawnPosition = new Vector3(randomX, y, randomZ);
 
             // Instantiate the wormPrefab at the random position with no rotation
+            yield return new WaitForSeconds(.001f);
             Instantiate(wormPrefab, spawnPosition, Quaternion.identity);
         }
     }
