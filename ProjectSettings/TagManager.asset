@@ -12,6 +12,7 @@ TagManager:
   - Worm
   - SpearInteractable
   - Tree
+  - spearItem
   layers:
   - Default
   - TransparentFX
