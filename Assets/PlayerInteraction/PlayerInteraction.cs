@@ -73,6 +73,11 @@ public class PlayerInteraction : MonoBehaviour
                 playerData.hasBrokenTree = true;
                 toolTips.changeScene();
                 playerData.curScene = "Tree";
+                if (!playerData.hasPlayedTreeGame)
+                {
+                    toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
+                    playerData.hasPlayedTreeGame = true;
+                }
                 SceneManager.LoadScene("Tree");
             }
         }

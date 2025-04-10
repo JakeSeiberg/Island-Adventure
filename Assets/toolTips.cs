@@ -53,7 +53,11 @@ public class toolTips : MonoBehaviour
     {
         playerData.startOfGame = false;
         yield return new WaitForSeconds(4f);
-        toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
+        if (playerData.curScene == "MainWorld")
+        {
+            toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
+        }
+        
     }
 
     public static void tip(string input, float waitTime)
@@ -208,5 +212,16 @@ public class toolTips : MonoBehaviour
     {
         image.enabled = true; 
         text.enabled = true;
+    }
+
+    public static void delayedToolTip(string tip, float waitTime)
+    {
+        Instance.StartCoroutine(Instance.delayedTooltipEnumerator(tip, waitTime));
+    }
+
+    private IEnumerator delayedTooltipEnumerator(string tip, float waitTime)
+    {
+        yield return new WaitForSeconds(2f);
+        toolTips.tip(tip, waitTime);
     }
 }
