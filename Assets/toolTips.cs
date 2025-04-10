@@ -46,12 +46,13 @@ public class toolTips : MonoBehaviour
         }
         StartCoroutine(spearTooltip());
         StartCoroutine(fishingToolTip());
+        StartCoroutine(hasBrokenTree());
     }
 
     private IEnumerator startOfGameTip()
     {
         playerData.startOfGame = false;
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(4f);
         toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
     }
 
@@ -120,13 +121,27 @@ public class toolTips : MonoBehaviour
 
         yield return new WaitForSeconds(10f);
         Debug.Log("Spear tooltip started");
+
+        while (!playerData.hasSpear)
+        {   
+            if (playerData.curScene == "MainWorld")
+            {
+                toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane",7);
+
+                yield return new WaitForSeconds(25f);
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
+        }
         
 
         while (!playerData.hasGoneFishing)
         {   
             if (playerData.curScene == "MainWorld")
             {
-                toolTips.tip("You need to find a high spot to spearfish. Maybe interact with the spear on the airplane wing",7);
+                toolTips.tip("You need to find a high spot to spearfish. Maybe there's a spot overlooking the water by the crashed plane",7);
 
                 yield return new WaitForSeconds(25f);
             }
@@ -157,6 +172,23 @@ public class toolTips : MonoBehaviour
             yield return new WaitForSeconds(20f);
 
             toolTips.tip("Press Escape to stop fishing",5);
+        }
+    }
+
+    private IEnumerator hasBrokenTree()
+    {
+        while (!playerData.hasBrokenTree)
+        {
+            if (playerData.hasThrownStrongSpear)
+            {
+                if (playerData.curScene == "MainWorld")
+                {
+                    toolTips.tip("You can use your axe to break a tree. Press E to interact with a tree", 7f);
+                }
+                yield return new WaitForSeconds(20f);
+            }
+            
+            yield return new WaitForSeconds(2f);
         }
     }
 

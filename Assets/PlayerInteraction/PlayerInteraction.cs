@@ -34,13 +34,21 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (hit.collider.CompareTag("Worm")) 
             {
-                Debug.Log("Distance to worm: " + hit.distance + " units");
 
                 wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
                 if (wormScript != null)
                 {
                     playerData.hasPickedUpAWorm = true;
                     wormScript.wormCollected();
+                }
+            }
+            if (hit.collider.CompareTag("spearItem")) 
+            {
+                spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
+                if (spear != null)
+                {
+                    playerData.hasSpear = true;
+                    spear.hasSpear();
                 }
             }
             if (hit.collider.CompareTag("SpearInteractable")) 
@@ -62,8 +70,10 @@ public class PlayerInteraction : MonoBehaviour
 
                 playerData.playerPosition = PlayerMovement.currentPlayerPos;
                 playerData.playerRotation = PlayerCamera.currentRotation;
+                playerData.hasBrokenTree = true;
+                toolTips.changeScene();
                 playerData.curScene = "Tree";
-                SceneManager.LoadScene("Chopping");
+                SceneManager.LoadScene("Tree");
             }
         }
     }
