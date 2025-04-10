@@ -46,7 +46,7 @@ public class toolTips : MonoBehaviour
         }
         StartCoroutine(spearTooltip());
         StartCoroutine(fishingToolTip());
-        StartCoroutine(hasBrokenTree());
+        StartCoroutine(treeToolTips());
     }
 
     private IEnumerator startOfGameTip()
@@ -57,7 +57,6 @@ public class toolTips : MonoBehaviour
         {
             toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
         }
-        
     }
 
     public static void tip(string input, float waitTime)
@@ -174,25 +173,38 @@ public class toolTips : MonoBehaviour
             toolTips.tip("Press spacebar to throw your worms. They might attract more fish",7);
 
             yield return new WaitForSeconds(20f);
-
-            toolTips.tip("Press Escape to stop fishing",5);
+            if (playerData.curScene == "Fishing")
+            {
+                toolTips.tip("Press Escape to stop fishing",5);
+            }
+            
         }
     }
 
-    private IEnumerator hasBrokenTree()
+    private IEnumerator treeToolTips()
     {
-        while (!playerData.hasBrokenTree)
+        while (!playerData.hasAxe)
         {
+            yield return new WaitForSeconds(5f);
             if (playerData.hasThrownStrongSpear)
             {
                 if (playerData.curScene == "MainWorld")
                 {
-                    toolTips.tip("You can use your axe to break a tree. Press E to interact with a tree", 7f);
+                    toolTips.tip("You need to find an axe. Maybe there's one by the crashed plane", 7f);
                 }
-                yield return new WaitForSeconds(20f);
             }
             
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(15f);
+        }
+
+        while (!playerData.hasEnteredTreeGame)
+        {
+            yield return new WaitForSeconds(5f);
+            if (playerData.curScene == "MainWorld")
+            {
+                toolTips.tip("Interact with a tree to chop it down", 8f);
+            }
+            yield return new WaitForSeconds(15f);
         }
     }
 
@@ -223,5 +235,7 @@ public class toolTips : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         toolTips.tip(tip, waitTime);
+
+        toolTips.tip("THIs is the tip",100f);
     }
 }

@@ -10,6 +10,7 @@ public class spearPickupScript : MonoBehaviour
         if (playerData.hasSpear)
         {
             spearFishingRenderer.gameObject.SetActive(true);
+            Destroy(this.gameObject);
         }
         else
         {
@@ -18,6 +19,7 @@ public class spearPickupScript : MonoBehaviour
         Color color = spearFishingRenderer.material.color;
         color.a = 0.25f;
         spearFishingRenderer.material.color = color;
+
     }
 
     public void hasSpear()
