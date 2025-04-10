@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Other")]
     public Transform orientation;
 
-    //public Animator playerAnimator;
+    public Animator playerAnimator;
 
     float horizontalInput;
     float verticalInput;
@@ -67,25 +67,24 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         dragCheck();
         limitSpeed();
-        //checkAnimation();
+        checkAnimation();
     }
     
-    /*
+    
     private void checkAnimation(){
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0){
             playerAnimator.SetBool("isWalking", true);
-            Debug.Log("here");
         }
         else{
             playerAnimator.SetBool("isWalking", false);
         }
-    }*/
+    }
     
     
     private void dragCheck()
     {
         if(onGround){
-            //rb.linearDamping = groundDrag;
+            rb.linearDamping = groundDrag;
         }
         else{
             rb.linearDamping = 0;
