@@ -15,9 +15,9 @@ public class HUDManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        wormNum.SetText("Worm: " + playerData.wormCount.ToString());
-        woodNum.SetText("Wood: " + playerData.woodCount.ToString());
-        fishNum.SetText("Fish: " + playerData.fishCount.ToString());
+        wormNum.SetText(": " + playerData.wormCount.ToString());
+        woodNum.SetText(": " + playerData.woodCount.ToString());
+        fishNum.SetText(": " + playerData.fishCount.ToString());
         spear.SetText("Spear: " + playerData.hasSpear.ToString());
         axe.SetText("Axe: " + playerData.hasAxe.ToString());
     }

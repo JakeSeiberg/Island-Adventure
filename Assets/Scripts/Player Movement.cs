@@ -77,13 +77,20 @@ public class PlayerMovement : MonoBehaviour
         else{
             playerAnimator.SetBool("isWalking", false);
         }
+
+        if(Input.GetKey(KeyCode.Space)){
+            playerAnimator.SetBool("isJump", true);
+        }
+        else{
+            playerAnimator.SetBool("isJump", false);
+        }
     }
     
     
     private void dragCheck()
     {
         if(onGround){
-            //rb.linearDamping = groundDrag;
+            rb.linearDamping = groundDrag;
         }
         else{
             rb.linearDamping = 0;
