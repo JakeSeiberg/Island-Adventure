@@ -22,6 +22,7 @@ public class ChopCounter : MonoBehaviour
         checkmarkSprite.enabled = false;
         xmarkSprite.enabled = false;
         counterText.text = hits + "/" + hitsNeeded;
+
     }
 
     public void RegisterHit()
@@ -43,6 +44,7 @@ public class ChopCounter : MonoBehaviour
         if (hits == hitsNeeded)
         {
             Debug.Log("Tree chopped!");
+            playerData.treeChopped = true;
             playerData.woodCount++;
 
             if (axeController != null)
@@ -53,7 +55,6 @@ public class ChopCounter : MonoBehaviour
 
             if (accuracyBarMover != null)
                 accuracyBarMover.enabled = false;
-
             
             toolTips.tip("Tree Chopped! Press [ESC]", 100f);
         }    

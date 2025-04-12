@@ -82,6 +82,15 @@ public class PlayerInteraction : MonoBehaviour
                     playerData.playerPosition = PlayerMovement.currentPlayerPos;
                     playerData.playerRotation = PlayerCamera.currentRotation;
                     playerData.hasEnteredTreeGame = true;
+
+                    playerData.treeChopped = false;
+                    TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
+                    if (treeIDScript != null)
+                    {
+                        playerData.currentTreeID = treeIDScript.treeID;
+                        Debug.Log("Saved tree ID: " + playerData.currentTreeID);
+                    }
+
                     toolTips.changeScene();
                     playerData.curScene = "Tree";
                     if (!playerData.hasPlayedTreeGame)

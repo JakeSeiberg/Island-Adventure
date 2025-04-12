@@ -23,12 +23,16 @@ public class playerData
     public static bool hasPlayedTreeGame = false;
     public static bool hasAxe = false;
 
+    public static string currentTreeID = null;
+    public static bool treeChopped = false;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
     public playerData()
     {
         playerPosition = new Vector3(95f, 6f, 78f);
+        //playerPosition = new Vector3(121.085f, 6.005f, 43.07f);
         playerRotation = new Vector3(-3f, -166f, 0f);
         startOfGame = true;
         wormCount = 0;
@@ -44,6 +48,10 @@ public class playerData
         hasEnteredTreeGame = false;
         hasPlayedTreeGame = false;
         hasAxe = false;
+
+        currentTreeID = null;
+        treeChopped = false;
+
         curScene = "MainWorld";
     }
 
