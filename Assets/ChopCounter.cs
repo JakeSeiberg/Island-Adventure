@@ -43,9 +43,7 @@ public class ChopCounter : MonoBehaviour
 
         if (hits == hitsNeeded)
         {
-            Debug.Log("Tree chopped!");
             playerData.treeChopped = true;
-            playerData.woodCount++;
 
             if (axeController != null)
                 axeController.enabled = false;

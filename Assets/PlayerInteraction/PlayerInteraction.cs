@@ -101,6 +101,16 @@ public class PlayerInteraction : MonoBehaviour
                     SceneManager.LoadScene("Tree");
                 }
             }
+            if (hit.collider.CompareTag("Leaf")) 
+            {
+                LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
+                leaf.leafCollected();
+            }
+            if (hit.collider.CompareTag("Log")) 
+            {
+                logScript log = hit.collider.GetComponent<logScript>();
+                log.logCollected();
+            }
         }
     }
 }

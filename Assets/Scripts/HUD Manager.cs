@@ -8,6 +8,8 @@ public class HUDManager : MonoBehaviour
     public TMP_Text wormNum;
     public TMP_Text woodNum;
     public TMP_Text fishNum;
+    public TMP_Text leafNum;
+
     public TMP_Text spear;
     public TMP_Text axe;
     
@@ -18,8 +20,8 @@ public class HUDManager : MonoBehaviour
         wormNum.SetText(": " + playerData.wormCount.ToString());
         woodNum.SetText(": " + playerData.woodCount.ToString());
         fishNum.SetText(": " + playerData.fishCount.ToString());
+        leafNum.SetText("leafNum: " + playerData.leafCount.ToString());
         spear.SetText("Spear: " + playerData.hasSpear.ToString());
         axe.SetText("Axe: " + playerData.hasAxe.ToString());
     }
-
 }
