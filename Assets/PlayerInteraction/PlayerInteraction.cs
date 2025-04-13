@@ -12,6 +12,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private float rayHeightOffset = 3.7f;
 
+    private Outline currentOutline;
+
     void Start()
     {
 
@@ -19,9 +21,18 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
+        interact();
+    }
+
+    private bool input()
+    {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadPlus))
         {
-            interact();
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -37,79 +48,132 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
-            if (hit.collider.CompareTag("Worm")) 
-            {
-                wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
-                if (wormScript != null)
+            if (input()){
+                if (hit.collider.CompareTag("Worm")) 
                 {
-                    playerData.hasPickedUpAWorm = true;
-                    wormScript.wormCollected();
+                    wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
+                    if (wormScript != null)
+                    {
+                        playerData.hasPickedUpAWorm = true;
+                        wormScript.wormCollected();
+                    }
                 }
-            }
-            if (hit.collider.CompareTag("spearItem")) 
-            {
-                spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
-                if (spear != null)
+                if (hit.collider.CompareTag("spearItem")) 
                 {
-                    playerData.hasSpear = true;
-                    spear.hasSpear();
+                    spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
+                    if (spear != null)
+                    {
+                        playerData.hasSpear = true;
+                        spear.hasSpear();
+                    }
                 }
-            }
-            if (hit.collider.CompareTag("axeItem")) 
-            {
-                axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
-                axe.hasAxe();
-            }
-            if (hit.collider.CompareTag("SpearInteractable")) 
-            {
-                playerData.hasGoneFishing = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                playerData.playerRotation = PlayerCamera.currentRotation;
-                toolTips.changeScene();
-                playerData.curScene = "Fishing";
-                SceneManager.LoadScene("Fishing");
-            }
-            if (hit.collider.CompareTag("Tree")) 
-            {
-                if (playerData.hasAxe)
+                if (hit.collider.CompareTag("axeItem")) 
                 {
+                    axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
+                    axe.hasAxe();
+                }
+                if (hit.collider.CompareTag("SpearInteractable")) 
+                {
+                    playerData.hasGoneFishing = true;
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
 
                     playerData.playerPosition = PlayerMovement.currentPlayerPos;
                     playerData.playerRotation = PlayerCamera.currentRotation;
-                    playerData.hasEnteredTreeGame = true;
-
-                    playerData.treeChopped = false;
-                    TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
-                    if (treeIDScript != null)
-                    {
-                        playerData.currentTreeID = treeIDScript.treeID;
-                        Debug.Log("Saved tree ID: " + playerData.currentTreeID);
-                    }
-
                     toolTips.changeScene();
-                    playerData.curScene = "Tree";
-                    if (!playerData.hasPlayedTreeGame)
+                    playerData.curScene = "Fishing";
+                    SceneManager.LoadScene("Fishing");
+                }
+                if (hit.collider.CompareTag("Tree")) 
+                {
+                    if (playerData.hasAxe)
                     {
-                        toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
-                        playerData.hasPlayedTreeGame = true;
+                        Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
+
+                        playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                        playerData.playerRotation = PlayerCamera.currentRotation;
+                        playerData.hasEnteredTreeGame = true;
+
+                        playerData.treeChopped = false;
+                        TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
+                        if (treeIDScript != null)
+                        {
+                            playerData.currentTreeID = treeIDScript.treeID;
+                            Debug.Log("Saved tree ID: " + playerData.currentTreeID);
+                        }
+
+                        toolTips.changeScene();
+                        playerData.curScene = "Tree";
+                        if (!playerData.hasPlayedTreeGame)
+                        {
+                            toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
+                            playerData.hasPlayedTreeGame = true;
+                        }
+                        SceneManager.LoadScene("Tree");
                     }
-                    SceneManager.LoadScene("Tree");
+                }
+                if (hit.collider.CompareTag("Leaf")) 
+                {
+                    LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
+                    leaf.leafCollected();
+                }
+                if (hit.collider.CompareTag("Log")) 
+                {
+                    logScript log = hit.collider.GetComponent<logScript>();
+                    log.logCollected();
                 }
             }
-            if (hit.collider.CompareTag("Leaf")) 
-            {
-                LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
-                leaf.leafCollected();
+            else{
+                // Handle outline logic
+                if (hit.collider.CompareTag("Tree"))
+                {
+                    if (!playerData.hasAxe)
+                    {
+                        return;
+                    }
+                }
+                if (hit.collider.CompareTag("SpearInteractable"))
+                {
+                    if (!playerData.hasSpear)
+                    {
+                        return;
+                    }
+                }
+
+                    // Check if the object has an Outline component
+                Outline outline = hit.collider.GetComponent<Outline>();
+                Debug.Log("Outline: " + outline);
+                if (outline != null)
+                {
+                    // Enable the outline on the currently hit object
+                    if (currentOutline != outline)
+                    {
+                        if (currentOutline != null)
+                        {
+                            currentOutline.enabled = false; // Disable the previous outline
+                        }
+                        currentOutline = outline; // Update the current outline
+                        currentOutline.enabled = true; // Enable the new outline
+                    }
+                }
+                else
+                {
+                    // If no outline component is found, disable the current outline
+                    if (currentOutline != null)
+                    {
+                        currentOutline.enabled = false;
+                        currentOutline = null;
+                    }
+                }
             }
-            if (hit.collider.CompareTag("Log")) 
+        }
+        else
+        {
+            if (currentOutline != null)
             {
-                logScript log = hit.collider.GetComponent<logScript>();
-                log.logCollected();
+                currentOutline.enabled = false;
+                currentOutline = null;
             }
         }
     }

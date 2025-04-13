@@ -32,8 +32,8 @@ public class playerData
 
     public playerData()
     {
-        //playerPosition = new Vector3(95f, 6f, 78f);
-        playerPosition = new Vector3(121.085f, 6.005f, 43.07f);
+        playerPosition = new Vector3(95f, 6f, 78f);
+        //playerPosition = new Vector3(121.085f, 6.005f, 43.07f);
         playerRotation = new Vector3(-3f, -166f, 0f);
         startOfGame = true;
         wormCount = 0;
