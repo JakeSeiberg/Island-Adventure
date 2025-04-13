@@ -10,6 +10,8 @@ public class HUDManager : MonoBehaviour
     public TMP_Text fishNum;
     public TMP_Text leafNum;
 
+    public TMP_Text fireVal;
+
     public TMP_Text spear;
     public TMP_Text axe;
     
@@ -23,5 +25,6 @@ public class HUDManager : MonoBehaviour
         leafNum.SetText("leafNum: " + playerData.leafCount.ToString());
         spear.SetText("Spear: " + playerData.hasSpear.ToString());
         axe.SetText("Axe: " + playerData.hasAxe.ToString());
+        fireVal.SetText("Fire: " + playerData.fireValue.ToString());
     }
 }

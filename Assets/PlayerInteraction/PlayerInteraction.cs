@@ -14,6 +14,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private Outline currentOutline;
 
+    public CampfireScript CampfireScript;
+
     void Start()
     {
 
@@ -123,6 +125,11 @@ public class PlayerInteraction : MonoBehaviour
                     logScript log = hit.collider.GetComponent<logScript>();
                     log.logCollected();
                 }
+                if (hit.collider.CompareTag("Campfire")) 
+                {
+                    CampfireScript.interact();
+                    Debug.Log("Campfire Interacted");
+                }
             }
             else{
                 // Handle outline logic
@@ -140,7 +147,6 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
-
                     // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();
                 Debug.Log("Outline: " + outline);

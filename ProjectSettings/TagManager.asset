@@ -16,6 +16,7 @@ TagManager:
   - axeItem
   - Leaf
   - Log
+  - Campfire
   layers:
   - Default
   - TransparentFX

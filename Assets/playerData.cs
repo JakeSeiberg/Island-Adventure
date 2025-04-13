@@ -24,6 +24,9 @@ public class playerData
     public static bool hasPlayedTreeGame = false;
     public static bool hasAxe = false;
 
+    public static float fireValue = 15f;
+    public static bool fireBurning = false;
+
     public static string currentTreeID = null;
     public static bool treeChopped = false;
 
@@ -32,8 +35,9 @@ public class playerData
 
     public playerData()
     {
-        playerPosition = new Vector3(95f, 6f, 78f);
-        //playerPosition = new Vector3(121.085f, 6.005f, 43.07f);
+        //playerPosition = new Vector3(95f, 6f, 78f); //default
+        //playerPosition = new Vector3(121.085f, 6.005f, 43.07f); //axe
+        playerPosition = new Vector3(94.22213f, 0.15230618f, 25.14625f); //campfire
         playerRotation = new Vector3(-3f, -166f, 0f);
         startOfGame = true;
         wormCount = 0;
