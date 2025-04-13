@@ -19,7 +19,7 @@ public class TreeManager : MonoBehaviour
 
                     Destroy(tree.gameObject);
                     
-                    for (int i = 0; i < Random.Range(0, 5); i++)
+                    for (int i = 0; i < Random.Range(1, 5); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);
@@ -28,7 +28,7 @@ public class TreeManager : MonoBehaviour
                         Instantiate(leafPrefab, leafPosition, Quaternion.identity);
                     }
 
-                    for (int i = 0; i < Random.Range(0, 4); i++)
+                    for (int i = 0; i < Random.Range(1, 4); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);
