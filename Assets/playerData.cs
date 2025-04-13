@@ -24,7 +24,7 @@ public class playerData
     public static bool hasPlayedTreeGame = false;
     public static bool hasAxe = false;
 
-    public static float fireValue = 15f;
+    public static float fireValue = 0f;
     public static bool fireBurning = false;
 
     public static string currentTreeID = null;
