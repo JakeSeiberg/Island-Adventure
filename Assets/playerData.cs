@@ -32,6 +32,14 @@ public class playerData
     public static bool treeChopped = false;
     public static ArrayList brokenTrees;
 
+    public static float[] fishTimers = new float[2];
+    public static int cookedFishCount;
+    public static float lastFishCheckTime;
+
+
+
+    public static bool day;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -39,14 +47,16 @@ public class playerData
     {
         //playerPosition = new Vector3(95f, 6f, 78f); //default
         //playerPosition = new Vector3(121.085f, 6.005f, 43.07f); //axe
-        //playerPosition = new Vector3(94.22213f, 0.15230618f, 25.14625f); //campfire
-        playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
+        playerPosition = new Vector3(94.22213f, 0.15230618f, 25.14625f); //campfire
+        //playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
         wormCount = 0;
-        woodCount = 0;
-        fishCount = 0;
+        woodCount = 10;
+        fishCount = 5;
         leafCount = 0;
+        cookedFishCount = 0;
+        lastFishCheckTime = float.NaN;
 
         hasSpear = false;
 
@@ -61,6 +71,9 @@ public class playerData
         currentTreeID = null;
         treeChopped = false;
         brokenTrees = new ArrayList();
+
+        fishTimers[0] = float.NaN;
+        fishTimers[1] = float.NaN;
 
         curScene = "MainWorld";
     }

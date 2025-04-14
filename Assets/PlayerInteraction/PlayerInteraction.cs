@@ -16,6 +16,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public CampfireScript CampfireScript;
 
+    public fishCookerScript fishCookerScript;
+
     void Start()
     {
 
@@ -128,6 +130,19 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     CampfireScript.interact();
                 }
+                if (hit.collider.CompareTag("CampfireGrate"))
+                {
+                    Debug.Log("Grate interacted");
+                    fishCookerScript.interact();
+                }
+                if (hit.collider.CompareTag("fishLeft"))
+                {
+                    fishCookerScript.fishLeft();
+                }
+                if (hit.collider.CompareTag("fishRight"))
+                {
+                    fishCookerScript.fishRight();
+                }
             }
             else{
                 // Handle outline logic
@@ -145,6 +160,7 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
+
                     // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();
                 if (outline != null)
