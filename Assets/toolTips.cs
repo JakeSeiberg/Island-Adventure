@@ -19,6 +19,8 @@ public class toolTips : MonoBehaviour
     private Image image;
     private TMP_Text text;
 
+    public CanvasGroup crashCanvasGroup;
+
     void Awake()
     {
         image = GetComponent<Image>();
@@ -47,7 +49,42 @@ public class toolTips : MonoBehaviour
         StartCoroutine(spearTooltip());
         StartCoroutine(fishingToolTip());
         StartCoroutine(treeToolTips());
+
+        StartCoroutine(fadeCanvas());
     }
+
+    private IEnumerator fadeCanvas()
+    {
+        Debug.Log("Starting canvas fade");
+        float duration = 2f;
+        float elapsedTime = 0f;
+
+        if (crashCanvasGroup != null)
+        {
+            crashCanvasGroup.alpha = 1f; 
+        }
+        yield return new WaitForSeconds(1f);
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            if (crashCanvasGroup != null)
+            {
+                crashCanvasGroup.alpha = Mathf.Clamp01(1f - (elapsedTime / duration));
+            }
+            yield return null;
+        }
+
+        if (crashCanvasGroup != null)
+        {
+            crashCanvasGroup.alpha = 0f; 
+        }
+
+        Debug.Log("Canvas fade complete");
+
+    }
+
+
 
     private IEnumerator startOfGameTip()
     {
@@ -116,14 +153,10 @@ public class toolTips : MonoBehaviour
     {
         while (playerData.hasPickedUpAWorm == false)
         {
-            Debug.Log("worm check");
             yield return new WaitForSeconds(5f);
-            Debug.Log("worm check after");
         }
-        Debug.Log("worm picked up- spear tooltip loaded");
 
         yield return new WaitForSeconds(10f);
-        Debug.Log("Spear tooltip started");
 
         while (!playerData.hasSpear)
         {   

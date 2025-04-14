@@ -45,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
         Ray ray = new Ray(tempPosition, playerCamera.forward);
         RaycastHit hit;
 
-        Debug.DrawRay(tempPosition, playerCamera.forward * rayDistance, Color.red, 1f);
+//        Debug.DrawRay(tempPosition, playerCamera.forward * rayDistance, Color.red, 1f);
 
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
@@ -102,7 +102,6 @@ public class PlayerInteraction : MonoBehaviour
                         if (treeIDScript != null)
                         {
                             playerData.currentTreeID = treeIDScript.treeID;
-                            Debug.Log("Saved tree ID: " + playerData.currentTreeID);
                         }
 
                         toolTips.changeScene();
@@ -128,7 +127,6 @@ public class PlayerInteraction : MonoBehaviour
                 if (hit.collider.CompareTag("Campfire")) 
                 {
                     CampfireScript.interact();
-                    Debug.Log("Campfire Interacted");
                 }
             }
             else{
@@ -149,7 +147,6 @@ public class PlayerInteraction : MonoBehaviour
                 }
                     // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();
-                Debug.Log("Outline: " + outline);
                 if (outline != null)
                 {
                     // Enable the outline on the currently hit object

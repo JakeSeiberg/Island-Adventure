@@ -21,4 +21,10 @@ public class sceneSwitcher : MonoBehaviour
             SceneManager.LoadScene("MainWorld"); 
         }
     }
+
+    public static void changeScene()
+    {
+        playerData.curScene = "MainWorld";
+        SceneManager.LoadScene("MainWorld"); 
+    }
 }

@@ -44,6 +44,7 @@ public class ChopCounter : MonoBehaviour
         if (hits == hitsNeeded)
         {
             playerData.treeChopped = true;
+            playerData.brokenTrees.Add(playerData.currentTreeID);
 
             if (axeController != null)
                 axeController.enabled = false;

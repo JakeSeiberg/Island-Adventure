@@ -7,13 +7,14 @@ public class TreeManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (playerData.treeChopped && !string.IsNullOrEmpty(playerData.currentTreeID))
-        {
-            TreeID[] allTrees = GameObject.FindObjectsOfType<TreeID>();
 
-            foreach (TreeID tree in allTrees)
+        TreeID[] allTrees = GameObject.FindObjectsOfType<TreeID>();
+
+        foreach (TreeID tree in allTrees)
+        {
+            if (playerData.brokenTrees.Contains(tree.treeID))
             {
-                if (tree.treeID == playerData.currentTreeID)
+                if ((playerData.treeChopped) && (tree.treeID == playerData.currentTreeID))
                 {
                     Vector3 treePosition = tree.transform.position;
 
@@ -36,15 +37,16 @@ public class TreeManager : MonoBehaviour
                         Vector3 logPosition = treePosition + new Vector3(randomX, randomY, randomZ);
                         Instantiate(logPrefab, logPosition, Quaternion.identity);
                     }
-                    
-                    break;
+                }
+                else{
+                    Destroy(tree.gameObject);
                 }
             }
 
             // Clear state
-            playerData.currentTreeID = null;
-            playerData.treeChopped = false;
         }
+        playerData.currentTreeID = null;
+        playerData.treeChopped = false;
     }
 
     // Update is called once per frame
