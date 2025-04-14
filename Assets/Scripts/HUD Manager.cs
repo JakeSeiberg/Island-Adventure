@@ -9,6 +9,8 @@ public class HUDManager : MonoBehaviour
     public TMP_Text woodNum;
     public TMP_Text fishNum;
     public TMP_Text leafNum;
+    public TMP_Text cookedFishNum;
+    public TMP_Text fish0Timer;
 
     public TMP_Text fireVal;
 
@@ -22,7 +24,14 @@ public class HUDManager : MonoBehaviour
         wormNum.SetText(": " + playerData.wormCount.ToString());
         woodNum.SetText(": " + playerData.woodCount.ToString());
         fishNum.SetText(": " + playerData.fishCount.ToString());
+<<<<<<< HEAD
+        leafNum.SetText("leafNum: " + playerData.leafCount.ToString());
+        cookedFishNum.SetText("cookedFish: " + playerData.cookedFishCount.ToString());
+        fish0Timer.SetText("fishTime: " + playerData.fishTimers[0].ToString());
+
+=======
         leafNum.SetText(": " + playerData.leafCount.ToString());
+>>>>>>> 6f3f162ef7cf08922865703cdb60d9dd8f86980e
         spear.SetText("Spear: " + playerData.hasSpear.ToString());
         axe.SetText("Axe: " + playerData.hasAxe.ToString());
         fireVal.SetText("Fire: " + playerData.fireValue.ToString());
