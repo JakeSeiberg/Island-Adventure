@@ -17,6 +17,9 @@ TagManager:
   - Leaf
   - Log
   - Campfire
+  - CampfireGrate
+  - fishLeft
+  - fishRight
   layers:
   - Default
   - TransparentFX
