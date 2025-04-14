@@ -27,9 +27,6 @@
 # Visual Studio cache directory
 .vs/
 
-#the one file thats too large
-C17.obj
-
 #VS Code files
 .vscode/
 
