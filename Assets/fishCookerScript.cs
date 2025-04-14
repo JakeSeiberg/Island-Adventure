@@ -73,7 +73,7 @@ public class fishCookerScript : MonoBehaviour
     public void fishLeft()
     {
 
-        if (playerData.fishTimers[0] > 49.02712f && playerData.fishTimers[0] < 56.35024f)
+        if (playerData.fishTimers[0] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[0] < (56.35024f / 60) * fishTimerLength)
         {
             playerData.cookedFishCount += 1;
         }
@@ -86,7 +86,7 @@ public class fishCookerScript : MonoBehaviour
     public void fishRight()
     {
 
-        if (playerData.fishTimers[1] > 49.02712f && playerData.fishTimers[1] < 56.35024f)
+        if (playerData.fishTimers[1] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[1] < (56.35024f / 60) * fishTimerLength)
         {
             playerData.cookedFishCount += 1;
         }
