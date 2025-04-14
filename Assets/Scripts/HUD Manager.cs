@@ -22,7 +22,7 @@ public class HUDManager : MonoBehaviour
         wormNum.SetText(": " + playerData.wormCount.ToString());
         woodNum.SetText(": " + playerData.woodCount.ToString());
         fishNum.SetText(": " + playerData.fishCount.ToString());
-        leafNum.SetText("leafNum: " + playerData.leafCount.ToString());
+        leafNum.SetText(": " + playerData.leafCount.ToString());
         spear.SetText("Spear: " + playerData.hasSpear.ToString());
         axe.SetText("Axe: " + playerData.hasAxe.ToString());
         fireVal.SetText("Fire: " + playerData.fireValue.ToString());
