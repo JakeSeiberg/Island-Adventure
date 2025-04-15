@@ -18,6 +18,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public fishCookerScript fishCookerScript;
 
+    public fireTimerUIScript fireTimerScript;
+
     void Start()
     {
 
@@ -52,6 +54,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
+
             if (input()){
                 if (hit.collider.CompareTag("Worm")) 
                 {
@@ -130,6 +133,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     CampfireScript.interact();
                 }
+
                 if (hit.collider.CompareTag("CampfireGrate"))
                 {
                     Debug.Log("Grate interacted");
@@ -160,6 +164,10 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
+                /*if (hit.collider.CompareTag("Campfire"))
+                {
+                    fireTimerScript.enable();
+                }*/
 
                     // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();

@@ -11,39 +11,18 @@ public class fishCookerScript : MonoBehaviour
 
     private float fishTimerLength;
 
+    public Material rawFish;
+    public Material partiallyCookedFish;
+    public Material cookedFish;
+    public Material burntFish;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (isActive(0))
-        {
-            LeftFish.SetActive(true);
-            enable(0);
-        }
-        else
-        {
-            LeftFish.SetActive(false);
-            disable(0);
-        }
-        if (isActive(1))
-        {
-            RightFish.SetActive(true);
-            enable(1);
-        }
-        else
-        {
-            RightFish.SetActive(false);
-            disable(1);
-        }
-        fishTimerLength = 60f;
-        StartCoroutine(fishTimer());
+        fishTimerLength = 45f;
     }
 
-    void OnDisable()
-    {
-        playerData.lastFishCheckTime = Time.realtimeSinceStartup;
-    }
-
-    public void interact()
+    public void interact() //interact with grate
     {
         if (fishOn() < 2 && playerData.fishCount > 0)
         {
@@ -54,80 +33,78 @@ public class fishCookerScript : MonoBehaviour
 
     public void putFishOn()
     {
-        if (!isActive(0))
+        if (playerData.fishStage[0] == -1)
         {
             playerData.fishTimers[0] = 0;
-            LeftFish.SetActive(true);
-            enable(0);
+            playerData.fishStage[0] = 0;
             leftTimer.transform.rotation = Quaternion.Euler(0f, 0f, -298.3f);
         }
-        else if (!isActive(1))
+        else if (playerData.fishStage[1] == -1)
         {
             playerData.fishTimers[1] = 0;
-            RightFish.SetActive(true);
-            enable(1);
+            playerData.fishStage[1] = 0;
             rightTimer.transform.rotation = Quaternion.Euler(0f, 0f, -298.3f);
         }
     }
 
     public void fishLeft()
-    {
-
-        if (playerData.fishTimers[0] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[0] < (56.35024f / 60) * fishTimerLength)
+    {   
+        if (playerData.fishStage[0] == 1) 
         {
-            playerData.cookedFishCount += 1;
+            //start flip
+            playerData.fishStage[0] = 2;
+            StartCoroutine(startFlip(0, 1f));
+            playerData.fishTimers[0] = 0;
         }
-        disable(0);
-        leftTimer.transform.parent.gameObject.SetActive(false);
-        LeftFish.SetActive(false);
-        playerData.fishTimers[0] = float.NaN;
+        else if (playerData.fishStage[0] == 3)
+        {
+            //fish cooked succesfully
+            playerData.fishStage[0] = -1;
+            playerData.cookedFishCount++;
+            playerData.fishTimers[0] = float.NaN;
+        }
+        else
+        {
+            //burned/undercooked fish
+            playerData.fishStage[0] = -1;
+            playerData.fishTimers[0] = float.NaN;
+        }
     }
 
     public void fishRight()
     {
 
-        if (playerData.fishTimers[1] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[1] < (56.35024f / 60) * fishTimerLength)
+        if (playerData.fishStage[1] == 1) 
         {
-            playerData.cookedFishCount += 1;
+            //start flip
+            playerData.fishStage[1] = 2;
+            StartCoroutine(startFlip(1, 1f));
+            playerData.fishTimers[1] = 0;
         }
-        disable(1);
-        rightTimer.transform.parent.gameObject.SetActive(false);
-        RightFish.SetActive(false);
-        playerData.fishTimers[1] = float.NaN;
-    }
+        else if (playerData.fishStage[1] == 3)
+        {
+            //fish cooked succesfully
+            playerData.fishStage[1] = -1;
+            playerData.cookedFishCount++;
+            playerData.fishTimers[1] = float.NaN;
+        }
+        else
+        {
+            //burned/undercooked fish
+            playerData.fishStage[1] = -1;
+            playerData.fishTimers[1] = float.NaN;
 
-    public void disable(int fishNum)
-    {
-        if (fishNum == 0)
-        {
-            leftTimer.transform.parent.gameObject.SetActive(false);
-        }
-        else if (fishNum == 1)
-        {
-            rightTimer.transform.parent.gameObject.SetActive(false);
-        }
-    }
-
-    public void enable(int fishNum)
-    {
-        if (fishNum == 0)
-        {
-            leftTimer.transform.parent.gameObject.SetActive(true);
-        }
-        else if (fishNum == 1)
-        {
-            rightTimer.transform.parent.gameObject.SetActive(true);
         }
     }
 
     public static int fishOn()
     {
         int fishies = 0;
-        if (isActive(0))
+        if (playerData.fishStage[0] != -1)
         {
             fishies++;
         }
-        if (isActive(1))
+        if (playerData.fishStage[1] != -1)
         {
             fishies++;
         }
@@ -135,38 +112,185 @@ public class fishCookerScript : MonoBehaviour
         return fishies;
     }
 
-
-    public static bool isActive(int fishNum)
+    public IEnumerator startFlip(int fishVal, float duration = 1f)
     {
-        if (!float.IsNaN(playerData.fishTimers[fishNum]))
+        GameObject fish;
+        if (fishVal == 0)
         {
-            return true;
+            fish = LeftFish;
         }
         else
         {
-            return false;
+            fish = RightFish;
         }
+        Vector3 startPos = fish.transform.localPosition;
+        Vector3 startEuler = fish.transform.localEulerAngles;
+
+        Quaternion startRot = Quaternion.Euler(startEuler);
+        Quaternion endRot;
+
+        if (fishVal == 0)
+        {
+            endRot = Quaternion.Euler(startEuler.x, startEuler.y, startEuler.z + 180f);
+        }
+        else
+        {
+            endRot = Quaternion.Euler(startEuler.x, startEuler.y, startEuler.z - 180f);
+        }
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+
+            // Ease in and out curve (smoothstep)
+            float curveT = Mathf.SmoothStep(0f, 1f, t);
+
+            // Interpolate position (upward then downward motion)
+            float yOffset = Mathf.Sin(curveT * Mathf.PI) * 0.286f;
+            fish.transform.localPosition = new Vector3(startPos.x, startPos.y + yOffset, startPos.z);
+
+            // Interpolate rotation
+            fish.transform.localRotation = Quaternion.Slerp(startRot, endRot, curveT);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Snap to final state to avoid rounding errors
+        fish.transform.localPosition = startPos;
+        fish.transform.localRotation = endRot;
     }
 
-    public IEnumerator fishTimer()
+    void FixedUpdate()
     {
-        while (true)
+        //fish stage updater
+        //fish 0
+        if (playerData.fishTimers[0] > ((56.35024f / 60) * fishTimerLength))
         {
-            if (playerData.fireBurning)
+            playerData.fishStage[0] = 4; //it burned
+        }
+        else if (playerData.fishTimers[0] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[0] < (56.35024f / 60) * fishTimerLength)
+        {
+            //it's in the green
+            if (playerData.fishStage[0] == 0)
             {
-                if (isActive(0))
-                {
-                    float zRotation = Mathf.Lerp(-298.3f, 0.93f, playerData.fishTimers[0] / fishTimerLength);
-                    leftTimer.transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
-                }
-                if (isActive(1))
-                {
-                    float zRotation = Mathf.Lerp(-298.3f, 0.93f, playerData.fishTimers[1] / fishTimerLength);
-                    rightTimer.transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
-                }
+                playerData.fishStage[0] = 1;
             }
+            else if (playerData.fishStage[0] == 2)
+            {
+                playerData.fishStage[0] = 3;
+            }
+        }
 
-            yield return null;
+        //fish 1
+        if (playerData.fishTimers[1] > ((56.35024f / 60) * fishTimerLength))
+        {
+            playerData.fishStage[1] = 4; //it burned
+        }
+        else if (playerData.fishTimers[1] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[1] < (56.35024f / 60) * fishTimerLength)
+        {
+            //it's in the green
+            if (playerData.fishStage[1] == 0)
+            {
+                playerData.fishStage[1] = 1;
+            }
+            else if (playerData.fishStage[1] == 2)
+            {
+                playerData.fishStage[1] = 3;
+            }
+        }
+        
+        if (playerData.fireBurning)
+        {
+            if (playerData.fishStage[0] != -1)
+            {
+                float zRotation = Mathf.Lerp(-298.3f, 0.93f, playerData.fishTimers[0] / fishTimerLength);
+                leftTimer.transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
+            }
+            if (playerData.fishStage[1] != -1)
+            {
+                float zRotation = Mathf.Lerp(-298.3f, 0.93f, playerData.fishTimers[1] / fishTimerLength);
+                rightTimer.transform.rotation = Quaternion.Euler(0f, 0f, zRotation);
+            }
+        }
+
+        switch (playerData.fishStage[0])
+        {
+            case -1:
+                LeftFish.GetComponentInChildren<Renderer>().material = rawFish;
+                LeftFish.SetActive(false);
+                leftTimer.transform.parent.gameObject.SetActive(false);
+                break;
+            case 0:
+                LeftFish.GetComponentInChildren<Renderer>().material = rawFish;
+                LeftFish.SetActive(true);
+                leftTimer.transform.parent.gameObject.SetActive(true);
+                break;
+
+            case 1:
+                LeftFish.GetComponentInChildren<Renderer>().material = partiallyCookedFish;
+                LeftFish.SetActive(true);
+                leftTimer.transform.parent.gameObject.SetActive(true);
+                break;
+
+            case 2:
+                LeftFish.GetComponentInChildren<Renderer>().material = partiallyCookedFish;
+                LeftFish.SetActive(true);
+                leftTimer.transform.parent.gameObject.SetActive(true);
+                break;
+
+            case 3:
+                LeftFish.GetComponentInChildren<Renderer>().material = cookedFish;
+                LeftFish.SetActive(true);
+                leftTimer.transform.parent.gameObject.SetActive(true);
+                break;
+
+            case 4:
+                LeftFish.GetComponentInChildren<Renderer>().material = burntFish;
+                LeftFish.SetActive(true);
+                leftTimer.transform.parent.gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
+
+        switch (playerData.fishStage[1])
+        {
+            case -1:
+                RightFish.GetComponentInChildren<Renderer>().material = rawFish;
+                RightFish.SetActive(false);
+                rightTimer.transform.parent.gameObject.SetActive(false);
+                break;
+            case 0:
+                RightFish.GetComponentInChildren<Renderer>().material = rawFish;
+                RightFish.SetActive(true);
+                rightTimer.transform.parent.gameObject.SetActive(true);
+                break;
+            case 1:
+                RightFish.GetComponentInChildren<Renderer>().material = partiallyCookedFish;
+                RightFish.SetActive(true);
+                rightTimer.transform.parent.gameObject.SetActive(true);
+                break;
+
+            case 2:
+                RightFish.GetComponentInChildren<Renderer>().material = partiallyCookedFish;
+                RightFish.SetActive(true);
+                rightTimer.transform.parent.gameObject.SetActive(true);
+                break;
+            case 3:
+                RightFish.GetComponentInChildren<Renderer>().material = cookedFish;
+                RightFish.SetActive(true);
+                rightTimer.transform.parent.gameObject.SetActive(true);
+                break;
+            case 4:
+                RightFish.GetComponentInChildren<Renderer>().material = burntFish;
+                RightFish.SetActive(true);
+                rightTimer.transform.parent.gameObject.SetActive(true);
+                break;
+            default:
+                break;
         }
     }
 }

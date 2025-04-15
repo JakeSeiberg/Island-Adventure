@@ -3,7 +3,6 @@ using System.Collections;
 
 public class fishTimerRunner : MonoBehaviour
 {
-
     private static fishTimerRunner instance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +21,7 @@ public class fishTimerRunner : MonoBehaviour
     void Start()
     {
         StartCoroutine(fishTimer());
+        StartCoroutine(fireTimer());
         
     }
 
@@ -42,6 +42,19 @@ public class fishTimerRunner : MonoBehaviour
             }
             
             yield return null;
+        }
+    }
+
+    private IEnumerator fireTimer()
+    {
+        while (true)
+        {
+            Debug.Log("fire timer decremented");
+            yield return new WaitForSeconds(1f);
+            if (playerData.fireValue > 0)
+            {
+                playerData.fireValue -= 1f;
+            }
         }
     }
 }

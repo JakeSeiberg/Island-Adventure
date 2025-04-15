@@ -33,8 +33,8 @@ public class playerData
     public static ArrayList brokenTrees;
 
     public static float[] fishTimers = new float[2];
+    public static int[] fishStage = new int[2];
     public static int cookedFishCount;
-    public static float lastFishCheckTime;
 
 
 
@@ -56,7 +56,6 @@ public class playerData
         fishCount = 5;
         leafCount = 0;
         cookedFishCount = 0;
-        lastFishCheckTime = float.NaN;
 
         hasSpear = false;
 
@@ -74,6 +73,8 @@ public class playerData
 
         fishTimers[0] = float.NaN;
         fishTimers[1] = float.NaN;
+        fishStage[0] = -1;
+        fishStage[1] = -1;
 
         curScene = "MainWorld";
     }

@@ -6,12 +6,6 @@ public class CampfireScript : MonoBehaviour
     public GameObject fireOff;
     public GameObject fireOn;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        StartCoroutine(burnFire());
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -29,23 +23,11 @@ public class CampfireScript : MonoBehaviour
         }
     }
 
-    private IEnumerator burnFire()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
-            if (playerData.fireValue > 0)
-            {
-                playerData.fireValue -= 1f;
-            }
-        }
-    }
-
     public static void interact()
     {
-        if (playerData.woodCount > 0)
+        if ((playerData.woodCount > 0) && playerData.fireValue <= 150)
         {
-            playerData.fireValue += 30f;
+            playerData.fireValue += 50f;
             playerData.woodCount--;
         }       
     }
