@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 787816914254118149}
   - component: {fileID: 634826500714535088}
   - component: {fileID: 4933776688902302618}
+  - component: {fileID: -407379715130560500}
   m_Layer: 6
   m_Name: landWormPrefab
   m_TagString: Worm
@@ -2989,3 +2990,18 @@ MonoBehaviour:
     - {x: -0.3356248, y: -0.89503914, z: 0.2937021}
     - {x: -0.21917222, y: -0.97527283, z: 0.028398719}
     - {x: -0.18264896, y: -0.8816472, z: 0.43512928}
+--- !u!114 &-407379715130560500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987661074334957154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a8d58bb27b74094820ce46eb1159a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  upperLimit: 4.34
+  lowerLimit: -4.34
