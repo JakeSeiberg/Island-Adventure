@@ -49,7 +49,6 @@ public class fishTimerRunner : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("fire timer decremented");
             yield return new WaitForSeconds(1f);
             if (playerData.fireValue > 0)
             {

@@ -182,6 +182,15 @@ public class PlayerInteraction : MonoBehaviour
                         }
                         currentOutline = outline; // Update the current outline
                         currentOutline.enabled = true; // Enable the new outline
+
+                        if (currentOutline.gameObject.CompareTag("Campfire") || currentOutline.gameObject.CompareTag("fishLeft") || currentOutline.gameObject.CompareTag("fishRight") || currentOutline.gameObject.CompareTag("CampfireGrate"))
+                        {
+                            fireTimerScript.isActive = true;
+                        }
+                        else
+                        {
+                            fireTimerScript.isActive = false;
+                        }
                     }
                 }
                 else
@@ -191,6 +200,7 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         currentOutline.enabled = false;
                         currentOutline = null;
+                        fireTimerScript.isActive = false;
                     }
                 }
             }
@@ -201,6 +211,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentOutline.enabled = false;
                 currentOutline = null;
+                fireTimerScript.isActive = false;
             }
         }
     }

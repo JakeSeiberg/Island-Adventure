@@ -7,30 +7,47 @@ public class fireTimerUIScript : MonoBehaviour
 
     private Image fireTimerImage;
 
+    public Image[] fireTimerImages;
+
+    public bool isActive;
+
+    private bool previouslyActive;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         fireTimerImage = physicalFireTimer.GetComponent<Image>();
-        //gameObject.SetActive(false);
+        isActive = false;
+        previouslyActive = !isActive;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (gameObject.activeSelf)
+        
+        SetVisibility();
+
+        if (isActive)
         {
             float fill = Mathf.Lerp(0.094f, 0.927f, playerData.fireValue / 200f);
             fireTimerImage.fillAmount = fill;
         }
+        //Debug.Log("Fire timer active: " + isActive);
+            
     }
 
-    public void enable()
+    private void SetVisibility()
     {
-        gameObject.SetActive(true);
-    }
+        if (isActive != previouslyActive)
+        {
+            foreach (Image image in fireTimerImages)
+            {
+                Color color = image.color;
+                color.a = isActive ? 1f : 0f; // Fully visible if active, fully transparent if not
+                image.color = color;
+            }
 
-    public void disable()
-    {
-        gameObject.SetActive(false);
+            previouslyActive = isActive;
+        }
     }
 }
