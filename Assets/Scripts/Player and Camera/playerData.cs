@@ -36,6 +36,11 @@ public class playerData
     public static int[] fishStage = new int[2];
     public static int cookedFishCount;
 
+    public static bool hasBoughtCampfire;
+    public static bool hasBoughtShelter;
+    public static bool hasBoughtBed;
+    public static bool hasBoughtHull;
+
 
 
     public static bool day;
@@ -52,9 +57,9 @@ public class playerData
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
         wormCount = 0;
-        woodCount = 10;
+        woodCount = 250;
         fishCount = 5;
-        leafCount = 0;
+        leafCount = 250;
         cookedFishCount = 0;
 
         hasSpear = false;
@@ -75,6 +80,11 @@ public class playerData
         fishTimers[1] = float.NaN;
         fishStage[0] = -1;
         fishStage[1] = -1;
+
+        hasBoughtCampfire = false;
+        hasBoughtShelter = false;
+        hasBoughtBed = false;
+        hasBoughtHull = false;
 
         curScene = "MainWorld";
     }
