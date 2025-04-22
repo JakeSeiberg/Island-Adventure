@@ -147,6 +147,17 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     fishCookerScript.fishRight();
                 }
+                if (hit.collider.CompareTag("workStation"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+
+                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                    playerData.playerRotation = PlayerCamera.currentRotation;
+                    toolTips.changeScene();
+                    playerData.curScene = "Shop";
+                    SceneManager.LoadScene("Shop");
+                }
             }
             else{
                 // Handle outline logic

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class shopManager : MonoBehaviour
 {
@@ -98,6 +99,13 @@ public class shopManager : MonoBehaviour
         {
             Debug.Log("Not enough resources to buy a campfire.");
         }
+    }
+
+    public void exit()
+    {
+        toolTips.changeScene();
+        playerData.curScene = "MainWorld";
+        SceneManager.LoadScene("MainWorld"); 
     }
 
 

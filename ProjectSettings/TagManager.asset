@@ -20,6 +20,7 @@ TagManager:
   - CampfireGrate
   - fishLeft
   - fishRight
+  - workStation
   layers:
   - Default
   - TransparentFX
