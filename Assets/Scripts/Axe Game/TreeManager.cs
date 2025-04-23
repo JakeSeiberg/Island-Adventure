@@ -4,6 +4,10 @@ public class TreeManager : MonoBehaviour
 {
     public GameObject leafPrefab; 
     public GameObject logPrefab;
+
+    private int maxLogPerTree = 8;
+    private int maxLeafPerTree = 8;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +24,7 @@ public class TreeManager : MonoBehaviour
 
                     Destroy(tree.gameObject);
                     
-                    for (int i = 0; i < Random.Range(1, 5); i++)
+                    for (int i = 0; i < Random.Range(1, maxLeafPerTree); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);
@@ -29,7 +33,7 @@ public class TreeManager : MonoBehaviour
                         Instantiate(leafPrefab, leafPosition, Quaternion.identity);
                     }
 
-                    for (int i = 0; i < Random.Range(1, 4); i++)
+                    for (int i = 0; i < Random.Range(1, maxLogPerTree); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);

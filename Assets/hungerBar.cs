@@ -60,7 +60,7 @@ public class hungerBar : MonoBehaviour
             {
                 playerData.hungerValue = 0;
             }
-            Debug.Log("Hunger value: " + playerData.hungerValue);
+            //Debug.Log("Hunger value: " + playerData.hungerValue);
         }
     }
 

@@ -21,6 +21,9 @@ TagManager:
   - fishLeft
   - fishRight
   - workStation
+  - BoatMotor
+  - BoatSail
+  - BoatGas
   layers:
   - Default
   - TransparentFX

@@ -99,6 +99,7 @@ public class shopManager : MonoBehaviour
             playerData.woodCount -= 40;
 
             playerData.hasBoughtHull = true;
+            playerData.boatHull = true;
         }
         else
         {

@@ -33,13 +33,5 @@ public class shopPurchases : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        else if (item == "Hull")
-        {
-            if (!playerData.hasBoughtHull)
-            {
-                //hide gameobject
-                gameObject.SetActive(false);
-            }
-        }
     }
 }

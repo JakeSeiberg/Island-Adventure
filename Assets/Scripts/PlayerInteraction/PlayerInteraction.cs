@@ -20,14 +20,23 @@ public class PlayerInteraction : MonoBehaviour
 
     public fireTimerUIScript fireTimerScript;
 
+    public GameObject boatGas;
+    public GameObject boatMotor;
+    public GameObject boatSail;
+
     void Start()
     {
-
+        manageBoatItemsPickup();
     }
 
     void Update()
     {
         interact();
+    }
+
+    void FixedUpdate()
+    {
+        manageBoatItemsPickup();
     }
 
     private bool input()
@@ -158,6 +167,21 @@ public class PlayerInteraction : MonoBehaviour
                     playerData.curScene = "Shop";
                     SceneManager.LoadScene("Shop");
                 }
+                if (hit.collider.CompareTag("BoatSail"))
+                {
+                    playerData.boatSail = true;
+                    boatSail.SetActive(false);
+                }
+                if (hit.collider.CompareTag("BoatMotor"))
+                {
+                    playerData.boatMotor = true;
+                    boatMotor.SetActive(false);
+                }
+                if (hit.collider.CompareTag("BoatGas"))
+                {
+                    playerData.boatGas = true;
+                    boatGas.SetActive(false);
+                }
             }
             else{
                 // Handle outline logic
@@ -224,6 +248,34 @@ public class PlayerInteraction : MonoBehaviour
                 currentOutline = null;
                 fireTimerScript.isActive = false;
             }
+        }
+    }
+
+    private void manageBoatItemsPickup()
+    {
+        if (playerData.boatSail)
+        {
+            boatSail.SetActive(false);
+        }
+        else
+        {
+            boatSail.SetActive(true);
+        }
+        if (playerData.boatMotor)
+        {
+            boatMotor.SetActive(false);
+        }
+        else
+        {
+            boatMotor.SetActive(true);
+        }
+        if (playerData.boatGas)
+        {
+            boatGas.SetActive(false);
+        }
+        else
+        {
+            boatGas.SetActive(true);
         }
     }
 }

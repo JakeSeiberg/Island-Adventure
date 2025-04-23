@@ -45,6 +45,11 @@ public class playerData
 
     public static bool day;
 
+    public static bool boatHull;
+    public static bool boatSail;
+    public static bool boatMotor;
+    public static bool boatGas;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -52,15 +57,15 @@ public class playerData
     {
         //playerPosition = new Vector3(95f, 6f, 78f); //default
         //playerPosition = new Vector3(121.085f, 6.005f, 43.07f); //axe
-        playerPosition = new Vector3(94.22213f, 0.15230618f, 25.14625f); //campfire
-        //playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
+        //playerPosition = new Vector3(94.22213f, 0.15230618f, 25.14625f); //campfire
+        playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
         wormCount = 0;
-        woodCount = 250;
-        fishCount = 5;
-        leafCount = 250;
-        cookedFishCount = 5;
+        woodCount = 0;
+        fishCount = 0;
+        leafCount = 0;
+        cookedFishCount = 0;
 
         hasSpear = false;
 
@@ -85,6 +90,11 @@ public class playerData
         hasBoughtShelter = false;
         hasBoughtBed = false;
         hasBoughtHull = false;
+
+        boatHull = false;
+        boatSail = false;
+        boatMotor = false;
+        boatGas = false;
 
         curScene = "MainWorld";
 
