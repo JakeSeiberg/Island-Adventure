@@ -262,8 +262,15 @@ public class toolTips : MonoBehaviour
 
     private void show()
     {
-        image.enabled = true; 
-        text.enabled = true;
+        if (image != null)
+        {
+            image.enabled = true;
+        }
+
+        if (text != null)
+        {
+            text.enabled = true;
+        }
     }
 
     public static void delayedToolTip(string tip, float waitTime)
