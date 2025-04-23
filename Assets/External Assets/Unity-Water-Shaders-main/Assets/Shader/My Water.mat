@@ -68,7 +68,7 @@ Material:
     - Vector1_2543adb75ce74f11bccbd58ad34c0d34: 0.082
     - Vector1_295a3e34a97142ada7476ec161a94a17: 0.5
     - Vector1_2ba5a5c1bbba4b5b9c9aff9f70921a70: 0.4
-    - Vector1_2d7e3b4bd51c4910bf99fc7c167bc81b: 0.06
+    - Vector1_2d7e3b4bd51c4910bf99fc7c167bc81b: 0.001
     - Vector1_2f6a21b0461b40ca93f2cd575920ec1c: 0.2
     - Vector1_4404b753c5fd4ca894e8635bff65f1dc: 75
     - Vector1_454a59594bd442f780ed58e294dc8e15: 0.125
@@ -85,12 +85,12 @@ Material:
     - Vector1_aeb86914fb3c41f7962abfd1784a54fa: 6
     - Vector1_b4651e1c4a334bef8c36a54b0b6c423c: 1
     - Vector1_ba17c1c736174044a699b5d77d6e278e: 0
-    - Vector1_cb57562c85b847b0b3fc69d44ea9d8f7: 0.12
+    - Vector1_cb57562c85b847b0b3fc69d44ea9d8f7: 0.5
     - Vector1_d43a535e351f4c47aeae14550d8f0c30: 1
     - Vector1_dcfd3a7a4c3b425aae452d557ed07b9c: 0.0025
     - Vector1_e2719c30786a4d4b804af8152444e446: 0.5
     - Vector1_f43f3972eb7941169f3013ad2ece79a8: 2.67
-    - Vector1_f8914effb3024a26994c7d3939d6cc23: 500
+    - Vector1_f8914effb3024a26994c7d3939d6cc23: 100
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

@@ -1,10 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class sceneSwitcher : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public SkyboxChanger SkyboxChanger;
     void Start()
     {
         
@@ -18,7 +19,10 @@ public class sceneSwitcher : MonoBehaviour
         {
             toolTips.changeScene();
             playerData.curScene = "MainWorld";
-            SceneManager.LoadScene("MainWorld"); 
+            SceneManager.LoadScene("MainWorld");
+            if (playerData.hasBoughtBed && SkyboxChanger != null){
+                SkyboxChanger.ChangeSkybox();
+            }
         }
     }
 

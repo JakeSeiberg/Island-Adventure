@@ -3,8 +3,11 @@ using UnityEngine;
 public class SkyboxChanger : MonoBehaviour
 {
     public Material[] skyboxMaterials;
+    public Vector3[] sunPositions;
 
-    private int curSkybox = 2;
+    public GameObject sun;
+
+    private int curSkybox = 0;
     public bool skyCooldown = true;
     
     void Start()
@@ -15,20 +18,25 @@ public class SkyboxChanger : MonoBehaviour
     
     void Update()
     {
+        /*
         if(Input.GetKey(KeyCode.G) && skyCooldown){
             ChangeSkybox(curSkybox);
-            skyCooldown = false;
+
         }
         if(Input.GetKey(KeyCode.H)){
+            sun.transform.eulerAngles = sunPositions[curSkybox];
             skyCooldown = true;
-        }
+        }*/
     }
 
-    void ChangeSkybox(int newSkybox){
-        RenderSettings.skybox = skyboxMaterials[newSkybox];
+    public void ChangeSkybox(){
+        RenderSettings.skybox = skyboxMaterials[curSkybox];
+        sun.transform.eulerAngles = sunPositions[curSkybox];
+        skyCooldown = false;
         curSkybox += 1;
-        if (curSkybox >= 10){
+        if (curSkybox >= 5){
             curSkybox = 0;
         }
+        
     }
 }

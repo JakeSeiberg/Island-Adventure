@@ -249,8 +249,15 @@ public class toolTips : MonoBehaviour
 
     private void hide()
     {
-        image.enabled = false; 
-        text.enabled = false;
+        if (image != null)
+        {
+            image.enabled = false;
+        }
+
+        if (text != null)
+        {
+            text.enabled = false;
+        }
     }
 
     private void show()
