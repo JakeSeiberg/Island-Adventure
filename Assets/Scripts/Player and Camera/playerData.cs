@@ -41,7 +41,7 @@ public class playerData
     public static bool hasBoughtBed;
     public static bool hasBoughtHull;
 
-
+    public static float hungerValue;
 
     public static bool day;
 
@@ -60,7 +60,7 @@ public class playerData
         woodCount = 250;
         fishCount = 5;
         leafCount = 250;
-        cookedFishCount = 0;
+        cookedFishCount = 5;
 
         hasSpear = false;
 
@@ -87,6 +87,8 @@ public class playerData
         hasBoughtHull = false;
 
         curScene = "MainWorld";
+
+        hungerValue = 250f;
     }
 
     static playerData()
