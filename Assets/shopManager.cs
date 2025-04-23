@@ -117,7 +117,7 @@ public class shopManager : MonoBehaviour
     {
         UpdateUI();
 
-        if (playerData.woodCount >= 20 && !playerData.hasBoughtCampfire)
+        if (playerData.woodCount >= 20 && !playerData.hasBoughtCampfire && playerData.hasBoughtBed)
         {
             canBuyCampfire = true;
             greyCampfire.SetActive(false);
@@ -137,7 +137,7 @@ public class shopManager : MonoBehaviour
             canBuyShelter = false;
             greyShelter.SetActive(true);
         }
-        if (playerData.woodCount >= 10 && playerData.leafCount >= 5 && !playerData.hasBoughtBed && playerData.hasBoughtShelter)
+        if (playerData.woodCount >= 10 && playerData.leafCount >= 5 && !playerData.hasBoughtBed)
         {
             canBuyBed = true;
             greyBed.SetActive(false);
@@ -147,7 +147,7 @@ public class shopManager : MonoBehaviour
             canBuyBed = false;
             greyBed.SetActive(true);
         }
-        if (playerData.woodCount >= 40 && !playerData.hasBoughtHull && playerData.hasBoughtBed)
+        if (playerData.woodCount >= 40 && !playerData.hasBoughtHull && playerData.hasBoughtShelter)
         {
             canBuyHull = true;
             greyHull.SetActive(false);
