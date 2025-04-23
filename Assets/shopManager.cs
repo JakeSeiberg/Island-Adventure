@@ -18,6 +18,16 @@ public class shopManager : MonoBehaviour
     [Header("Purchased Item Color")]
     public Color purchasedColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
+    public bool canBuyCampfire = false;
+    public bool canBuyShelter = false;
+    public bool canBuyBed = false;
+    public bool canBuyHull = false;
+
+    public GameObject greyCampfire;
+    public GameObject greyShelter;
+    public GameObject greyBed;
+    public GameObject greyHull;
+
     void Start()
     {
         UpdateUI();
@@ -25,11 +35,6 @@ public class shopManager : MonoBehaviour
         {
             campfireImage.color = purchasedColor;
         }
-    }
-
-    void FixedUpdate()
-    {
-        UpdateUI();
     }
 
     void UpdateUI()
@@ -42,7 +47,7 @@ public class shopManager : MonoBehaviour
     public void buyCampfire()
     {
         // Check if the player has enough resources to buy the campfire
-        if (playerData.woodCount >= 20 && !playerData.hasBoughtCampfire)
+        if (canBuyCampfire)
         {
             playerData.woodCount -= 20;
 
@@ -57,7 +62,7 @@ public class shopManager : MonoBehaviour
     public void buyShelter()
     {
         // Check if the player has enough resources to buy the campfire
-        if (playerData.woodCount >= 20 && playerData.leafCount >= 15 && !playerData.hasBoughtShelter)
+        if (canBuyShelter)
         {
             playerData.woodCount -= 20;
             playerData.leafCount -= 15;
@@ -73,7 +78,7 @@ public class shopManager : MonoBehaviour
     //same thing but for bed, which costs 10 wood and 5 leaves
     public void buyBed()
     {
-        if (playerData.woodCount >= 10 && playerData.leafCount >= 5 && !playerData.hasBoughtBed)
+        if (canBuyBed)
         {
             playerData.woodCount -= 10;
             playerData.leafCount -= 5;
@@ -89,7 +94,7 @@ public class shopManager : MonoBehaviour
     //same for hull, which costs 40 wood
     public void buyHull()
     {
-        if (playerData.woodCount >= 40 && !playerData.hasBoughtHull)
+        if (canBuyHull)
         {
             playerData.woodCount -= 40;
 
@@ -108,5 +113,49 @@ public class shopManager : MonoBehaviour
         SceneManager.LoadScene("MainWorld"); 
     }
 
+    void FixedUpdate()
+    {
+        UpdateUI();
 
+        if (playerData.woodCount >= 20 && !playerData.hasBoughtCampfire)
+        {
+            canBuyCampfire = true;
+            greyCampfire.SetActive(false);
+        }
+        else
+        {
+            canBuyCampfire = false;
+            greyCampfire.SetActive(true);
+        }
+        if (playerData.woodCount >= 20 && playerData.leafCount >= 15 && !playerData.hasBoughtShelter && playerData.hasBoughtCampfire)
+        {
+            canBuyShelter = true;
+            greyShelter.SetActive(false);
+        }
+        else
+        {
+            canBuyShelter = false;
+            greyShelter.SetActive(true);
+        }
+        if (playerData.woodCount >= 10 && playerData.leafCount >= 5 && !playerData.hasBoughtBed && playerData.hasBoughtShelter)
+        {
+            canBuyBed = true;
+            greyBed.SetActive(false);
+        }
+        else
+        {
+            canBuyBed = false;
+            greyBed.SetActive(true);
+        }
+        if (playerData.woodCount >= 40 && !playerData.hasBoughtHull && playerData.hasBoughtBed)
+        {
+            canBuyHull = true;
+            greyHull.SetActive(false);
+        }
+        else
+        {
+            canBuyHull = false;
+            greyHull.SetActive(true);
+        }
+    }
 }
