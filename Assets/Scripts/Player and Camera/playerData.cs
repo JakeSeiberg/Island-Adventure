@@ -61,7 +61,7 @@ public class playerData
         playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
-        wormCount = 0;
+        wormCount = 150;
         woodCount = 0;
         fishCount = 0;
         leafCount = 0;

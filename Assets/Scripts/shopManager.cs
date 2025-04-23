@@ -109,16 +109,14 @@ public class shopManager : MonoBehaviour
 
     public void exit()
     {
-        toolTips.changeScene();
-        playerData.curScene = "MainWorld";
-        SceneManager.LoadScene("MainWorld"); 
+        sceneSwitcher.changeScene();
     }
 
     void FixedUpdate()
     {
         UpdateUI();
 
-        if (playerData.woodCount >= 20 && !playerData.hasBoughtCampfire && playerData.hasBoughtBed)
+        if (!playerData.hasBoughtCampfire && playerData.hasBoughtBed)
         {
             canBuyCampfire = true;
             greyCampfire.SetActive(false);
@@ -128,7 +126,7 @@ public class shopManager : MonoBehaviour
             canBuyCampfire = false;
             greyCampfire.SetActive(true);
         }
-        if (playerData.woodCount >= 20 && playerData.leafCount >= 15 && !playerData.hasBoughtShelter && playerData.hasBoughtCampfire)
+        if (!playerData.hasBoughtShelter && playerData.hasBoughtCampfire)
         {
             canBuyShelter = true;
             greyShelter.SetActive(false);
@@ -138,7 +136,7 @@ public class shopManager : MonoBehaviour
             canBuyShelter = false;
             greyShelter.SetActive(true);
         }
-        if (playerData.woodCount >= 10 && playerData.leafCount >= 5 && !playerData.hasBoughtBed)
+        if (!playerData.hasBoughtBed)
         {
             canBuyBed = true;
             greyBed.SetActive(false);
@@ -148,7 +146,7 @@ public class shopManager : MonoBehaviour
             canBuyBed = false;
             greyBed.SetActive(true);
         }
-        if (playerData.woodCount >= 40 && !playerData.hasBoughtHull && playerData.hasBoughtShelter)
+        if (!playerData.hasBoughtHull && playerData.hasBoughtShelter)
         {
             canBuyHull = true;
             greyHull.SetActive(false);
