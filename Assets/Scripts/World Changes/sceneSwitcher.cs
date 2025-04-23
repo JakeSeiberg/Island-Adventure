@@ -5,7 +5,6 @@ using UnityEditor;
 
 public class sceneSwitcher : MonoBehaviour
 {
-    public SkyboxChanger SkyboxChanger;
     void Start()
     {
         
@@ -20,9 +19,6 @@ public class sceneSwitcher : MonoBehaviour
             toolTips.changeScene();
             playerData.curScene = "MainWorld";
             SceneManager.LoadScene("MainWorld");
-            if (playerData.hasBoughtBed && SkyboxChanger != null){
-                SkyboxChanger.ChangeSkybox();
-            }
         }
     }
 

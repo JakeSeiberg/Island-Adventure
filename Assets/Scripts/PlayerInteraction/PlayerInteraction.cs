@@ -8,6 +8,8 @@ public class PlayerInteraction : MonoBehaviour
     public Transform playerPosition;
     public Transform playerCamera;
 
+    public SkyboxChanger skyboxChanger;
+
     public LayerMask interactableLayer;
 
     private float rayHeightOffset = 3.7f;
@@ -96,6 +98,9 @@ public class PlayerInteraction : MonoBehaviour
 
                     playerData.playerPosition = PlayerMovement.currentPlayerPos;
                     playerData.playerRotation = PlayerCamera.currentRotation;
+                    if (playerData.hasBoughtBed){
+                        skyboxChanger.ChangeSkybox();
+                    }
                     toolTips.changeScene();
                     playerData.curScene = "Fishing";
                     SceneManager.LoadScene("Fishing");
@@ -117,7 +122,9 @@ public class PlayerInteraction : MonoBehaviour
                         {
                             playerData.currentTreeID = treeIDScript.treeID;
                         }
-
+                        if (playerData.hasBoughtBed){
+                            skyboxChanger.ChangeSkybox();
+                        }
                         toolTips.changeScene();
                         playerData.curScene = "Tree";
                         if (!playerData.hasPlayedTreeGame)

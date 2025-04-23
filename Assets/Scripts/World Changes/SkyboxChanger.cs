@@ -13,8 +13,11 @@ public class SkyboxChanger : MonoBehaviour
     void Start()
     {
         RenderSettings.skybox = skyboxMaterials[curSkybox];
+        }
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
-
     
     void Update()
     {
