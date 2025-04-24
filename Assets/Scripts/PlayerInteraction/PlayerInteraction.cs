@@ -88,7 +88,7 @@ public class PlayerInteraction : MonoBehaviour
                     axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
                     axe.hasAxe();
                 }
-                if (hit.collider.CompareTag("SpearInteractable") && !playerData.canSleep) //playerData.curSkybox != 4)
+                if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep) //playerData.curSkybox != 4)
                 {
                     playerData.hasGoneFishing = true;
                     Cursor.lockState = CursorLockMode.None;
@@ -101,11 +101,11 @@ public class PlayerInteraction : MonoBehaviour
                     SceneManager.LoadScene("Fishing");
                 }
                 else{
-                    toolTips.tip("go to sleep bozo", 10f);
+                    //toolTips.tip("go to sleep bozo", 10f);
                 }
                 if (hit.collider.CompareTag("Tree")) 
                 {
-                    if (playerData.hasAxe && !playerData.canSleep)
+                    if (playerData.hasAxe)// && !playerData.canSleep)
                     {
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
@@ -130,7 +130,7 @@ public class PlayerInteraction : MonoBehaviour
                         SceneManager.LoadScene("Tree");
                     }
                     else{
-                        toolTips.tip("go to sleep bozo", 10f);
+                        //toolTips.tip("go to sleep bozo", 10f);
                     }
                 }
                 if (hit.collider.CompareTag("Leaf")) 
