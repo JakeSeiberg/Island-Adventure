@@ -126,6 +126,7 @@ public class shopManager : MonoBehaviour
             canBuyCampfire = false;
             greyCampfire.SetActive(true);
         }
+        
         if (!playerData.hasBoughtShelter && playerData.hasBoughtCampfire)
         {
             canBuyShelter = true;
@@ -136,6 +137,7 @@ public class shopManager : MonoBehaviour
             canBuyShelter = false;
             greyShelter.SetActive(true);
         }
+
         if (!playerData.hasBoughtBed)
         {
             canBuyBed = true;
@@ -146,6 +148,7 @@ public class shopManager : MonoBehaviour
             canBuyBed = false;
             greyBed.SetActive(true);
         }
+
         if (!playerData.hasBoughtHull && playerData.hasBoughtShelter)
         {
             canBuyHull = true;

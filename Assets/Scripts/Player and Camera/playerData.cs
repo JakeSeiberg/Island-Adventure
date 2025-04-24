@@ -65,9 +65,9 @@ public class playerData
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
         wormCount = 150;
-        woodCount = 0;
+        woodCount = 100;
         fishCount = 0;
-        leafCount = 0;
+        leafCount = 100;
         cookedFishCount = 0;
 
         hasSpear = false;
