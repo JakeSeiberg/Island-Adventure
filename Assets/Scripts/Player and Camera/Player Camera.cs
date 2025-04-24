@@ -7,10 +7,10 @@ public class PlayerCamera : MonoBehaviour
     public float sensY;
 
     public Transform orientation;
+    public Transform playerPos;
 
     float xRotation;
     float yRotation;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static Vector3 currentRotation;
 
@@ -29,7 +29,6 @@ public class PlayerCamera : MonoBehaviour
         yRotation = initialLookRotation.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
@@ -44,6 +43,13 @@ public class PlayerCamera : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
         currentRotation = transform.rotation.eulerAngles;
+
+        updateCameraPos();
     }
 
+    void updateCameraPos(){
+        Vector3 newPosition = playerPos.position + orientation.forward * 0.25f;
+        newPosition.y += 3.7f;
+        transform.position = newPosition;
+    }
 }

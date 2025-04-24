@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     private float rayDistance = 3.3f;
     public Transform playerPosition;
     public Transform playerCamera;
+    public Transform orientation;
 
     public LayerMask interactableLayer;
 
@@ -56,6 +57,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Vector3 tempPosition = playerPosition.position;
         tempPosition.y += rayHeightOffset;
+        tempPosition += orientation.forward * 0.25f;
         Ray ray = new Ray(tempPosition, playerCamera.forward);
         RaycastHit hit;
 
