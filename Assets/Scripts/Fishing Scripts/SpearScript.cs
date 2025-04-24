@@ -25,6 +25,8 @@ public class SpearUIScript : MonoBehaviour
 
     private Rigidbody rb; // Reference to the Rigidbody
 
+    public AudioManager audioManager;
+
     void Start()
     {
         // Initialize the Rigidbody
@@ -155,8 +157,8 @@ public class SpearUIScript : MonoBehaviour
         isShooting = true; // Set shooting state to true
         holdTime = 0f;
 
-        AudioManager.Instance.playGrunt();
-        AudioManager.Instance.playSplash();
+        audioManager.playGrunt();
+        audioManager.playSplash();
     }
 
     private void resetSpear()

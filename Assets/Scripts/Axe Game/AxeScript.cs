@@ -16,6 +16,8 @@ public class AxeScript : MonoBehaviour
 
     public ChopCounter chopCounter; // Add this in Unity Inspector
 
+    public AudioManager audioManager;
+
     void Start()
     {
         // Set starting rotation
@@ -38,7 +40,7 @@ public class AxeScript : MonoBehaviour
                 StartCoroutine(SwingAxe());
                 chopCounter.RegisterHit();
 
-                AudioManager.Instance.playAxe();
+                audioManager.playAxe();
                 // Move green zone to new random Y position
                 float newY = Random.Range(0.35f, 6.85f);
                 accuracyMeterGreen.position = new Vector3(

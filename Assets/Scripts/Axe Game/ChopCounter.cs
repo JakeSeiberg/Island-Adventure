@@ -17,6 +17,8 @@ public class ChopCounter : MonoBehaviour
     public int hits = 0;
     public int hitsNeeded = 5;
 
+    public AudioManager audioManager;
+
     void Start()
     {
         checkmarkSprite.enabled = false;
@@ -44,8 +46,8 @@ public class ChopCounter : MonoBehaviour
         if (hits == hitsNeeded)
         {
 
-            AudioManager.Instance.playTree();
-            
+            audioManager.playTree();
+
             playerData.treeChopped = true;
             playerData.brokenTrees.Add(playerData.currentTreeID);
 

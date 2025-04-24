@@ -1,22 +1,11 @@
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{
-    public static AudioManager Instance;
+{   
     public Sound[] sound;
     public AudioSource audioSrc;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Awake()
-    {
-        if(Instance == null){
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else{
-            Destroy(gameObject);
-        }
-    }
 
     public void playAxe(){
 
