@@ -12,16 +12,23 @@ public class SkyboxChanger : MonoBehaviour
         RenderSettings.skybox = skyboxMaterials[playerData.curSkybox];
         DynamicGI.UpdateEnvironment();
         sun.transform.eulerAngles = sunPositions[playerData.curSkybox];
-    }
 
+        playerData.curSkybox ++;
+        if (playerData.curSkybox >= skyboxMaterials.Length){
+            playerData.curSkybox = 0;
+        }
+    }
+/*
     public void ChangeSkybox(){
         RenderSettings.skybox = skyboxMaterials[playerData.curSkybox];
         DynamicGI.UpdateEnvironment();
         sun.transform.eulerAngles = sunPositions[playerData.curSkybox];
+
+
         playerData.curSkybox ++;
         if (playerData.curSkybox >= skyboxMaterials.Length){
             playerData.curSkybox = 0;
         }
         
-    }
+    }*/
 }

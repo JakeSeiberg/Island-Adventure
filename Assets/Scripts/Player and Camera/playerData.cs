@@ -51,6 +51,7 @@ public class playerData
     public static bool boatGas;
 
     public static int curSkybox;
+    public static bool canSleep;
 
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
@@ -99,6 +100,7 @@ public class playerData
         boatGas = false;
 
         curSkybox = 0;
+        canSleep = false;
 
         curScene = "MainWorld";
 
