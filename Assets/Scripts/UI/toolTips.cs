@@ -26,8 +26,6 @@ public class toolTips : MonoBehaviour
         image = GetComponent<Image>();
         text = GetComponentInChildren<TMP_Text>();
 
-        Instance = this;
-
         Canvas parentCanvas = GetComponentInParent<Canvas>();
         if (parentCanvas != null)
         {

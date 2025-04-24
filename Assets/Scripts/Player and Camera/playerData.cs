@@ -50,6 +50,8 @@ public class playerData
     public static bool boatMotor;
     public static bool boatGas;
 
+    public static int curSkybox;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -95,6 +97,8 @@ public class playerData
         boatSail = false;
         boatMotor = false;
         boatGas = false;
+
+        curSkybox = 0;
 
         curScene = "MainWorld";
 

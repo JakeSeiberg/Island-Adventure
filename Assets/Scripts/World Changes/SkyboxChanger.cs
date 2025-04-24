@@ -6,28 +6,21 @@ public class SkyboxChanger : MonoBehaviour
     public Vector3[] sunPositions;
 
     public GameObject sun;
-    public static int curSkybox = 0;
-    public bool skyCooldown = true;
     
     void Start()
     {
-        RenderSettings.skybox = skyboxMaterials[curSkybox];
+        RenderSettings.skybox = skyboxMaterials[playerData.curSkybox];
         DynamicGI.UpdateEnvironment();
-        sun.transform.eulerAngles = sunPositions[curSkybox];
-    }
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
+        sun.transform.eulerAngles = sunPositions[playerData.curSkybox];
     }
 
     public void ChangeSkybox(){
-        RenderSettings.skybox = skyboxMaterials[curSkybox];
+        RenderSettings.skybox = skyboxMaterials[playerData.curSkybox];
         DynamicGI.UpdateEnvironment();
-        sun.transform.eulerAngles = sunPositions[curSkybox];
-        skyCooldown = false;
-        curSkybox ++;
-        if (curSkybox >= skyboxMaterials.Length){
-            curSkybox = 0;
+        sun.transform.eulerAngles = sunPositions[playerData.curSkybox];
+        playerData.curSkybox ++;
+        if (playerData.curSkybox >= skyboxMaterials.Length){
+            playerData.curSkybox = 0;
         }
         
     }

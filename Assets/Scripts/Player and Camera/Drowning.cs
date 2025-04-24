@@ -20,8 +20,8 @@ public class Drowning : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(isDrowning);
-        Debug.Log("Air Level: " + air);
+        //Debug.Log(isDrowning);
+        //Debug.Log("Air Level: " + air);
         if (PlayerMovement.currentPlayerPos.y < drowningYLevel)
         {
             if (!isDrowning)
