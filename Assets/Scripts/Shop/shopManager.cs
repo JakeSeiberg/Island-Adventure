@@ -15,9 +15,6 @@ public class shopManager : MonoBehaviour
     public Image bedImage;
     public Image hullImage;
 
-    [Header("Purchased Item Color")]
-    public Color purchasedColor = new Color(0.5f, 0.5f, 0.5f, 1f);
-
     public bool canBuyCampfire = false;
     public bool canBuyShelter = false;
     public bool canBuyBed = false;
@@ -31,10 +28,11 @@ public class shopManager : MonoBehaviour
     void Start()
     {
         UpdateUI();
-        if (playerData.hasBoughtCampfire)
-        {
-            campfireImage.color = purchasedColor;
-        }
+    }
+
+    void Update()
+    {
+//        Debug.Log("")
     }
 
     void UpdateUI()
@@ -46,6 +44,7 @@ public class shopManager : MonoBehaviour
 
     public void buyCampfire()
     {
+        Debug.Log("Attempting to buy campfire");
         // Check if the player has enough resources to buy the campfire
         if (canBuyCampfire)
         {
@@ -61,6 +60,7 @@ public class shopManager : MonoBehaviour
 
     public void buyShelter()
     {
+        Debug.Log("Attempting to buy shelter");
         // Check if the player has enough resources to buy the campfire
         if (canBuyShelter && playerData.woodCount >= 20 && playerData.leafCount >= 15)
         {
@@ -78,6 +78,7 @@ public class shopManager : MonoBehaviour
     //same thing but for bed, which costs 10 wood and 5 leaves
     public void buyBed()
     {
+        Debug.Log("Attempting to buy bed");
         if (canBuyBed && playerData.woodCount >= 10 && playerData.leafCount >= 5)
         {
             playerData.woodCount -= 10;
@@ -94,6 +95,7 @@ public class shopManager : MonoBehaviour
     //same for hull, which costs 40 wood
     public void buyHull()
     {
+        Debug.Log("Attempting to buy hull");
         if (canBuyHull && playerData.woodCount >= 40)
         {
             playerData.woodCount -= 40;
@@ -126,7 +128,7 @@ public class shopManager : MonoBehaviour
             canBuyCampfire = false;
             greyCampfire.SetActive(true);
         }
-        
+
         if (!playerData.hasBoughtShelter && playerData.hasBoughtCampfire)
         {
             canBuyShelter = true;

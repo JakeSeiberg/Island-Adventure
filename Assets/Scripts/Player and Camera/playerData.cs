@@ -89,18 +89,12 @@ public class playerData
         fishStage[0] = -1;
         fishStage[1] = -1;
 
-        hasBoughtCampfire = true;
-<<<<<<< HEAD
+        hasBoughtCampfire = false;
         hasBoughtShelter = false;
         hasBoughtBed = false;
         hasBoughtHull = false;
-=======
-        hasBoughtShelter = true;
-        hasBoughtBed = true;
-        hasBoughtHull = true;
->>>>>>> bd0a76c6c40ff8f262b9127531ce2c635d7d1685
 
-        boatHull = true;
+        boatHull = false;
         boatSail = false;
         boatMotor = false;
         boatGas = false;
