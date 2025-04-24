@@ -62,7 +62,7 @@ public class shopManager : MonoBehaviour
     public void buyShelter()
     {
         // Check if the player has enough resources to buy the campfire
-        if (canBuyShelter)
+        if (canBuyShelter && playerData.woodCount >= 20 && playerData.leafCount >= 15)
         {
             playerData.woodCount -= 20;
             playerData.leafCount -= 15;
@@ -78,7 +78,7 @@ public class shopManager : MonoBehaviour
     //same thing but for bed, which costs 10 wood and 5 leaves
     public void buyBed()
     {
-        if (canBuyBed)
+        if (canBuyBed && playerData.woodCount >= 10 && playerData.leafCount >= 5)
         {
             playerData.woodCount -= 10;
             playerData.leafCount -= 5;
@@ -94,7 +94,7 @@ public class shopManager : MonoBehaviour
     //same for hull, which costs 40 wood
     public void buyHull()
     {
-        if (canBuyHull)
+        if (canBuyHull && playerData.woodCount >= 40)
         {
             playerData.woodCount -= 40;
 
