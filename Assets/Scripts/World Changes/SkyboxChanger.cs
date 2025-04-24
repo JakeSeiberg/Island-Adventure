@@ -6,7 +6,7 @@ public class SkyboxChanger : MonoBehaviour
     public Vector3[] sunPositions;
 
     public GameObject sun;
-    private static int curSkybox = 0;
+    public static int curSkybox = 0;
     public bool skyCooldown = true;
     
     void Start()
