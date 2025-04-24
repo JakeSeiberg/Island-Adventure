@@ -17,7 +17,17 @@ public class SkyboxChanger : MonoBehaviour
         if (playerData.curSkybox >= skyboxMaterials.Length){
             playerData.curSkybox = 0;
         }
+
+        if (playerData.curSkybox == 4)
+        {
+            playerData.canSleep = true;
+        }
+        else
+        {
+            playerData.canSleep = false;
+        }
     }
+
 /*
     public void ChangeSkybox(){
         RenderSettings.skybox = skyboxMaterials[playerData.curSkybox];
