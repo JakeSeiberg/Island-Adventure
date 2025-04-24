@@ -23,6 +23,17 @@ public class toolTips : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        
+        crashCanvasGroup.alpha = 0f; 
         image = GetComponent<Image>();
         text = GetComponentInChildren<TMP_Text>();
 

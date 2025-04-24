@@ -88,7 +88,7 @@ public class PlayerInteraction : MonoBehaviour
                     axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
                     axe.hasAxe();
                 }
-                if (hit.collider.CompareTag("SpearInteractable") && playerData.canSleep) //playerData.curSkybox != 4)
+                if (hit.collider.CompareTag("SpearInteractable") && !playerData.canSleep) //playerData.curSkybox != 4)
                 {
                     playerData.hasGoneFishing = true;
                     Cursor.lockState = CursorLockMode.None;
@@ -96,10 +96,6 @@ public class PlayerInteraction : MonoBehaviour
 
                     playerData.playerPosition = PlayerMovement.currentPlayerPos;
                     playerData.playerRotation = PlayerCamera.currentRotation;
-                    /*
-                    if (playerData.hasBoughtBed){
-                        skyboxChanger.ChangeSkybox();
-                    }*/
                     toolTips.changeScene();
                     playerData.curScene = "Fishing";
                     SceneManager.LoadScene("Fishing");
@@ -109,7 +105,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("Tree")) 
                 {
-                    if (playerData.hasAxe) //&& (SkyboxChanger.curSkybox != 4))
+                    if (playerData.hasAxe && !playerData.canSleep)
                     {
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
@@ -124,10 +120,6 @@ public class PlayerInteraction : MonoBehaviour
                         {
                             playerData.currentTreeID = treeIDScript.treeID;
                         }
-                        /*
-                        if (playerData.hasBoughtBed){
-                            skyboxChanger.ChangeSkybox();
-                        }*/
                         toolTips.changeScene();
                         playerData.curScene = "Tree";
                         if (!playerData.hasPlayedTreeGame)
