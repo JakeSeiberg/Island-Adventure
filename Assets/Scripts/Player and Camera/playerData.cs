@@ -66,7 +66,7 @@ public class playerData
         startOfGame = true;
         wormCount = 150;
         woodCount = 100;
-        fishCount = 0;
+        fishCount = 100;
         leafCount = 100;
         cookedFishCount = 0;
 
@@ -89,7 +89,7 @@ public class playerData
         fishStage[0] = -1;
         fishStage[1] = -1;
 
-        hasBoughtCampfire = false;
+        hasBoughtCampfire = true;
         hasBoughtShelter = false;
         hasBoughtBed = false;
         hasBoughtHull = false;
