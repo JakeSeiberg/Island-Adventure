@@ -27,6 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     void Start()
     {
         manageBoatItemsPickup();
+        playerData.curScene = "MainWorld";
     }
 
     void Update()

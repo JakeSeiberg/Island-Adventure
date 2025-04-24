@@ -13,10 +13,14 @@ public class sceneSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Cur scene: " + playerData.curScene);
         //when escape is pressed, switch scene to "TYLER NEW SCENE"
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            toolTips.changeScene();
+            if (playerData.curScene != "CutScene")
+            {
+                toolTips.changeScene();
+            }
             playerData.curScene = "MainWorld";
             SceneManager.LoadScene("MainWorld");
         }
@@ -24,7 +28,10 @@ public class sceneSwitcher : MonoBehaviour
 
     public static void changeScene()
     {
-        toolTips.changeScene();
+        if (playerData.curScene != "CutScene")
+        {
+            toolTips.changeScene();
+        }
         playerData.curScene = "MainWorld";
         SceneManager.LoadScene("MainWorld"); 
     }

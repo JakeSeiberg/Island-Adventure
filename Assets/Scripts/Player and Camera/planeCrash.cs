@@ -26,7 +26,7 @@ public class PlaneCrashPath : MonoBehaviour
         transform.position = startPoint;
         transform.rotation = Quaternion.LookRotation(cruisePoint - startPoint);
         crashCanvasGroup.alpha = 0f;
-        playerData.curScene = "cutscene";
+        playerData.curScene = "CutScene";
     }
 
     void Update()
