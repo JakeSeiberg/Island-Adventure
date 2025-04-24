@@ -154,6 +154,9 @@ public class SpearUIScript : MonoBehaviour
 
         isShooting = true; // Set shooting state to true
         holdTime = 0f;
+
+        AudioManager.Instance.playGrunt();
+        AudioManager.Instance.playSplash();
     }
 
     private void resetSpear()

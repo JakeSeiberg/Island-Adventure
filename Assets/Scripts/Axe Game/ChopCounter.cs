@@ -43,6 +43,9 @@ public class ChopCounter : MonoBehaviour
 
         if (hits == hitsNeeded)
         {
+
+            AudioManager.Instance.playTree();
+            
             playerData.treeChopped = true;
             playerData.brokenTrees.Add(playerData.currentTreeID);
 
