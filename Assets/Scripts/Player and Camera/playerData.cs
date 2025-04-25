@@ -30,6 +30,7 @@ public class playerData
     public static bool hasCookedFish = false;
     public static bool hasEatenFish = false;
     public static bool hasEscaped = false;
+    public static bool hasSlept = false;
 
 
     
@@ -95,6 +96,7 @@ public class playerData
         hasCookedFish = false;
         hasEatenFish = false;
         hasEscaped = false;
+        hasSlept = false;
 
         currentTreeID = null;
         treeChopped = false;

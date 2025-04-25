@@ -5,8 +5,8 @@ public class TreeManager : MonoBehaviour
     public GameObject leafPrefab; 
     public GameObject logPrefab;
 
-    private int maxLogPerTree = 8;
-    private int maxLeafPerTree = 8;
+    private int maxLogPerTree = 30;
+    private int maxLeafPerTree = 30;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

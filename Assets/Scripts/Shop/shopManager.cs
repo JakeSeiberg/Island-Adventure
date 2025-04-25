@@ -32,7 +32,7 @@ public class shopManager : MonoBehaviour
 
     void Update()
     {
-//        Debug.Log("")
+//        Debug.Log(Sleep score"")
     }
 
     void UpdateUI()
@@ -46,7 +46,7 @@ public class shopManager : MonoBehaviour
     {
         Debug.Log("Attempting to buy campfire");
         // Check if the player has enough resources to buy the campfire
-        if (canBuyCampfire)
+        if (canBuyCampfire && playerData.woodCount >= 20)
         {
             playerData.woodCount -= 20;
 
@@ -85,6 +85,7 @@ public class shopManager : MonoBehaviour
             playerData.leafCount -= 5;
 
             playerData.hasBoughtBed = true;
+            playerData.sleepScore = 100;
         }
         else
         {

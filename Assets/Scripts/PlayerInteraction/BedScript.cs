@@ -9,6 +9,7 @@ public class BedScript : MonoBehaviour
         {
             playerData.playerPosition = PlayerMovement.currentPlayerPos;
             playerData.playerRotation = PlayerCamera.currentRotation;
+            playerData.hasSlept = true;
             toolTips.changeScene();
             playerData.curScene = "SleepScene";
             SceneManager.LoadScene("SleepScene");

@@ -60,7 +60,7 @@ public class toolTips : MonoBehaviour
 
     void Update()
     {
-
+        Debug.Log("Sleep score: " + playerData.sleepScore + " Sleep state: " + playerData.curSkybox);
         if (!isShowingTip && tooltipQueue.Count > 0)
         {
             string nextTip = tooltipQueue[0];
@@ -179,137 +179,140 @@ public class toolTips : MonoBehaviour
         {
             yield return new WaitForSeconds(4f);
             
-            if (playerData.curScene == "MainWorld")
+            if (playerData.startOfGame)
             {
-                if (playerData.startOfGame)
-                {
-                    toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
-                    playerData.startOfGame = false;
-                }
+                if (playerData.curScene == "MainWorld") toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
+                playerData.startOfGame = false;
+            }
 
-                while (!playerData.hasAxe)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You need to find an axe. Maybe there's one by the crashed plane", 7f);
-                    yield return new WaitForSeconds(20f);
-                }
+            while (!playerData.hasAxe)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You need to find an axe. Maybe there's one by the crashed plane", 7f);
+                yield return new WaitForSeconds(20f);
+            }
 
-                while (!playerData.hasEnteredTreeGame)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("Interact with a tree to chop it down", 8f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasEnteredTreeGame)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Interact with a tree to chop it down", 8f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasOpenedShop)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You can turn your wood and leaves into a bed at a work station. Maybe there's one by the ____", 8f);
-                    yield return new WaitForSeconds(20f);
-                }
+            while (!playerData.hasOpenedShop)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You can turn your wood and leaves into a bed at a work station. Maybe there's one by the ____", 8f);
+                yield return new WaitForSeconds(20f);
+            }
 
-                //sleeping one
+            while (!playerData.hasSlept)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Interact with the bed to go to sleep", 8f);
+                yield return new WaitForSeconds(20f);
+            }
 
-                while (!playerData.hasPickedUpAWorm)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You're going to get hungry soon. Look for some bait to fish with. Maybe some worms", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasPickedUpAWorm)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You're going to get hungry soon. Look for some bait to fish with. Maybe some worms", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasSpear)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasSpear)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasGoneFishing)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You need to find a high spot to spearfish. Maybe there's a spot overlooking the water by the crashed plane", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
-                
-                while (!playerData.hasBoughtCampfire)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You need to build a campfire. Gather some wood and go back to the workstation", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasGoneFishing)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You need to find a high spot to spearfish. Maybe there's a spot overlooking the water by the crashed plane", 7f);
+                yield return new WaitForSeconds(15f);
+            }
+            
+            while (!playerData.hasBoughtCampfire)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You need to build a campfire. Gather some wood and go back to the workstation", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasPlacedFish)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("Interact with the cooking grate to place a fish to cook", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasPlacedFish)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Interact with the cooking grate to place a fish to cook", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasBurnedWood)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("Interact with the campfire logs to add some wood", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasBurnedWood)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Interact with the campfire logs to add some wood", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasCookedFish)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("When the bar gets to the green zone, interact with it to flip it!", 7f);
-                    toolTips.tip("If you flip it too early or too late, you'll ruin the fish!", 7f);
-                    yield return new WaitForSeconds(60f);
-                    toolTips.tip("When the bar gets to the green zone, interact to collect it!", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasCookedFish)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("When the bar gets to the green zone, interact with it to flip it!", 7f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("If you flip it too early or too late, you'll ruin the fish!", 7f);
+                yield return new WaitForSeconds(60f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("When the bar gets to the green zone, interact to collect it!", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasEatenFish)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("Press T to eat your fish", 7f);
-                    yield return new WaitForSeconds(15f);
-                }
+            while (!playerData.hasEatenFish)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Press T to eat your fish", 7f);
+                yield return new WaitForSeconds(15f);
+            }
 
-                while (!playerData.hasBoughtShelter)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
-                    yield return new WaitForSeconds(60f);
-                }
+            while (!playerData.hasBoughtShelter)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
+                yield return new WaitForSeconds(60f);
+            }
 
-                while (!playerData.hasBoughtShelter)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
-                    yield return new WaitForSeconds(60f);
-                }
+            while (!playerData.hasBoughtShelter)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
+                yield return new WaitForSeconds(60f);
+            }
 
-                while (!playerData.hasBoughtHull)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You have built the shelter!", 4f);
-                    toolTips.tip("Now work on building the boat hull and collecting parts from around the island and you'll be out of here in no time!", 7f);
-                    yield return new WaitForSeconds(60f);
-                }
+            while (!playerData.hasBoughtHull)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You have built the shelter!", 4f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Now work on building the boat hull and collecting parts from around the island and you'll be out of here in no time!", 7f);
+                yield return new WaitForSeconds(60f);
+            }
 
-                while (!playerData.boatSail || !playerData.boatMotor || !playerData.boatGas)
-                {
-                    yield return new WaitForSeconds(4f);
-                    int count = 0;
-                    if (!playerData.boatSail) count++;
-                    if (!playerData.boatMotor) count++;
-                    if (!playerData.boatGas) count++;
-                    string boatPartsTip = "You need to find " + count + " more parts for the boat. Keep exploring the island!";
+            while (!playerData.boatSail || !playerData.boatMotor || !playerData.boatGas)
+            {
+                yield return new WaitForSeconds(4f);
+                int count = 0;
+                if (!playerData.boatSail) count++;
+                if (!playerData.boatMotor) count++;
+                if (!playerData.boatGas) count++;
+                if (count > 1) string boatPartsTip = "You need to find " + count + " more parts for the boat. Keep exploring the island!";
+                else string boatPartsTip = "You need to find " + count + " more part for the boat. Keep exploring the island!";
 
-                    toolTips.tip(boatPartsTip, 7f);
-                    yield return new WaitForSeconds(40f);
-                }
+                if (playerData.curScene == "MainWorld") toolTips.tip(boatPartsTip, 7f);
+                yield return new WaitForSeconds(40f);
+            }
 
-                while (!playerData.hasEscaped)
-                {
-                    yield return new WaitForSeconds(5f);
-                    toolTips.tip("You have everything you need! Go back to the boat to get out of here!", 8f);
-                    yield return new WaitForSeconds(35f);
-                }
+            while (!playerData.hasEscaped)
+            {
+                yield return new WaitForSeconds(5f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You have everything you need! Go back to the boat to get out of here!", 8f);
+                yield return new WaitForSeconds(35f);
             }
         }
     }

@@ -19,7 +19,7 @@ public class fishCookerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fishTimerLength = 45f;
+        fishTimerLength = 15f;
     }
 
     public void interact() //interact with grate
