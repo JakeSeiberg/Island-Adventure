@@ -55,8 +55,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-    {
-        
+    {     
         currentPlayerPos = rb.position;
         Vector3 tmpPos = transform.position;
         tmpPos.y = transform.position.y + 3f; //dont change 3
