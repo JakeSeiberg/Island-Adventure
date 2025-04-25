@@ -60,6 +60,7 @@ public class playerData
     public static bool boatGas;
 
     public static int curSkybox;
+    public static float actionsTaken;
     public static bool canSleep;
 
     public static string curScene = "MainWorld";
@@ -115,6 +116,7 @@ public class playerData
         boatGas = false;
 
         curSkybox = 0;
+        actionsTaken = 0;
         canSleep = false;
 
         curScene = "MainWorld";

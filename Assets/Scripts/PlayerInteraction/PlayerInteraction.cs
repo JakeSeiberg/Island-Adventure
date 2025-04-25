@@ -91,7 +91,7 @@ public class PlayerInteraction : MonoBehaviour
                     axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
                     axe.hasAxe();
                 }
-                if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep) //playerData.curSkybox != 4)
+                if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep)
                 {
                     playerData.hasGoneFishing = true;
                     Cursor.lockState = CursorLockMode.None;
@@ -118,6 +118,9 @@ public class PlayerInteraction : MonoBehaviour
                         playerData.hasEnteredTreeGame = true;
 
                         playerData.treeChopped = false;
+                        if (playerData.hasBoughtBed){
+                            playerData.actionsTaken++;
+                        }
                         TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
                         if (treeIDScript != null)
                         {

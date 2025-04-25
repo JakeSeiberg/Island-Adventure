@@ -211,6 +211,7 @@ public class SpearUIScript : MonoBehaviour
             FishScript fishScript = other.transform.parent?.GetComponent<FishScript>();
             if (other.CompareTag("FishTarget"))
             {
+                playerData.actionsTaken += .5f;
                 fishScript.HitBySpear(); // Call the HitBySpear method on the FishScript
             }
         }
