@@ -47,4 +47,15 @@ public class AudioManager : MonoBehaviour
             audioSrc.PlayOneShot(audioSrc.clip);
         }
     }
+
+    public void playExplosion(){
+        if(sound == null){
+            Debug.Log("sound does not exist");
+        }
+        else{
+            audioSrc.clip = sound[4].clip;
+            audioSrc.PlayOneShot(audioSrc.clip);
+        }
+    }
+
 }
