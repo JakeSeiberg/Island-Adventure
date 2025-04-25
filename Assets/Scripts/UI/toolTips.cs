@@ -301,8 +301,9 @@ public class toolTips : MonoBehaviour
                 if (!playerData.boatSail) count++;
                 if (!playerData.boatMotor) count++;
                 if (!playerData.boatGas) count++;
-                if (count > 1) string boatPartsTip = "You need to find " + count + " more parts for the boat. Keep exploring the island!";
-                else string boatPartsTip = "You need to find " + count + " more part for the boat. Keep exploring the island!";
+                string boatPartsTip = "";
+                if (count > 1) boatPartsTip = "You need to find " + count + " more parts for the boat. Keep exploring the island!";
+                else boatPartsTip = "You need to find " + count + " more part for the boat. Keep exploring the island!";
 
                 if (playerData.curScene == "MainWorld") toolTips.tip(boatPartsTip, 7f);
                 yield return new WaitForSeconds(40f);
