@@ -499,7 +499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &14063819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21892,7 +21892,6 @@ MonoBehaviour:
   sensX: 1600
   sensY: 1600
   orientation: {fileID: 1884788306}
-  playerPos: {fileID: 0}
 --- !u!114 &1661589598
 MonoBehaviour:
   m_ObjectHideFlags: 0
