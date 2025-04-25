@@ -61,6 +61,7 @@ public class playerData
 
     public static int curSkybox;
     public static bool canSleep;
+    public static int sleepScore;
 
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
@@ -73,10 +74,10 @@ public class playerData
         playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
-        wormCount = 100;
-        woodCount = 100;
+        wormCount = 0;
+        woodCount = 0;
         fishCount = 0;
-        leafCount = 100;
+        leafCount = 0;
         cookedFishCount = 0;
 
         hasSpear = false;
@@ -116,6 +117,7 @@ public class playerData
 
         curSkybox = 0;
         canSleep = false;
+        sleepScore = 0;
 
         curScene = "MainWorld";
 

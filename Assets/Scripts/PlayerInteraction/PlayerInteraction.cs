@@ -21,6 +21,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public fireTimerUIScript fireTimerScript;
 
+    public BedScript bedScript;
+
     public GameObject boatGas;
     public GameObject boatMotor;
     public GameObject boatSail;
@@ -70,11 +72,18 @@ public class PlayerInteraction : MonoBehaviour
             if (input()){
                 if (hit.collider.CompareTag("Worm")) 
                 {
-                    wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
-                    if (wormScript != null)
+                    if (!playerData.canSleep)
                     {
-                        playerData.hasPickedUpAWorm = true;
-                        wormScript.wormCollected();
+                        wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
+                        if (wormScript != null)
+                        {
+                            playerData.hasPickedUpAWorm = true;
+                            wormScript.wormCollected();
+                        }
+                        playerData.sleepScore += 2;
+                    }
+                    else{
+                        toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
                     }
                 }
                 if (hit.collider.CompareTag("spearItem")) 
@@ -93,47 +102,55 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep) //playerData.curSkybox != 4)
                 {
-                    playerData.hasGoneFishing = true;
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-
-                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                    playerData.playerRotation = PlayerCamera.currentRotation;
-                    toolTips.changeScene();
-                    playerData.curScene = "Fishing";
-                    SceneManager.LoadScene("Fishing");
-                }
-                else{
-                    //toolTips.tip("go to sleep bozo", 10f);
-                }
-                if (hit.collider.CompareTag("Tree")) 
-                {
-                    if (playerData.hasAxe)// && !playerData.canSleep)
+                    if (!playerData.canSleep)
                     {
+                        playerData.hasGoneFishing = true;
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
 
                         playerData.playerPosition = PlayerMovement.currentPlayerPos;
                         playerData.playerRotation = PlayerCamera.currentRotation;
-                        playerData.hasEnteredTreeGame = true;
-
-                        playerData.treeChopped = false;
-                        TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
-                        if (treeIDScript != null)
-                        {
-                            playerData.currentTreeID = treeIDScript.treeID;
-                        }
                         toolTips.changeScene();
-                        playerData.curScene = "Tree";
-                        if (!playerData.hasPlayedTreeGame)
-                        {
-                            toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
-                            playerData.hasPlayedTreeGame = true;
-                        }
-                        SceneManager.LoadScene("Tree");
+                        playerData.curScene = "Fishing";
+                        SceneManager.LoadScene("Fishing");
                     }
                     else{
-                        //toolTips.tip("go to sleep bozo", 10f);
+                        toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
+                    }
+                }
+                if (hit.collider.CompareTag("Tree")) 
+                {
+                    if (playerData.hasAxe)// && !playerData.canSleep)
+                    {
+                        if (!playerData.canSleep)
+                        {
+                            Cursor.lockState = CursorLockMode.None;
+                            Cursor.visible = true;
+
+                            playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                            playerData.playerRotation = PlayerCamera.currentRotation;
+                            playerData.hasEnteredTreeGame = true;
+
+                            playerData.treeChopped = false;
+                            TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
+                            if (treeIDScript != null)
+                            {
+                                playerData.currentTreeID = treeIDScript.treeID;
+                            }
+                            toolTips.changeScene();
+                            playerData.curScene = "Tree";
+                            if (!playerData.hasPlayedTreeGame)
+                            {
+                                toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
+                                playerData.hasPlayedTreeGame = true;
+                            }
+                            playerData.sleepScore += 15;
+                            SceneManager.LoadScene("Tree");
+                        }
+                        else
+                        {
+                            toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
+                        }
                     }
                 }
                 if (hit.collider.CompareTag("Leaf")) 
@@ -208,6 +225,11 @@ public class PlayerInteraction : MonoBehaviour
                         Debug.Log("Player Has Not Escaped!");
                         toolTips.tip("You need to find more parts!", 5f);
                     }
+                }
+                if (hit.collider.CompareTag("Bed"))
+                {
+                    Debug.Log("Sleeping");
+                    bedScript.interact();
                 }
             }
             else{

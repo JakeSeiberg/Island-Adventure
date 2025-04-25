@@ -25,6 +25,7 @@ TagManager:
   - BoatSail
   - BoatGas
   - GetawayBoat
+  - Bed
   layers:
   - Default
   - TransparentFX

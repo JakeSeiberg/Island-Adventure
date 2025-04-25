@@ -5,15 +5,11 @@ using UnityEditor;
 
 public class sceneSwitcher : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Cur scene: " + playerData.curScene);
+        //Debug.Log("Cur scene: " + playerData.curScene);
         //when escape is pressed, switch scene to "TYLER NEW SCENE"
         if (Input.GetKeyDown(KeyCode.Escape))
         {
