@@ -40,7 +40,7 @@ public class AxeScript : MonoBehaviour
                 StartCoroutine(SwingAxe());
                 chopCounter.RegisterHit();
 
-                audioManager.playAxe();
+                
                 // Move green zone to new random Y position
                 float newY = Random.Range(0.35f, 6.85f);
                 accuracyMeterGreen.position = new Vector3(
@@ -74,6 +74,8 @@ public class AxeScript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        audioManager.playAxe();
 
         transform.rotation = targetRotation;
 
