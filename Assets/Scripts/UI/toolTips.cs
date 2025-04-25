@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
@@ -7,19 +8,20 @@ public class toolTips : MonoBehaviour
 {
     public static toolTips Instance { get; private set; }
 
-    private RectTransform rectTransform; 
-    private Vector3 hiddenPosition = new Vector3(0, 340, 0); 
-    private Vector3 visiblePosition = new Vector3(0, 196, 0); 
+    private RectTransform rectTransform;
+    private Vector3 hiddenPosition = new Vector3(0, 340, 0);
+    private Vector3 visiblePosition = new Vector3(0, 196, 0);
     private float animationDuration = 0.5f;
 
     public TMP_Text tooltipText;
-
-    private bool toolTipActive = false;
+    public CanvasGroup crashCanvasGroup;
 
     private Image image;
     private TMP_Text text;
 
-    public CanvasGroup crashCanvasGroup;
+    private List<string> tooltipQueue = new List<string>();
+    private List<float> durationQueue = new List<float>();
+    private bool isShowingTip = false;
 
     void Awake()
     {
@@ -32,8 +34,7 @@ public class toolTips : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        
-        crashCanvasGroup.alpha = 0f; 
+        crashCanvasGroup.alpha = 0f;
         image = GetComponent<Image>();
         text = GetComponentInChildren<TMP_Text>();
 
@@ -48,238 +49,75 @@ public class toolTips : MonoBehaviour
         }
 
         rectTransform = GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = hiddenPosition; 
+        rectTransform.anchoredPosition = hiddenPosition;
         tooltipText = GetComponentInChildren<TMP_Text>();
-        if (playerData.startOfGame)
-        {
-            StartCoroutine(startOfGameTip());
-            playerData.startOfGame = false;
-        }
-        StartCoroutine(spearTooltip());
+
         StartCoroutine(fishingToolTip());
-        StartCoroutine(treeToolTips());
-
         StartCoroutine(fadeCanvas());
+
+        StartCoroutine(MainWorldTooltips());
     }
 
-    private IEnumerator fadeCanvas()
+    void Update()
     {
-        Debug.Log("Starting canvas fade");
-        float duration = 2f;
-        float elapsedTime = 0f;
 
-        if (crashCanvasGroup != null)
+        if (!isShowingTip && tooltipQueue.Count > 0)
         {
-            crashCanvasGroup.alpha = 1f; 
-        }
-        yield return new WaitForSeconds(1f);
+            string nextTip = tooltipQueue[0];
+            float duration = durationQueue[0];
 
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            if (crashCanvasGroup != null)
-            {
-                crashCanvasGroup.alpha = Mathf.Clamp01(1f - (elapsedTime / duration));
-            }
-            yield return null;
-        }
+            tooltipQueue.RemoveAt(0);
+            durationQueue.RemoveAt(0);
 
-        if (crashCanvasGroup != null)
-        {
-            crashCanvasGroup.alpha = 0f; 
-        }
-
-        Debug.Log("Canvas fade complete");
-
-    }
-
-
-
-    private IEnumerator startOfGameTip()
-    {
-        playerData.startOfGame = false;
-        yield return new WaitForSeconds(4f);
-        if (playerData.curScene == "MainWorld")
-        {
-            toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
+            StartCoroutine(RunTip(nextTip, duration));
         }
     }
 
-    public static void tip(string input, float waitTime)
+    private IEnumerator RunTip(string text, float duration)
     {
-        if (!Instance.toolTipActive)
-        {
-            Instance.toolTipActive = true;
-            Instance.show();
-            Instance.StartCoroutine(Instance.ShowToolTip(input, waitTime));
-        }
-    }
+        isShowingTip = true;
 
-    private IEnumerator ShowToolTip(string input, float waitTime)
-    {
-        tooltipText.text = input;
-        
+        tooltipText.text = text;
+        show();
         yield return StartCoroutine(AnimatePosition(rectTransform, hiddenPosition, visiblePosition, animationDuration));
-
-        yield return new WaitForSeconds(waitTime);
-
+        yield return new WaitForSeconds(duration);
         yield return StartCoroutine(AnimatePosition(rectTransform, visiblePosition, hiddenPosition, animationDuration));
-        Instance.toolTipActive = false;
-        Instance.hide();
+        hide();
+
+        isShowingTip = false;
     }
 
     private IEnumerator AnimatePosition(RectTransform rect, Vector3 start, Vector3 end, float duration)
     {
         float elapsedTime = 0f;
-        Vector3 overshootPosition = end + new Vector3(0, -20f, 0); 
+        Vector3 overshootPosition = end + new Vector3(0, -20f, 0);
 
         while (elapsedTime < duration)
         {
-            float t = elapsedTime / duration;
-            t = Mathf.Sin(t * Mathf.PI * 0.5f); 
+            float t = Mathf.Sin((elapsedTime / duration) * Mathf.PI * 0.5f);
             rect.anchoredPosition = Vector3.Lerp(start, overshootPosition, t);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         elapsedTime = 0f;
-        float bounceDuration = duration * 0.5f; 
+        float bounceDuration = duration * 0.5f;
+
         while (elapsedTime < bounceDuration)
         {
-            float t = elapsedTime / bounceDuration;
-            t = Mathf.Sin(t * Mathf.PI * 0.5f); 
+            float t = Mathf.Sin((elapsedTime / bounceDuration) * Mathf.PI * 0.5f);
             rect.anchoredPosition = Vector3.Lerp(overshootPosition, end, t);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        rect.anchoredPosition = end; 
+        rect.anchoredPosition = end;
     }
 
-    private IEnumerator spearTooltip()
+    public static void tip(string input, float waitTime)
     {
-        while (playerData.hasPickedUpAWorm == false)
-        {
-            yield return new WaitForSeconds(5f);
-        }
-
-        yield return new WaitForSeconds(10f);
-
-        while (!playerData.hasSpear)
-        {   
-            if (playerData.curScene == "MainWorld")
-            {
-                toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane",7);
-
-                yield return new WaitForSeconds(25f);
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-            }
-        }
-        
-
-        while (!playerData.hasGoneFishing)
-        {   
-            if (playerData.curScene == "MainWorld")
-            {
-                toolTips.tip("You need to find a high spot to spearfish. Maybe there's a spot overlooking the water by the crashed plane",7);
-
-                yield return new WaitForSeconds(25f);
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-            }
-        }
-    }
-
-    private IEnumerator fishingToolTip()
-    {
-        while (playerData.curScene != "Fishing")
-        {
-            yield return new WaitForSeconds(2f);
-        }
-
-        yield return new WaitForSeconds(2f);
-
-        while (!playerData.hasThrownStrongSpear)
-        {
-            toolTips.tip("Aim with your mouse to aim the spear. Hold click to pull back spear, and release to throw it",8);
-
-            yield return new WaitForSeconds(10f);
-
-            toolTips.tip("Press spacebar to throw your worms. They might attract more fish",7);
-
-            yield return new WaitForSeconds(20f);
-            if (playerData.curScene == "Fishing")
-            {
-                toolTips.tip("Press Escape to stop fishing",5);
-            }
-            
-        }
-    }
-
-    private IEnumerator treeToolTips()
-    {
-        while (!playerData.hasAxe)
-        {
-            yield return new WaitForSeconds(5f);
-            if (playerData.hasThrownStrongSpear)
-            {
-                if (playerData.curScene == "MainWorld")
-                {
-                    toolTips.tip("You need to find an axe. Maybe there's one by the crashed plane", 7f);
-                }
-            }
-            
-            yield return new WaitForSeconds(15f);
-        }
-
-        while (!playerData.hasEnteredTreeGame)
-        {
-            yield return new WaitForSeconds(5f);
-            if (playerData.curScene == "MainWorld")
-            {
-                toolTips.tip("Interact with a tree to chop it down", 8f);
-            }
-            yield return new WaitForSeconds(15f);
-        }
-    }
-
-    public static void changeScene()
-    {
-        Instance.hide();
-        Instance.toolTipActive = false;
-    }
-
-    private void hide()
-    {
-        if (image != null)
-        {
-            image.enabled = false;
-        }
-
-        if (text != null)
-        {
-            text.enabled = false;
-        }
-    }
-
-    private void show()
-    {
-        if (image != null)
-        {
-            image.enabled = true;
-        }
-
-        if (text != null)
-        {
-            text.enabled = true;
-        }
+        Instance.tooltipQueue.Add(input);
+        Instance.durationQueue.Add(waitTime);
     }
 
     public static void delayedToolTip(string tip, float waitTime)
@@ -291,7 +129,204 @@ public class toolTips : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         toolTips.tip(tip, waitTime);
+    }
 
-        toolTips.tip("THIs is the tip",100f);
+    private void hide()
+    {
+        if (image != null) image.enabled = false;
+        if (text != null) text.enabled = false;
+    }
+
+    private void show()
+    {
+        if (image != null) image.enabled = true;
+        if (text != null) text.enabled = true;
+    }
+
+    public static void changeScene()
+    {
+        Instance.hide();
+        Instance.isShowingTip = false;
+        Instance.tooltipQueue.Clear();
+        Instance.durationQueue.Clear();
+    }
+
+    private IEnumerator fadeCanvas()
+    {
+        float duration = 2f;
+        float elapsedTime = 0f;
+
+        if (crashCanvasGroup != null)
+            crashCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(1f);
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            if (crashCanvasGroup != null)
+                crashCanvasGroup.alpha = Mathf.Clamp01(1f - (elapsedTime / duration));
+            yield return null;
+        }
+
+        if (crashCanvasGroup != null)
+            crashCanvasGroup.alpha = 0f;
+    }
+
+    private IEnumerator MainWorldTooltips()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(4f);
+            
+            if (playerData.curScene == "MainWorld")
+            {
+                if (playerData.startOfGame)
+                {
+                    toolTips.tip("Welcome to the island! Use WASD to move around, and E to interact with objects", 5f);
+                    playerData.startOfGame = false;
+                }
+
+                while (!playerData.hasAxe)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You need to find an axe. Maybe there's one by the crashed plane", 7f);
+                    yield return new WaitForSeconds(20f);
+                }
+
+                while (!playerData.hasEnteredTreeGame)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("Interact with a tree to chop it down", 8f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasOpenedShop)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You can turn your wood and leaves into a bed at a work station. Maybe there's one by the ____", 8f);
+                    yield return new WaitForSeconds(20f);
+                }
+
+                //sleeping one
+
+                while (!playerData.hasPickedUpAWorm)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You're going to get hungry soon. Look for some bait to fish with. Maybe some worms", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasSpear)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasGoneFishing)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You need to find a high spot to spearfish. Maybe there's a spot overlooking the water by the crashed plane", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+                
+                while (!playerData.hasBoughtCampfire)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You need to build a campfire. Gather some wood and go back to the workstation", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasPlacedFish)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("Interact with the cooking grate to place a fish to cook", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasBurnedWood)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("Interact with the campfire logs to add some wood", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasCookedFish)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("When the bar gets to the green zone, interact with it to flip it!", 7f);
+                    toolTips.tip("If you flip it too early or too late, you'll ruin the fish!", 7f);
+                    yield return new WaitForSeconds(60f);
+                    toolTips.tip("When the bar gets to the green zone, interact to collect it!", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasEatenFish)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("Press T to eat your fish", 7f);
+                    yield return new WaitForSeconds(15f);
+                }
+
+                while (!playerData.hasBoughtShelter)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
+                    yield return new WaitForSeconds(60f);
+                }
+
+                while (!playerData.hasBoughtShelter)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
+                    yield return new WaitForSeconds(60f);
+                }
+
+                while (!playerData.hasBoughtHull)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You have built the shelter!", 4f);
+                    toolTips.tip("Now work on building the boat hull and collecting parts from around the island and you'll be out of here in no time!", 7f);
+                    yield return new WaitForSeconds(60f);
+                }
+
+                while (!playerData.boatSail || !playerData.boatMotor || !playerData.boatGas)
+                {
+                    yield return new WaitForSeconds(4f);
+                    int count = 0;
+                    if (!playerData.boatSail) count++;
+                    if (!playerData.boatMotor) count++;
+                    if (!playerData.boatGas) count++;
+                    string boatPartsTip = "You need to find " + count + " more parts for the boat. Keep exploring the island!";
+
+                    toolTips.tip(boatPartsTip, 7f);
+                    yield return new WaitForSeconds(40f);
+                }
+
+                while (!playerData.hasEscaped)
+                {
+                    yield return new WaitForSeconds(5f);
+                    toolTips.tip("You have everything you need! Go back to the boat to get out of here!", 8f);
+                    yield return new WaitForSeconds(35f);
+                }
+            }
+        }
+    }
+
+    private IEnumerator fishingToolTip()
+    {
+        yield return new WaitUntil(() => playerData.curScene == "Fishing");
+        yield return new WaitForSeconds(2f);
+
+        while (!playerData.hasThrownStrongSpear)
+        {
+            toolTips.tip("Aim with your mouse to aim the spear. Hold click to pull back spear, and release to throw it", 8);
+            yield return new WaitForSeconds(10f);
+            toolTips.tip("Press spacebar to throw your worms. They might attract more fish", 7);
+            yield return new WaitForSeconds(20f);
+            if (playerData.curScene == "Fishing")
+                toolTips.tip("Press Escape to stop fishing", 5);
+        }
     }
 }

@@ -24,6 +24,15 @@ public class playerData
     public static bool hasEnteredTreeGame = false;
     public static bool hasPlayedTreeGame = false;
     public static bool hasAxe = false;
+    public static bool hasOpenedShop = false;
+    public static bool hasPlacedFish = false;
+    public static bool hasBurnedWood = false;
+    public static bool hasCookedFish = false;
+    public static bool hasEatenFish = false;
+    public static bool hasEscaped = false;
+
+
+    
 
     public static float fireValue = 0f;
     public static bool fireBurning = false;
@@ -64,10 +73,10 @@ public class playerData
         playerPosition = new Vector3(145.7728f, 0.8920119f, 43.1707f); //planeCrash
         playerRotation = new Vector3(16f, 88f, 0f);
         startOfGame = true;
-        wormCount = 0;
-        woodCount = 0;
+        wormCount = 100;
+        woodCount = 100;
         fishCount = 0;
-        leafCount = 0;
+        leafCount = 100;
         cookedFishCount = 0;
 
         hasSpear = false;
@@ -79,6 +88,12 @@ public class playerData
         hasEnteredTreeGame = false;
         hasPlayedTreeGame = false;
         hasAxe = false;
+        hasOpenedShop = false;
+        hasPlacedFish = false;
+        hasBurnedWood = false;
+        hasCookedFish = false;
+        hasEatenFish = false;
+        hasEscaped = false;
 
         currentTreeID = null;
         treeChopped = false;
@@ -104,7 +119,7 @@ public class playerData
 
         curScene = "MainWorld";
 
-        hungerValue = 250f;
+        hungerValue = 100f;
     }
 
     static playerData()

@@ -146,15 +146,18 @@ public class PlayerInteraction : MonoBehaviour
                     logScript log = hit.collider.GetComponent<logScript>();
                     log.logCollected();
                 }
+                
                 if (hit.collider.CompareTag("Campfire")) 
                 {
                     CampfireScript.interact();
+                    playerData.hasBurnedWood = true;
                 }
 
                 if (hit.collider.CompareTag("CampfireGrate"))
                 {
                     Debug.Log("Grate interacted");
                     fishCookerScript.interact();
+                    playerData.hasPlacedFish = true;
                 }
                 if (hit.collider.CompareTag("fishLeft"))
                 {
@@ -171,6 +174,7 @@ public class PlayerInteraction : MonoBehaviour
 
                     playerData.playerPosition = PlayerMovement.currentPlayerPos;
                     playerData.playerRotation = PlayerCamera.currentRotation;
+                    playerData.hasOpenedShop = true;
                     toolTips.changeScene();
                     playerData.curScene = "Shop";
                     SceneManager.LoadScene("Shop");
@@ -190,6 +194,21 @@ public class PlayerInteraction : MonoBehaviour
                     playerData.boatGas = true;
                     boatGas.SetActive(false);
                 }
+                if (hit.collider.CompareTag("GetawayBoat"))
+                {
+                    Debug.Log("Boat Hit");
+                    if (playerData.boatHull && playerData.boatSail && playerData.boatMotor && playerData.boatGas)
+                    {
+                        playerData.hasEscaped = true;
+                        Debug.Log("You've Escaped!");
+                        toolTips.tip("You escaped!", 5f);
+                    }
+                    else
+                    {
+                        Debug.Log("Player Has Not Escaped!");
+                        toolTips.tip("You need to find more parts!", 5f);
+                    }
+                }
             }
             else{
                 // Handle outline logic
@@ -207,10 +226,6 @@ public class PlayerInteraction : MonoBehaviour
                         return;
                     }
                 }
-                /*if (hit.collider.CompareTag("Campfire"))
-                {
-                    fireTimerScript.enable();
-                }*/
 
                     // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();

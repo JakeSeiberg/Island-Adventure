@@ -24,6 +24,7 @@ TagManager:
   - BoatMotor
   - BoatSail
   - BoatGas
+  - GetawayBoat
   layers:
   - Default
   - TransparentFX

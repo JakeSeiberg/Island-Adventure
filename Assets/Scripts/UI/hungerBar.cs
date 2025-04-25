@@ -49,12 +49,15 @@ public class hungerBar : MonoBehaviour
 
     private IEnumerator LoseHunger()
     {
+        //wait until playerData.hasPlacedFish && playerData.hasBurnedWood
+        yield return new WaitUntil(() => playerData.hasPlacedFish && playerData.hasBurnedWood);
+
         while (true)
         {
             yield return new WaitForSeconds(1f);
             if (playerData.hungerValue > 0)
             {
-                playerData.hungerValue -= .5f;
+                playerData.hungerValue -= .25f;
             }
             else
             {
@@ -72,6 +75,7 @@ public class hungerBar : MonoBehaviour
             {
                 playerData.hungerValue += 100f;
                 playerData.cookedFishCount -= 1;
+                playerData.hasEatenFish = true;
             }
         }
     }

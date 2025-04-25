@@ -62,6 +62,7 @@ public class fishCookerScript : MonoBehaviour
             playerData.fishStage[0] = -1;
             playerData.cookedFishCount++;
             playerData.fishTimers[0] = float.NaN;
+            playerData.hasCookedFish = true;
         }
         else
         {
@@ -73,7 +74,6 @@ public class fishCookerScript : MonoBehaviour
 
     public void fishRight()
     {
-
         if (playerData.fishStage[1] == 1) 
         {
             //start flip
@@ -87,6 +87,7 @@ public class fishCookerScript : MonoBehaviour
             playerData.fishStage[1] = -1;
             playerData.cookedFishCount++;
             playerData.fishTimers[1] = float.NaN;
+            playerData.hasCookedFish = true;
         }
         else
         {

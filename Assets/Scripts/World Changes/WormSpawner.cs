@@ -9,7 +9,6 @@ public class WormSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnWorms());
-        StartCoroutine(tip());
     }
 
     private IEnumerator SpawnWorms()
@@ -32,20 +31,6 @@ public class WormSpawner : MonoBehaviour
             }
 
             yield return new WaitForSeconds(0.001f);
-        }
-    }
-
-    private IEnumerator tip()
-    {
-        yield return new WaitForSeconds(15f);
-        while (!playerData.hasPickedUpAWorm)
-        {
-            if (playerData.curScene == "MainWorld")
-            {
-                toolTips.tip("Use E to collect worms! They might be good bait for fishing", 5f);
-            }
-
-            yield return new WaitForSeconds(20f); // Waits regardless of scene, avoids tight loop
         }
     }
 }
