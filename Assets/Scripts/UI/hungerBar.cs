@@ -45,6 +45,7 @@ public class hungerBar : MonoBehaviour
         //make the fill amount of the hunger bar equal to the hunger value
         hungerBarImage.GetComponent<UnityEngine.UI.Image>().fillAmount = physicalHungerLevel / 100f;
         
+        
     }
 
     private IEnumerator LoseHunger()
