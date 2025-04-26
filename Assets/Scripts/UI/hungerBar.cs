@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class hungerBar : MonoBehaviour
 {
@@ -62,7 +63,12 @@ public class hungerBar : MonoBehaviour
             }
             else
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 playerData.hungerValue = 0;
+                toolTips.changeScene();
+                playerData.curScene = "DeathScene";
+                SceneManager.LoadScene("DeathScene");
             }
             //Debug.Log("Hunger value: " + playerData.hungerValue);
         }

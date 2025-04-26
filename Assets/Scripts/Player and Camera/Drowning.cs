@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Drowning : MonoBehaviour
 {
@@ -50,6 +51,11 @@ public class Drowning : MonoBehaviour
             if (playerData.air <= 0)
             {
                 Debug.Log("Player has died due to drowning.");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                toolTips.changeScene();
+                playerData.curScene = "DeathScene";
+                SceneManager.LoadScene("DeathScene");
                 yield break; 
             }
         }
