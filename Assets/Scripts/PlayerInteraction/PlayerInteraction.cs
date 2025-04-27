@@ -219,6 +219,10 @@ public class PlayerInteraction : MonoBehaviour
                         playerData.hasEscaped = true;
                         Debug.Log("You've Escaped!");
                         toolTips.tip("You escaped!", 5f);
+
+                        toolTips.changeScene();
+                        playerData.curScene = "WinScene";
+                        SceneManager.LoadScene("WinScene");
                     }
                     else
                     {
