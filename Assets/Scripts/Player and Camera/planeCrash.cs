@@ -9,9 +9,9 @@ public class PlaneCrashPath : MonoBehaviour
 
 
     // Path positions
-    private Vector3 startPoint = new Vector3(138f, 105f, -812f);
-    private Vector3 cruisePoint = new Vector3(0f, 105f, -160f);
-    private Vector3 crashPoint = new Vector3(120f, 9.2f, 40.9f);
+    private Vector3 startPoint = new Vector3(138f, 105f, -2602f);
+    private Vector3 cruisePoint = new Vector3(0f, 105f, -260f);
+    private Vector3 crashPoint = new Vector3(120f, 12f, 40.9f);
 
     private float timer = 0f;
     private bool particlesTriggered = false;
@@ -21,12 +21,25 @@ public class PlaneCrashPath : MonoBehaviour
 
     public sceneSwitcher sceneSwitcher;
 
+    private float startShakeAt = 28f;
+    private float shakeDuration = 3f;
+    private float diveDuration = 5f;
+
+    private float startParticlesAt = 35f;
+    private float canvasFadeDuration = 2f;
+
+    private float timeBeforeDive;
+    private float totalTime;
+
     void Start()
     {
         transform.position = startPoint;
         transform.rotation = Quaternion.LookRotation(cruisePoint - startPoint);
         crashCanvasGroup.alpha = 0f;
         playerData.curScene = "CutScene";
+        timeBeforeDive = startShakeAt + shakeDuration;
+        totalTime = startShakeAt + shakeDuration + diveDuration + canvasFadeDuration;
+
     }
 
     void Update()
@@ -37,24 +50,24 @@ public class PlaneCrashPath : MonoBehaviour
         Quaternion rotation;
         float t;
 
-        if (timer < 8f)
+        if (timer < timeBeforeDive)
         {
             // Stage 1: Cruise phase, slight engine shake starts after 6s
-            t = Mathf.InverseLerp(0f, 8f, timer);
+            t = Mathf.InverseLerp(0f, timeBeforeDive, timer);
             position = Vector3.Lerp(startPoint, cruisePoint, t);
             Vector3 direction = (cruisePoint - startPoint).normalized;
             rotation = Quaternion.LookRotation(direction);
 
-            if (timer > 6f)
+            if (timer > startShakeAt)
             {
                 float shakeZ = Mathf.Sin(timer * 40f) * 6f;
                 rotation *= Quaternion.Euler(0f, 0f, shakeZ);
             }
         }
-        else if (timer < 13f)
+        else if (timer < 36f)
         {
             // Stage 2: Dive + barrel roll (5 seconds of fast descent with spin)
-            t = Mathf.InverseLerp(8f, 13f, timer);
+            t = Mathf.InverseLerp(timeBeforeDive, (totalTime - canvasFadeDuration), timer);
             position = Vector3.Lerp(cruisePoint, crashPoint, t);
             Vector3 direction = (crashPoint - cruisePoint).normalized;
             rotation = Quaternion.LookRotation(direction);
@@ -62,7 +75,7 @@ public class PlaneCrashPath : MonoBehaviour
             float rollZ = t * 1440f; // 4 full rolls in 5 seconds
             rotation *= Quaternion.Euler(0f, 0f, rollZ);
 
-            if (!particlesTriggered && timer >= 12.5f)
+            if (!particlesTriggered && timer >= startParticlesAt)
             {
                 TriggerCrashParticles();
                 particlesTriggered = true;
@@ -105,7 +118,7 @@ public class PlaneCrashPath : MonoBehaviour
 
     private IEnumerator FadeInCanvas()
     {
-        float duration = 2f; // Duration of the fade-in
+        float duration = canvasFadeDuration; // Duration of the fade-in
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
