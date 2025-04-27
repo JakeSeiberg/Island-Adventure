@@ -27,6 +27,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject boatMotor;
     public GameObject boatSail;
 
+    public AudioManager audioManager;
+
     void Start()
     {
         manageBoatItemsPickup();
@@ -70,10 +72,12 @@ public class PlayerInteraction : MonoBehaviour
         {
 
             if (input()){
+                
                 if (hit.collider.CompareTag("Worm")) 
                 {
                     if (!playerData.canSleep)
                     {
+                        audioManager.playPickup();
                         wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
                         if (wormScript != null)
                         {
@@ -88,6 +92,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("spearItem")) 
                 {
+                    audioManager.playPickup();
                     spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
                     if (spear != null)
                     {
@@ -97,6 +102,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("axeItem")) 
                 {
+                    audioManager.playPickup();
                     axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
                     axe.hasAxe();
                 }
@@ -124,6 +130,7 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         if (!playerData.canSleep)
                         {
+                            audioManager.playPickup();
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
 
@@ -155,11 +162,13 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("Leaf")) 
                 {
+                    audioManager.playPickup();
                     LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
                     leaf.leafCollected();
                 }
                 if (hit.collider.CompareTag("Log")) 
                 {
+                    audioManager.playPickup();
                     logScript log = hit.collider.GetComponent<logScript>();
                     log.logCollected();
                 }
@@ -186,6 +195,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("workStation"))
                 {
+                    audioManager.playPickup();
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
 
@@ -198,16 +208,19 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("BoatSail"))
                 {
+                    audioManager.playPickup();
                     playerData.boatSail = true;
                     boatSail.SetActive(false);
                 }
                 if (hit.collider.CompareTag("BoatMotor"))
                 {
+                    audioManager.playPickup();
                     playerData.boatMotor = true;
                     boatMotor.SetActive(false);
                 }
                 if (hit.collider.CompareTag("BoatGas"))
                 {
+                    audioManager.playPickup();
                     playerData.boatGas = true;
                     boatGas.SetActive(false);
                 }

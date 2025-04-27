@@ -199,6 +199,10 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 090e13aaa71234086b7889d6b3e65017, type: 3}
   - clip: {fileID: 8300000, guid: 14703b6657ac44b708a2efe4ec4361b4, type: 3}
   - clip: {fileID: 8300000, guid: ca624d1fd44f64bc683c1d2774651869, type: 3}
+  - clip: {fileID: 8300000, guid: ca624d1fd44f64bc683c1d2774651869, type: 3}
+  - clip: {fileID: 8300000, guid: ca624d1fd44f64bc683c1d2774651869, type: 3}
+  - clip: {fileID: 8300000, guid: 1c1b7be02349542ad85719f1eabc0903, type: 3}
+  sizzleSfx: []
   audioSrc: {fileID: 484726304}
 --- !u!4 &469085204
 Transform:

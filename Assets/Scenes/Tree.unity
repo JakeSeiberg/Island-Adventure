@@ -972,6 +972,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 090e13aaa71234086b7889d6b3e65017, type: 3}
   - clip: {fileID: 8300000, guid: 14703b6657ac44b708a2efe4ec4361b4, type: 3}
   - clip: {fileID: 8300000, guid: ca624d1fd44f64bc683c1d2774651869, type: 3}
+  - clip: {fileID: 8300000, guid: ca624d1fd44f64bc683c1d2774651869, type: 3}
+  - clip: {fileID: 8300000, guid: 0186180fdf8bb4e6ca6048556543923f, type: 3}
+  sizzleSfx: []
   audioSrc: {fileID: 506926582}
 --- !u!4 &838129225
 Transform:

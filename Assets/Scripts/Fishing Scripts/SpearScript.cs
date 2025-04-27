@@ -212,6 +212,7 @@ public class SpearUIScript : MonoBehaviour
             if (other.CompareTag("FishTarget"))
             {
                 fishScript.HitBySpear(); // Call the HitBySpear method on the FishScript
+                audioManager.playFishHit();
             }
         }
     }

@@ -53,6 +53,7 @@ public class AxeScript : MonoBehaviour
             {
                 // ❌ Missed input
                 chopCounter.RegisterMiss();
+                audioManager.playWhiff();
             }
         }
     }

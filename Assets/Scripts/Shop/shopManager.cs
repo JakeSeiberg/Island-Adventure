@@ -25,6 +25,8 @@ public class shopManager : MonoBehaviour
     public GameObject greyBed;
     public GameObject greyHull;
 
+    public AudioManager audioManager;
+
     void Start()
     {
         UpdateUI();
@@ -54,6 +56,7 @@ public class shopManager : MonoBehaviour
         }
         else
         {
+            audioManager.playBuzzer();
             Debug.Log("Not enough resources to buy a campfire.");
         }
     }
@@ -71,6 +74,7 @@ public class shopManager : MonoBehaviour
         }
         else
         {
+            audioManager.playBuzzer();
             Debug.Log("Not enough resources to buy a campfire.");
         }
     }
@@ -89,6 +93,7 @@ public class shopManager : MonoBehaviour
         }
         else
         {
+            audioManager.playBuzzer();
             Debug.Log("Not enough resources to buy a campfire.");
         }
     }
@@ -106,6 +111,7 @@ public class shopManager : MonoBehaviour
         }
         else
         {
+            audioManager.playBuzzer();
             Debug.Log("Not enough resources to buy a campfire.");
         }
     }
