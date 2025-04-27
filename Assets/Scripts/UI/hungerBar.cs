@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class hungerBar : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class hungerBar : MonoBehaviour
         //make the fill amount of the hunger bar equal to the hunger value
         hungerBarImage.GetComponent<UnityEngine.UI.Image>().fillAmount = physicalHungerLevel / 100f;
         
+        
     }
 
     private IEnumerator LoseHunger()
@@ -61,7 +63,12 @@ public class hungerBar : MonoBehaviour
             }
             else
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 playerData.hungerValue = 0;
+                toolTips.changeScene();
+                playerData.curScene = "DeathScene";
+                SceneManager.LoadScene("DeathScene");
             }
             //Debug.Log("Hunger value: " + playerData.hungerValue);
         }

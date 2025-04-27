@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Drowning : MonoBehaviour
 {
-    private float air = 100f;
     private bool isDrowning = false;
     private float drowningYLevel = -2.8f;
 
@@ -33,7 +33,7 @@ public class Drowning : MonoBehaviour
         else
         {
             isDrowning = false;
-            air = 100f; 
+            playerData.air = 100f; 
         }
     }
 
@@ -41,25 +41,26 @@ public class Drowning : MonoBehaviour
     {
         while (PlayerMovement.currentPlayerPos.y < drowningYLevel)
         {
-            airBarFull.GetComponent<UnityEngine.UI.Image>().fillAmount = air / 100f;
+            airBarFull.GetComponent<UnityEngine.UI.Image>().fillAmount = playerData.air / 100f;
             airBarFull.SetActive(true);
             airBarEmpty.SetActive(true);
             // Decrease air over 15 seconds
             yield return new WaitForSeconds(0.15f); // 15 seconds / 100 air = 0.15 seconds per decrement
-            air -= 1f;
+            playerData.air -= 1f;
 
-            if (air <= 0)
+            if (playerData.air <= 0)
             {
                 Debug.Log("Player has died due to drowning.");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                toolTips.changeScene();
+                playerData.curScene = "DeathScene";
+                SceneManager.LoadScene("DeathScene");
                 yield break; 
             }
-
-            
-
-
         }
 
-        air = 100f;
+        playerData.air = 100f;
         isDrowning = false;
         //hide airBar gameobject
         airBarFull.SetActive(false);

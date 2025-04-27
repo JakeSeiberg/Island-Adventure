@@ -52,6 +52,7 @@ public class playerData
     public static bool hasBoughtHull;
 
     public static float hungerValue;
+    public static float air;
 
     public static bool day;
 
@@ -124,6 +125,7 @@ public class playerData
         curScene = "MainWorld";
 
         hungerValue = 100f;
+        air = 100f;
     }
 
     static playerData()

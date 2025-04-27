@@ -60,7 +60,6 @@ public class toolTips : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Sleep score: " + playerData.sleepScore + " Sleep state: " + playerData.curSkybox);
         if (!isShowingTip && tooltipQueue.Count > 0)
         {
             string nextTip = tooltipQueue[0];
