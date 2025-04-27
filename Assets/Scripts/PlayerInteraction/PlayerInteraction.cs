@@ -222,6 +222,7 @@ public class PlayerInteraction : MonoBehaviour
 
                         toolTips.changeScene();
                         playerData.curScene = "WinScene";
+                        playerData.sleepScore = 100;
                         SceneManager.LoadScene("WinScene");
                     }
                     else
