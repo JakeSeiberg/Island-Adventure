@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class BoatWinscreenScript : MonoBehaviour
 {
-    private Vector3 startPosition = new Vector3(86.97f, 1.553683f, 22.77695f);
-    private Vector3 endPosition = new Vector3(86.97f, 1.553683f, -165f); // You originally wanted way further out
+    private Vector3 startPosition = new Vector3(21.3f, 1.68f, 63.86259f);
+    private Vector3 endPosition = new Vector3(-128f, 1.68f, -146.6f); // You originally wanted way further out
     private float totalTravelTime = 32f; // Total journey time
     private float fadeStartTime = 20f;   // When fade starts
     private float fadeDuration = 10f;    // Fade time
