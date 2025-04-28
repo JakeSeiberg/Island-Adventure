@@ -201,7 +201,7 @@ public class toolTips : MonoBehaviour
             while (!playerData.hasOpenedShop)
             {
                 yield return new WaitForSeconds(5f);
-                if (playerData.curScene == "MainWorld") toolTips.tip("You can turn your wood and leaves into a bed at a work station. Maybe there's one by the ____", 8f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You can turn your wood and leaves into a bed at a work station. Maybe there's one by the beachside ruins", 8f);
                 yield return new WaitForSeconds(20f);
             }
 
