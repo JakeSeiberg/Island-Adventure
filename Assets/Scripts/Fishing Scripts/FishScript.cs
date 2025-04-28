@@ -94,11 +94,10 @@ public class FishScript : MonoBehaviour
         // Pick a random target point inside the box
         Vector3 targetPoint = new Vector3(
             Random.Range(targetMinX, targetMaxX),
-            yPos,  // Keep the same Y-level
+            yPos,  
             Random.Range(targetMinZ, targetMaxZ)
         );
 
-        // Make the fish face the target point
         transform.LookAt(targetPoint);
     }
 
@@ -106,17 +105,15 @@ public class FishScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        // If the timer exceeds the set time, choose a new direction
+        // If timer finishes, change direction
         if (timer >= changeDirectionTime)
         {
             SetNewDirection();
             timer = 0;
         }
 
-        // Smoothly adjust the direction over time
         direction = Vector3.Lerp(direction, targetDirection, Time.deltaTime * turnSpeed).normalized;
 
-        // Smoothly rotate towards the new direction
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -124,7 +121,6 @@ public class FishScript : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
         }
 
-        // Move the fish forward in the direction it is facing
         transform.position += transform.forward * (fishSpeed * fishSpeedMultiplier) * Time.deltaTime;
         
         
