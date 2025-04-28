@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class WinCutsceneCamera : MonoBehaviour
 {
-    public float sensitivity = 2.0f;
-    public float maxYawAngle = 60f; // 60 degrees left/right
-    public float maxPitchAngle = 80f; // 80 degrees up/down (almost vertical)
+    private float sensitivity = 2.0f;
+    private float maxYawAngle = 130f; // 60 degrees left/right
+    private float maxPitchAngle = 80f; // 80 degrees up/down (almost vertical)
 
     private float yaw;   // left/right
     private float pitch; // up/down
