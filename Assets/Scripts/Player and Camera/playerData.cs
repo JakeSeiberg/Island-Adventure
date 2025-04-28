@@ -32,9 +32,6 @@ public class playerData
     public static bool hasEscaped = false;
     public static bool hasSlept = false;
 
-
-    
-
     public static float fireValue = 0f;
     public static bool fireBurning = false;
 

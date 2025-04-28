@@ -249,6 +249,16 @@ public class PlayerInteraction : MonoBehaviour
                     Debug.Log("Sleeping");
                     bedScript.interact();
                 }
+                if (hit.collider.CompareTag("CityBiker"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                    playerData.playerRotation = PlayerCamera.currentRotation;
+                    toolTips.changeScene();
+                    playerData.curScene = "CityBikerMenu";
+                    SceneManager.LoadScene("CityBikerMenu");
+                }
             }
             else{
                 // Handle outline logic
