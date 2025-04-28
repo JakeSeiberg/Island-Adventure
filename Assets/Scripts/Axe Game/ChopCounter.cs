@@ -55,12 +55,12 @@ public class ChopCounter : MonoBehaviour
                 axeController.enabled = false;
 
             if (treeToFall != null)
-                StartCoroutine(FallTree());
+                StartCoroutine(DoFallThenChange());
 
             if (accuracyBarMover != null)
                 accuracyBarMover.enabled = false;
-            
-            toolTips.tip("Tree Chopped! Press [ESC]", 100f);
+
+            //toolTips.tip("Tree Chopped! Press [ESC]", 100f);
         }    
     }
 
@@ -106,6 +106,17 @@ public class ChopCounter : MonoBehaviour
         }
 
         treeToFall.rotation = endRotation;
+    }
+    private IEnumerator SwitchScene(){
+        sceneSwitcher.changeScene();
+        yield break;
+    }
+
+
+    IEnumerator DoFallThenChange()
+    {
+        yield return StartCoroutine(FallTree());
+        yield return StartCoroutine(SwitchScene());
     }
 
 }
