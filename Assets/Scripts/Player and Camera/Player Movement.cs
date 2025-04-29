@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System.Collections;
-using TMPro;
+
 
 public class PlayerMovement : MonoBehaviour
 {
