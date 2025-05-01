@@ -28,7 +28,7 @@ public class SleepingPlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        Vector3 initialLookRotation = new Vector3(0f, 90f, 0f);
+        Vector3 initialLookRotation = new Vector3(0f, 220f, 0f);
 
         transform.rotation = Quaternion.Euler(initialLookRotation);
 

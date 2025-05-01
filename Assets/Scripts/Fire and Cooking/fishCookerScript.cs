@@ -18,7 +18,7 @@ public class FishCookerScript : MonoBehaviour
 
     void Start()
     {
-        fishTimerLength = 20f;
+        fishTimerLength = 40f;
     }
 
     public void interact()
