@@ -28,6 +28,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject boatSail;
 
     public AudioManager audioManager;
+    
+    private RaycastHit hit; 
 
     void Start()
     {
@@ -63,7 +65,6 @@ public class PlayerInteraction : MonoBehaviour
         tempPosition.y += rayHeightOffset;
         tempPosition += orientation.forward * 0.25f;
         Ray ray = new Ray(tempPosition, playerCamera.forward);
-        RaycastHit hit;
 
 //        Debug.DrawRay(tempPosition, playerCamera.forward * rayDistance, Color.red, 1f);
 
@@ -75,115 +76,41 @@ public class PlayerInteraction : MonoBehaviour
                 
                 if (hit.collider.CompareTag("Worm")) 
                 {
-                    if (!playerData.canSleep)
-                    {
-                        audioManager.playPickup();
-                        wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
-                        if (wormScript != null)
-                        {
-                            playerData.hasPickedUpAWorm = true;
-                            wormScript.wormCollected();
-                        }
-                        playerData.sleepScore += 2;
-                    }
-                    else{
-                        toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
-                    }
+                    clickWorm();
                 }
                 if (hit.collider.CompareTag("spearItem")) 
                 {
-                    audioManager.playPickup();
-                    spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
-                    if (spear != null)
-                    {
-                        playerData.hasSpear = true;
-                        spear.hasSpear();
-                    }
+                    clickSpear();
                 }
                 if (hit.collider.CompareTag("axeItem")) 
                 {
-                    audioManager.playPickup();
-                    axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
-                    axe.hasAxe();
+                    clickAxe();
                 }
                 if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep) //playerData.curSkybox != 4)
                 {
-                    if (!playerData.canSleep)
-                    {
-                        playerData.hasGoneFishing = true;
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
-
-                        playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                        playerData.playerRotation = PlayerCamera.currentRotation;
-                        toolTips.changeScene();
-                        playerData.curScene = "Fishing";
-                        SceneManager.LoadScene("Fishing");
-                    }
-                    else{
-                        toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
-                    }
+                    clickSpearFishingSpot();
                 }
                 if (hit.collider.CompareTag("Tree")) 
                 {
-                    if (playerData.hasAxe)// && !playerData.canSleep)
-                    {
-                        if (!playerData.canSleep)
-                        {
-                            audioManager.playPickup();
-                            Cursor.lockState = CursorLockMode.None;
-                            Cursor.visible = true;
-
-                            playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                            playerData.playerRotation = PlayerCamera.currentRotation;
-                            playerData.hasEnteredTreeGame = true;
-
-                            playerData.treeChopped = false;
-                            TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
-                            if (treeIDScript != null)
-                            {
-                                playerData.currentTreeID = treeIDScript.treeID;
-                            }
-                            toolTips.changeScene();
-                            playerData.curScene = "Tree";
-                            if (!playerData.hasPlayedTreeGame)
-                            {
-                                toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
-                                playerData.hasPlayedTreeGame = true;
-                            }
-                            playerData.sleepScore += 15;
-                            SceneManager.LoadScene("Tree");
-                        }
-                        else
-                        {
-                            toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
-                        }
-                    }
+                    clickTree();
                 }
                 if (hit.collider.CompareTag("Leaf")) 
                 {
-                    audioManager.playPickup();
-                    LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
-                    leaf.leafCollected();
+                    clickLeaf();
                 }
                 if (hit.collider.CompareTag("Log")) 
                 {
-                    audioManager.playPickup();
-                    logScript log = hit.collider.GetComponent<logScript>();
-                    log.logCollected();
+                    clickLog();
                 }
                 
                 if (hit.collider.CompareTag("Campfire")) 
                 {
-                    CampfireScript.interact();
-                    playerData.hasBurnedWood = true;
+                    clickCampfire();
                 }
 
                 if (hit.collider.CompareTag("CampfireGrate"))
                 {
-                    Debug.Log("Grate interacted");
-                    fishCookerScript.interact();
-                    playerData.hasPlacedFish = true;
+                    clickCampfireGrate();
                 }
                 if (hit.collider.CompareTag("fishLeft"))
                 {
@@ -195,54 +122,23 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("workStation"))
                 {
-                    audioManager.playPickup();
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-
-                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                    playerData.playerRotation = PlayerCamera.currentRotation;
-                    playerData.hasOpenedShop = true;
-                    toolTips.changeScene();
-                    playerData.curScene = "Shop";
-                    SceneManager.LoadScene("Shop");
+                    clickWorkstation();
                 }
                 if (hit.collider.CompareTag("BoatSail"))
                 {
-                    audioManager.playPickup();
-                    playerData.boatSail = true;
-                    boatSail.SetActive(false);
+                    clickBoatSail();
                 }
                 if (hit.collider.CompareTag("BoatMotor"))
                 {
-                    audioManager.playPickup();
-                    playerData.boatMotor = true;
-                    boatMotor.SetActive(false);
+                    clickBoatMotor();
                 }
                 if (hit.collider.CompareTag("BoatGas"))
                 {
-                    audioManager.playPickup();
-                    playerData.boatGas = true;
-                    boatGas.SetActive(false);
+                    clickBoatGas();
                 }
                 if (hit.collider.CompareTag("GetawayBoat"))
                 {
-                    Debug.Log("Boat Hit");
-                    if (playerData.boatHull && playerData.boatSail && playerData.boatMotor && playerData.boatGas)
-                    {
-                        playerData.hasEscaped = true;
-                        Debug.Log("You've Escaped!");
-                        toolTips.tip("You escaped!", 5f);
-
-                        toolTips.changeScene();
-                        playerData.curScene = "WinScene";
-                        playerData.sleepScore = 100;
-                        SceneManager.LoadScene("WinScene");
-                    }
-                    else
-                    {
-                        Debug.Log("Player Has Not Escaped!");
-                        toolTips.tip("You need to find more parts!", 5f);
-                    }
+                    clickGetawayBoat();
                 }
                 if (hit.collider.CompareTag("Bed"))
                 {
@@ -251,17 +147,10 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (hit.collider.CompareTag("CityBiker"))
                 {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                    playerData.playerPosition = PlayerMovement.currentPlayerPos;
-                    playerData.playerRotation = PlayerCamera.currentRotation;
-                    toolTips.changeScene();
-                    playerData.curScene = "CityBikerMenu";
-                    SceneManager.LoadScene("CityBikerMenu");
+                    clickCityBiker();
                 }
             }
             else{
-                // Handle outline logic
                 if (hit.collider.CompareTag("Tree"))
                 {
                     if (!playerData.hasAxe)
@@ -277,33 +166,23 @@ public class PlayerInteraction : MonoBehaviour
                     }
                 }
 
-                    // Check if the object has an Outline component
                 Outline outline = hit.collider.GetComponent<Outline>();
                 if (outline != null)
                 {
-                    // Enable the outline on the currently hit object
                     if (currentOutline != outline)
                     {
                         if (currentOutline != null)
                         {
-                            currentOutline.enabled = false; // Disable the previous outline
+                            currentOutline.enabled = false; 
                         }
-                        currentOutline = outline; // Update the current outline
-                        currentOutline.enabled = true; // Enable the new outline
+                        currentOutline = outline; 
+                        currentOutline.enabled = true; 
 
-                        if (currentOutline.gameObject.CompareTag("Campfire") || currentOutline.gameObject.CompareTag("fishLeft") || currentOutline.gameObject.CompareTag("fishRight") || currentOutline.gameObject.CompareTag("CampfireGrate"))
-                        {
-                            fireTimerScript.isActive = true;
-                        }
-                        else
-                        {
-                            fireTimerScript.isActive = false;
-                        }
+                        enableFireTimer();
                     }
                 }
                 else
                 {
-                    // If no outline component is found, disable the current outline
                     if (currentOutline != null)
                     {
                         currentOutline.enabled = false;
@@ -351,4 +230,205 @@ public class PlayerInteraction : MonoBehaviour
             boatGas.SetActive(true);
         }
     }
+
+    private void clickWorm()
+    {
+        if (!playerData.canSleep)
+        {
+            audioManager.playPickup();
+            wormInteract wormScript = hit.collider.GetComponent<wormInteract>();
+            if (wormScript != null)
+            {
+                playerData.hasPickedUpAWorm = true;
+                wormScript.wormCollected();
+            }
+            playerData.sleepScore += 2;
+        }
+        else{
+            toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
+        }
+    }
+
+    private void clickSpear()
+    {
+        audioManager.playPickup();
+        spearPickupScript spear = hit.collider.GetComponent<spearPickupScript>();
+        if (spear != null)
+        {
+            playerData.hasSpear = true;
+            spear.hasSpear();
+        }
+    }
+
+    private void clickAxe()
+    {
+        audioManager.playPickup();
+        axePickupScript axe = hit.collider.GetComponent<axePickupScript>();
+        axe.hasAxe();
+    }
+
+    private void clickSpearFishingSpot()
+    {
+        if (!playerData.canSleep)
+        {
+            playerData.hasGoneFishing = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            playerData.playerPosition = PlayerMovement.currentPlayerPos;
+            playerData.playerRotation = PlayerCamera.currentRotation;
+            toolTips.changeScene();
+            playerData.curScene = "Fishing";
+            SceneManager.LoadScene("Fishing");
+        }
+        else{
+            toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
+        }
+    }
+
+    private void clickTree()
+    {
+        if (playerData.hasAxe)// && !playerData.canSleep)
+        {
+            if (!playerData.canSleep)
+            {
+                audioManager.playPickup();
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                playerData.playerPosition = PlayerMovement.currentPlayerPos;
+                playerData.playerRotation = PlayerCamera.currentRotation;
+                playerData.hasEnteredTreeGame = true;
+
+                playerData.treeChopped = false;
+                TreeID treeIDScript = hit.collider.GetComponent<TreeID>();
+                if (treeIDScript != null)
+                {
+                    playerData.currentTreeID = treeIDScript.treeID;
+                }
+                toolTips.changeScene();
+                playerData.curScene = "Tree";
+                if (!playerData.hasPlayedTreeGame)
+                {
+                    toolTips.delayedToolTip("Press Spacebar while the white bar is in the green area to chop the tree",5f);
+                    playerData.hasPlayedTreeGame = true;
+                }
+                playerData.sleepScore += 15;
+                SceneManager.LoadScene("Tree");
+            }
+            else
+            {
+                toolTips.tip("You're starting to get tired, Maybe you should get some rest", 5f);
+            }
+        }
+    }
+
+    private void clickLeaf()
+    {
+        audioManager.playPickup();
+        LeafFallingScript leaf = hit.collider.GetComponent<LeafFallingScript>();
+        leaf.leafCollected();
+    }
+
+    private void clickLog()
+    {
+        audioManager.playPickup();
+        logScript log = hit.collider.GetComponent<logScript>();
+        log.logCollected();
+    }
+
+    private void clickCampfire()
+    {
+        CampfireScript.interact();
+        playerData.hasBurnedWood = true;
+    }
+
+    private void clickCampfireGrate()
+    {
+        Debug.Log("Grate interacted");
+        fishCookerScript.interact();
+        playerData.hasPlacedFish = true;
+    }
+
+    private void clickWorkstation()
+    {
+        audioManager.playPickup();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        playerData.playerPosition = PlayerMovement.currentPlayerPos;
+        playerData.playerRotation = PlayerCamera.currentRotation;
+        playerData.hasOpenedShop = true;
+        toolTips.changeScene();
+        playerData.curScene = "Shop";
+        SceneManager.LoadScene("Shop");
+    }
+
+    private void clickBoatSail()
+    {
+        audioManager.playPickup();
+        playerData.boatSail = true;
+        boatSail.SetActive(false);
+    }
+
+    private void clickBoatMotor()
+    {
+        audioManager.playPickup();
+        playerData.boatMotor = true;
+        boatMotor.SetActive(false);
+    }
+
+    private void clickBoatGas()
+    {
+        audioManager.playPickup();
+        playerData.boatGas = true;
+        boatGas.SetActive(false);
+    }
+
+    private void clickGetawayBoat()
+    {
+        Debug.Log("Boat Hit");
+        if (playerData.boatHull && playerData.boatSail && playerData.boatMotor && playerData.boatGas)
+        {
+            playerData.hasEscaped = true;
+            Debug.Log("You've Escaped!");
+            toolTips.tip("You escaped!", 5f);
+
+            toolTips.changeScene();
+            playerData.curScene = "WinScene";
+            playerData.sleepScore = 100;
+            SceneManager.LoadScene("WinScene");
+        }
+        else
+        {
+            Debug.Log("Player Has Not Escaped!");
+            toolTips.tip("You need to find more parts!", 5f);
+        }
+    }
+
+    private void clickCityBiker()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        playerData.playerPosition = PlayerMovement.currentPlayerPos;
+        playerData.playerRotation = PlayerCamera.currentRotation;
+        toolTips.changeScene();
+        playerData.curScene = "CityBikerMenu";
+        SceneManager.LoadScene("CityBikerMenu");
+    }
+
+    private void enableFireTimer()
+    {
+        if (currentOutline.gameObject.CompareTag("Campfire") || currentOutline.gameObject.CompareTag("fishLeft") || currentOutline.gameObject.CompareTag("fishRight") || currentOutline.gameObject.CompareTag("CampfireGrate"))
+        {
+            fireTimerScript.isActive = true;
+        }
+        else
+        {
+            fireTimerScript.isActive = false;
+        }
+    }
+
+
+
 }
