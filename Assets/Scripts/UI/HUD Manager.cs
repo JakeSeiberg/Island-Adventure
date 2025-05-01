@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
@@ -13,8 +12,6 @@ public class HUDManager : MonoBehaviour
 
     public TMP_Text spear;
     public TMP_Text axe;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void FixedUpdate()
     {
@@ -22,7 +19,6 @@ public class HUDManager : MonoBehaviour
         woodNum.SetText(": " + playerData.woodCount.ToString());
         fishNum.SetText(": " + playerData.fishCount.ToString());
         leafNum.SetText(": " + playerData.leafCount.ToString());
-        //cookedFishNum.SetText("cookedFish: " + playerData.cookedFishCount.ToString());
         cookedFishNum.SetText("cookedFish: " + playerData.cookedFishCount.ToString());
 
         spear.SetText("Spear: " + playerData.hasSpear.ToString());

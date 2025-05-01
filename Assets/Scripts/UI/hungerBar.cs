@@ -4,34 +4,30 @@ using UnityEngine.SceneManagement;
 
 public class hungerBar : MonoBehaviour
 {
-    public static hungerBar Instance;
+    public static hungerBar instance;
     public GameObject hungerBarImage;
 
     private float physicalHungerLevel;
 
     void Awake()
     {
-        // Check if an instance already exists
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
-            Destroy(gameObject); // Destroy this GameObject if another instance exists
+            Destroy(gameObject);
             return;
         }
 
-        // Set this as the Singleton instance
-        Instance = this;
+        instance = this;
 
-        // Make this GameObject persist across scene loads
         DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(LoseHunger());
+        StartCoroutine(loseHunger());
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if (playerData.hungerValue >= 100)
@@ -43,15 +39,13 @@ public class hungerBar : MonoBehaviour
             physicalHungerLevel = playerData.hungerValue;
         }
 
-        //make the fill amount of the hunger bar equal to the hunger value
         hungerBarImage.GetComponent<UnityEngine.UI.Image>().fillAmount = physicalHungerLevel / 100f;
         
         
     }
 
-    private IEnumerator LoseHunger()
+    private IEnumerator loseHunger()
     {
-        //wait until playerData.hasPlacedFish && playerData.hasBurnedWood
         yield return new WaitUntil(() => playerData.hasPlacedFish && playerData.hasBurnedWood);
 
         while (true)
@@ -70,7 +64,6 @@ public class hungerBar : MonoBehaviour
                 playerData.curScene = "DeathScene";
                 SceneManager.LoadScene("DeathScene");
             }
-            //Debug.Log("Hunger value: " + playerData.hungerValue);
         }
     }
 
