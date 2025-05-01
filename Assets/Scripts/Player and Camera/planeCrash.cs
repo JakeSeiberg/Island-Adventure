@@ -19,7 +19,7 @@ public class PlaneCrashPath : MonoBehaviour
     public CanvasGroup crashCanvasGroup;
     private bool fadeCanvas = false;
 
-    public sceneSwitcher sceneSwitcher;
+    public SceneSwitcher SceneSwitcher;
 
     private float startShakeAt = 28f;
     private float shakeDuration = 3f;
@@ -137,6 +137,6 @@ public class PlaneCrashPath : MonoBehaviour
             crashCanvasGroup.alpha = 1f;
         }
 
-        sceneSwitcher.changeScene();
+        SceneSwitcher.changeScene();
     }
 }

@@ -11,8 +11,8 @@ public class ChopCounter : MonoBehaviour
     public AxeScript axeController;
     public AccuracyBarMover accuracyBarMover;
 
-    public Transform treeToFall; // Drag the tree GameObject here
-    public float fallDuration = 3f; // How long the fall should take
+    public Transform treeToFall; 
+    public float fallDuration = 3f; 
 
     public int hits = 0;
     public int hitsNeeded = 5;
@@ -40,7 +40,7 @@ public class ChopCounter : MonoBehaviour
 
         if (accuracyBarMover != null && hits < hitsNeeded)
         {
-            accuracyBarMover.speed += 1f; // Increase speed by 1 after each successful chop
+            accuracyBarMover.speed += 1f; 
         }
 
         if (hits == hitsNeeded)
@@ -60,7 +60,6 @@ public class ChopCounter : MonoBehaviour
             if (accuracyBarMover != null)
                 accuracyBarMover.enabled = false;
 
-            //toolTips.tip("Tree Chopped! Press [ESC]", 100f);
         }    
     }
 
@@ -108,7 +107,7 @@ public class ChopCounter : MonoBehaviour
         treeToFall.rotation = endRotation;
     }
     private IEnumerator SwitchScene(){
-        sceneSwitcher.changeScene();
+        SceneSwitcher.changeScene();
         yield break;
     }
 

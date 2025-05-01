@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WormSpawner : MonoBehaviour
 {
-    public GameObject wormPrefab; // Assign the worm prefab in the Inspector
+    public GameObject wormPrefab; 
     public LayerMask groundLayer;
 
     void Start()
@@ -23,7 +23,6 @@ public class WormSpawner : MonoBehaviour
             Ray ray = new Ray(rayOrigin, Vector3.down);
             RaycastHit hit;
 
-            // Only hit the groundLayer
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
             {
                 Vector3 spawnPosition = hit.point + Vector3.up * 0.05f;

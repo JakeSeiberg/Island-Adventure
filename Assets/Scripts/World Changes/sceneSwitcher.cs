@@ -3,14 +3,12 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class sceneSwitcher : MonoBehaviour
+public class SceneSwitcher : MonoBehaviour
 {
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Cur scene: " + playerData.curScene);
-        //when escape is pressed, switch scene to "TYLER NEW SCENE"
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (playerData.curScene != "CutScene")
