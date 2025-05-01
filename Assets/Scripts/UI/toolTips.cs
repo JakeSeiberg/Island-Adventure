@@ -23,6 +23,8 @@ public class toolTips : MonoBehaviour
     private List<float> durationQueue = new List<float>();
     private bool isShowingTip = false;
 
+    public CanvasGroup toolTipCanvas;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -325,4 +327,17 @@ public class toolTips : MonoBehaviour
                 toolTips.tip("Press Escape to stop fishing", 5);
         }
     }
+
+    void FixedUpdate()
+    {
+        if (playerData.toolTipsToggle)
+        {
+            toolTipCanvas.alpha = 1f;
+        }
+        else
+        {
+            toolTipCanvas.alpha = 0f;
+        }
+    }
+
 }
