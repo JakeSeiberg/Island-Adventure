@@ -278,13 +278,6 @@ public class toolTips : MonoBehaviour
                 yield return new WaitForSeconds(60f);
             }
 
-            while (!playerData.hasBoughtShelter)
-            {
-                yield return new WaitForSeconds(5f);
-                if (playerData.curScene == "MainWorld") toolTips.tip("You can now progress your island! Explore and work on building the shelter!", 7f);
-                yield return new WaitForSeconds(60f);
-            }
-
             while (!playerData.hasBoughtHull)
             {
                 yield return new WaitForSeconds(5f);

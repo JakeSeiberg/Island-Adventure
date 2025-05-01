@@ -33,6 +33,7 @@ public class PlaneCrashPath : MonoBehaviour
 
     void Start()
     {
+        playerData.newInstance();
         transform.position = startPoint;
         transform.rotation = Quaternion.LookRotation(cruisePoint - startPoint);
         crashCanvasGroup.alpha = 0f;
@@ -131,7 +132,6 @@ public class PlaneCrashPath : MonoBehaviour
         {
             crashCanvasGroup.alpha = 1f;
         }
-
         SceneSwitcher.changeScene();
     }
 }
