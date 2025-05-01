@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class shopManager : MonoBehaviour
+public class ShopManager : MonoBehaviour
 {
 
     [Header("Resources Text")]

@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainWorld.unity
     guid: 746f96fb5d9b54588b36658428e21254
   - enabled: 1
-    path: Assets/Fishing.unity
+    path: Assets/Scenes/Fishing.unity
     guid: 5ef0d037b934642a5b52bbce65fd92f9
   - enabled: 1
     path: Assets/Scenes/Tree.unity

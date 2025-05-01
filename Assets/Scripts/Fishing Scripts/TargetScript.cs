@@ -13,7 +13,6 @@ public class TargetScript : MonoBehaviour
     {
         print("AHH");
         targetPos.y = 25;
-        //print out x y and z of targetPos
         Debug.Log("Target Position: " + targetPos.x + ", " + targetPos.y + ", " + targetPos.z);
         transform.position = targetPos;
         GetComponent<Renderer>().enabled = true;

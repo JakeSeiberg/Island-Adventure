@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WormManager : MonoBehaviour
 {
-    public GameObject wormPrefab; // Prefab for the worm
+    public GameObject wormPrefab; 
     private bool canSpawnWorms = true;
     public static float wormMultiplier = 1f;
     public static float wormSpawnMultiplier = 1f;
@@ -74,7 +74,6 @@ public class WormManager : MonoBehaviour
         wormSpawnMultiplier = 2f;
         fishManager.restartFishSpawning();
         yield return new WaitForSeconds(12f);
-//        Debug.Log("Worm boost ended");
         wormMultiplier = 1f;
         wormSpawnMultiplier = 1f;
         canSpawnWorms = true;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class shopPurchases : MonoBehaviour
+public class ShopPurchases : MonoBehaviour
 {
 
     public string item;
@@ -13,7 +13,6 @@ public class shopPurchases : MonoBehaviour
         {
             if (!playerData.hasBoughtCampfire)
             {
-                //hide gameobject
                 gameObject.SetActive(false);
             }
         }
@@ -21,7 +20,6 @@ public class shopPurchases : MonoBehaviour
         {
             if (!playerData.hasBoughtShelter)
             {
-                //hide gameobject
                 gameObject.SetActive(false);
             }
         }
@@ -29,7 +27,6 @@ public class shopPurchases : MonoBehaviour
         {
             if (!playerData.hasBoughtBed)
             {
-                //hide gameobject
                 gameObject.SetActive(false);
             }
         }
