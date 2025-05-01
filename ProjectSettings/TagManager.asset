@@ -28,6 +28,7 @@ TagManager:
   - Bed
   - DontDestroyOnLoad
   - CityBiker
+  - Radio
   layers:
   - Default
   - TransparentFX

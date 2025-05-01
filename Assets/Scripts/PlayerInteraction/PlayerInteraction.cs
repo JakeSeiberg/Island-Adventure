@@ -40,6 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         interact();
+        Debug.Log("Radio: " + playerData.radioOn);
     }
 
     void FixedUpdate()
@@ -146,6 +147,10 @@ public class PlayerInteraction : MonoBehaviour
                 if (hit.collider.CompareTag("CityBiker"))
                 {
                     clickCityBiker();
+                }
+                if (hit.collider.CompareTag("Radio"))
+                {
+                    toggleRadio();
                 }
             }
             else{
@@ -422,6 +427,16 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-
+    private void toggleRadio()
+    {
+        if (playerData.radioOn)
+        {
+            playerData.radioOn = false;
+        }
+        else
+        {
+            playerData.radioOn = true;
+        }
+    }
 
 }

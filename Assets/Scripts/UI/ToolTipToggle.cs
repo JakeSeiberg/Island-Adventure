@@ -23,8 +23,4 @@ public class ToolTipToggle : MonoBehaviour
     {
         toolTipsToggle.onValueChanged.RemoveListener(OnToggleChanged);
     }
-    void Update()
-    {
-        Debug.Log(playerData.toolTipsToggle);   
-    }
 }

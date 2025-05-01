@@ -64,6 +64,8 @@ public class playerData
 
     public static bool toolTipsToggle;
 
+    public static bool radioOn = false;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -124,6 +126,8 @@ public class playerData
         curScene = "MainWorld";
 
         toolTipsToggle = true;
+
+        radioOn = false;
 
         hungerValue = 100f;
         air = 100f;
