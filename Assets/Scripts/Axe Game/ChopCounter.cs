@@ -45,6 +45,8 @@ public class ChopCounter : MonoBehaviour
 
         if (hits == hitsNeeded)
         {
+            if (accuracyBarMover != null)
+                accuracyBarMover.enabled = false;
 
             audioManager.playTree();
 
@@ -57,8 +59,7 @@ public class ChopCounter : MonoBehaviour
             if (treeToFall != null)
                 StartCoroutine(DoFallThenChange());
 
-            if (accuracyBarMover != null)
-                accuracyBarMover.enabled = false;
+            
 
         }    
     }
