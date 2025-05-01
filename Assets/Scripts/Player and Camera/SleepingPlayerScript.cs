@@ -28,19 +28,16 @@ public class SleepingPlayerScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        // Set the initial rotation to look 90 degrees to the right
         Vector3 initialLookRotation = new Vector3(0f, 90f, 0f);
 
         transform.rotation = Quaternion.Euler(initialLookRotation);
 
-        // Initialize rotation variables
         xRotation = initialLookRotation.x;
         yRotation = initialLookRotation.y;
         initialYRotation = yRotation;
 
-        // Set CanvasGroup alpha to 0
         blackOut.alpha = 0f;
-        StartCoroutine(FadeInBlackOut());
+        StartCoroutine(fadeInBlackOut());
     }
 
     void Update()
@@ -51,10 +48,8 @@ public class SleepingPlayerScript : MonoBehaviour
         yRotation += mouseX;
         xRotation -= mouseY;
 
-        // Clamp vertical angle (can't look fully down)
         xRotation = Mathf.Clamp(xRotation, verticalLookLimitMin, verticalLookLimitMax);
 
-        // Clamp horizontal angle relative to initial direction
         float horizontalOffset = Mathf.DeltaAngle(initialYRotation, yRotation);
         horizontalOffset = Mathf.Clamp(horizontalOffset, -horizontalLookLimit, horizontalLookLimit);
         yRotation = initialYRotation + horizontalOffset;
@@ -64,10 +59,10 @@ public class SleepingPlayerScript : MonoBehaviour
 
     }
 
-    private IEnumerator FadeInBlackOut()
+    private IEnumerator fadeInBlackOut()
     {
         yield return new WaitForSeconds(2f);
-        float fadeDuration = 2f; // Duration of the fade in seconds
+        float fadeDuration = 2f;
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
@@ -77,8 +72,8 @@ public class SleepingPlayerScript : MonoBehaviour
             yield return null;
         }
 
-        blackOut.alpha = 1f; // Ensure it's fully opaque at the end
-        yield return new WaitForSeconds(2f); // Wait for 1 second before fading out
+        blackOut.alpha = 1f;
+        yield return new WaitForSeconds(2f);
         playerData.sleepScore = 0;
         playerData.canSleep = false;
         sceneSwitcher.changeScene();

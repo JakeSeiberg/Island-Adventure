@@ -17,9 +17,9 @@ public class PlayerInteraction : MonoBehaviour
 
     public CampfireScript CampfireScript;
 
-    public fishCookerScript fishCookerScript;
+    public FishCookerScript fishCookerScript;
 
-    public fireTimerUIScript fireTimerScript;
+    public FireTimerUIScript fireTimerScript;
 
     public BedScript bedScript;
 
