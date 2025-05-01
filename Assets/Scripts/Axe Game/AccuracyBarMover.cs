@@ -10,13 +10,10 @@ public class AccuracyBarMover : MonoBehaviour
 
     void Update()
     {
-        // Determine direction
         float direction = movingUp ? 1f : -1f;
 
-        // Move the bar
         transform.Translate(Vector3.up * direction * speed * Time.deltaTime);
 
-        // Reverse direction when hitting bounds
         if (transform.position.y >= upperLimit)
         {
             movingUp = false;
