@@ -1,12 +1,10 @@
 using UnityEngine;
-using System.Collections;
 
 public class CampfireScript : MonoBehaviour
 {
     public GameObject fireOff;
     public GameObject fireOn;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (playerData.fireValue > 0)

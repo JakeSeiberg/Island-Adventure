@@ -10,7 +10,6 @@ public class Drowning : MonoBehaviour
     public GameObject airBarFull;
     public GameObject airBarEmpty;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         airBarFull.SetActive(false);
@@ -20,8 +19,6 @@ public class Drowning : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log(isDrowning);
-        //Debug.Log("Air Level: " + air);
         if (PlayerMovement.currentPlayerPos.y < drowningYLevel)
         {
             if (!isDrowning)
@@ -44,8 +41,7 @@ public class Drowning : MonoBehaviour
             airBarFull.GetComponent<UnityEngine.UI.Image>().fillAmount = playerData.air / 100f;
             airBarFull.SetActive(true);
             airBarEmpty.SetActive(true);
-            // Decrease air over 15 seconds
-            yield return new WaitForSeconds(0.15f); // 15 seconds / 100 air = 0.15 seconds per decrement
+            yield return new WaitForSeconds(0.15f);
             playerData.air -= 1f;
 
             if (playerData.air <= 0)
@@ -62,7 +58,6 @@ public class Drowning : MonoBehaviour
 
         playerData.air = 100f;
         isDrowning = false;
-        //hide airBar gameobject
         airBarFull.SetActive(false);
         airBarEmpty.SetActive(false);
 

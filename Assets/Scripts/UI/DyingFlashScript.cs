@@ -8,11 +8,7 @@ public class DyingFlashScript : MonoBehaviour
 
     public GameObject flashImage;
     private Image flashImageComponent;
-    
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         flashImageComponent = flashImage.GetComponent<Image>();
@@ -21,7 +17,6 @@ public class DyingFlashScript : MonoBehaviour
 
     void FixedUpdate()
     {
-       //Debug.Log("Dying: " + dying + " Air: " + playerData.air);
         if (playerData.hungerValue <= 20 || (playerData.air <= 40 && playerData.curScene == "MainWorld"))
         {
             if (!dying)

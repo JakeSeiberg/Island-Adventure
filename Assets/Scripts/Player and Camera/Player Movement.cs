@@ -39,13 +39,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        // Teleport the player
         rb.position = playerData.playerPosition;
 
-        // Clear any initial velocity just in case
         rb.linearVelocity = Vector3.zero;
 
-        // Optional but good practice
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         currentPlayerPos = rb.position;
 
@@ -56,11 +53,10 @@ public class PlayerMovement : MonoBehaviour
     {     
         currentPlayerPos = rb.position;
         Vector3 tmpPos = transform.position;
-        tmpPos.y = transform.position.y + 3f; //dont change 3
+        tmpPos.y = transform.position.y + 3f;
         onGround = Physics.Raycast(tmpPos, Vector3.down, playerHeight*0.5f + 0.2f, isGround);
 
-        //should split these into new clases at some point
-        MyInput();
+        myInput();
         dragCheck();
         limitSpeed();
         checkAnimation();
@@ -96,10 +92,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        movePlayer();
     }
 
-    private void MyInput(){
+    private void myInput(){
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -110,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void MovePlayer(){
+    private void movePlayer(){
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         if(onGround){
