@@ -62,11 +62,7 @@ public class SleepingPlayerScript : MonoBehaviour
     private IEnumerator fadeInBlackOut()
     {
         yield return new WaitForSeconds(2f);
-<<<<<<< HEAD
         float fadeDuration = 2f; 
-=======
-        float fadeDuration = 2f;
->>>>>>> a2ac5c6552a9075b436a0f256def509f0a55c75e
         float elapsedTime = 0f;
 
         while (elapsedTime < fadeDuration)
@@ -77,11 +73,7 @@ public class SleepingPlayerScript : MonoBehaviour
         }
 
         blackOut.alpha = 1f;
-<<<<<<< HEAD
-        yield return new WaitForSeconds(2f); 
-=======
         yield return new WaitForSeconds(2f);
->>>>>>> a2ac5c6552a9075b436a0f256def509f0a55c75e
         playerData.sleepScore = 0;
         playerData.canSleep = false;
         SceneSwitcher.changeScene();
