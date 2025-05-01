@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -135,6 +136,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void resetJump(){
         canJump = true;
+    }
+
+    public void resetPosition()
+    {
+        rb.position = playerData.playerPosition;
+        rb.linearVelocity = Vector3.zero;
     }
     
 }
