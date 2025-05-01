@@ -60,7 +60,6 @@ public class AxeScript : MonoBehaviour
 
         float elapsedTime = 0f;
 
-        // Forward swing
         while (elapsedTime < swingDuration)
         {
             float t = elapsedTime / swingDuration;
