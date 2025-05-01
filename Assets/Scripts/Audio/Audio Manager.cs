@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
     public Sound[] pickupSfx;
     public AudioSource audioSrc;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public void playAxe(){
 

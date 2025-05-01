@@ -47,7 +47,6 @@ public class shopManager : MonoBehaviour
     public void buyCampfire()
     {
         Debug.Log("Attempting to buy campfire");
-        // Check if the player has enough resources to buy the campfire
         if (canBuyCampfire && playerData.woodCount >= 20)
         {
             playerData.woodCount -= 20;
@@ -64,7 +63,6 @@ public class shopManager : MonoBehaviour
     public void buyShelter()
     {
         Debug.Log("Attempting to buy shelter");
-        // Check if the player has enough resources to buy the campfire
         if (canBuyShelter && playerData.woodCount >= 20 && playerData.leafCount >= 15)
         {
             playerData.woodCount -= 20;
@@ -79,7 +77,6 @@ public class shopManager : MonoBehaviour
         }
     }
     
-    //same thing but for bed, which costs 10 wood and 5 leaves
     public void buyBed()
     {
         Debug.Log("Attempting to buy bed");
@@ -98,7 +95,6 @@ public class shopManager : MonoBehaviour
         }
     }
 
-    //same for hull, which costs 40 wood
     public void buyHull()
     {
         Debug.Log("Attempting to buy hull");
@@ -118,7 +114,7 @@ public class shopManager : MonoBehaviour
 
     public void exit()
     {
-        sceneSwitcher.changeScene();
+        SceneSwitcher.changeScene();
     }
 
     void FixedUpdate()

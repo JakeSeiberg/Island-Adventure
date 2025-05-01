@@ -19,7 +19,7 @@ public class PlaneCrashPath : MonoBehaviour
     public CanvasGroup crashCanvasGroup;
     private bool fadeCanvas = false;
 
-    public sceneSwitcher sceneSwitcher;
+    public SceneSwitcher SceneSwitcher;
 
     private float startShakeAt = 28f;
     private float shakeDuration = 3f;
@@ -52,7 +52,6 @@ public class PlaneCrashPath : MonoBehaviour
 
         if (timer < timeBeforeDive)
         {
-            // Stage 1: Cruise phase, slight engine shake starts after 6s
             t = Mathf.InverseLerp(0f, timeBeforeDive, timer);
             position = Vector3.Lerp(startPoint, cruisePoint, t);
             Vector3 direction = (cruisePoint - startPoint).normalized;
@@ -66,13 +65,12 @@ public class PlaneCrashPath : MonoBehaviour
         }
         else if (timer < 36f)
         {
-            // Stage 2: Dive + barrel roll (5 seconds of fast descent with spin)
             t = Mathf.InverseLerp(timeBeforeDive, (totalTime - canvasFadeDuration), timer);
             position = Vector3.Lerp(cruisePoint, crashPoint, t);
             Vector3 direction = (crashPoint - cruisePoint).normalized;
             rotation = Quaternion.LookRotation(direction);
 
-            float rollZ = t * 1440f; // 4 full rolls in 5 seconds
+            float rollZ = t * 1440f;
             rotation *= Quaternion.Euler(0f, 0f, rollZ);
 
             if (!particlesTriggered && timer >= startParticlesAt)
@@ -83,7 +81,6 @@ public class PlaneCrashPath : MonoBehaviour
         }
         else
         {
-            // Stage 3: Final crash
             position = crashPoint;
             rotation = Quaternion.Euler(2.31f, 57f, 17.83f);
 
@@ -97,7 +94,6 @@ public class PlaneCrashPath : MonoBehaviour
         transform.position = position;
         transform.rotation = rotation;
 
-        // Lock camera to plane
         if (planeCamera != null)
         {
             planeCamera.position = position;
@@ -111,14 +107,14 @@ public class PlaneCrashPath : MonoBehaviour
         {
             if (particle != null)
             {
-                particle.Play(); // Start the particle system
+                particle.Play();
             }
         }
     }
 
     private IEnumerator FadeInCanvas()
     {
-        float duration = canvasFadeDuration; // Duration of the fade-in
+        float duration = canvasFadeDuration;
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
@@ -126,17 +122,16 @@ public class PlaneCrashPath : MonoBehaviour
             elapsedTime += Time.deltaTime;
             if (crashCanvasGroup != null)
             {
-                crashCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / duration); // Gradually increase alpha
+                crashCanvasGroup.alpha = Mathf.Clamp01(elapsedTime / duration);
             }
             yield return null;
         }
 
-        // Ensure the canvas is fully visible at the end
         if (crashCanvasGroup != null)
         {
             crashCanvasGroup.alpha = 1f;
         }
 
-        sceneSwitcher.changeScene();
+        SceneSwitcher.changeScene();
     }
 }

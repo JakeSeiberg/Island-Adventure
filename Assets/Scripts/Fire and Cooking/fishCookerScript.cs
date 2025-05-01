@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class fishCookerScript : MonoBehaviour
+public class FishCookerScript : MonoBehaviour
 {
     public GameObject LeftFish;
     public GameObject RightFish;
@@ -16,13 +16,12 @@ public class fishCookerScript : MonoBehaviour
     public Material cookedFish;
     public Material burntFish;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fishTimerLength = 15f;
+        fishTimerLength = 20f;
     }
 
-    public void interact() //interact with grate
+    public void interact()
     {
         if (fishOn() < 2 && playerData.fishCount > 0)
         {
@@ -51,14 +50,12 @@ public class fishCookerScript : MonoBehaviour
     {   
         if (playerData.fishStage[0] == 1) 
         {
-            //start flip
             playerData.fishStage[0] = 2;
             StartCoroutine(startFlip(0, 1f));
             playerData.fishTimers[0] = 0;
         }
         else if (playerData.fishStage[0] == 3)
         {
-            //fish cooked succesfully
             playerData.fishStage[0] = -1;
             playerData.cookedFishCount++;
             playerData.fishTimers[0] = float.NaN;
@@ -66,7 +63,6 @@ public class fishCookerScript : MonoBehaviour
         }
         else
         {
-            //burned/undercooked fish
             playerData.fishStage[0] = -1;
             playerData.fishTimers[0] = float.NaN;
         }
@@ -76,14 +72,12 @@ public class fishCookerScript : MonoBehaviour
     {
         if (playerData.fishStage[1] == 1) 
         {
-            //start flip
             playerData.fishStage[1] = 2;
             StartCoroutine(startFlip(1, 1f));
             playerData.fishTimers[1] = 0;
         }
         else if (playerData.fishStage[1] == 3)
         {
-            //fish cooked succesfully
             playerData.fishStage[1] = -1;
             playerData.cookedFishCount++;
             playerData.fishTimers[1] = float.NaN;
@@ -91,7 +85,6 @@ public class fishCookerScript : MonoBehaviour
         }
         else
         {
-            //burned/undercooked fish
             playerData.fishStage[1] = -1;
             playerData.fishTimers[1] = float.NaN;
 
@@ -145,36 +138,30 @@ public class fishCookerScript : MonoBehaviour
         {
             float t = elapsedTime / duration;
 
-            // Ease in and out curve (smoothstep)
             float curveT = Mathf.SmoothStep(0f, 1f, t);
 
-            // Interpolate position (upward then downward motion)
             float yOffset = Mathf.Sin(curveT * Mathf.PI) * 0.286f;
             fish.transform.localPosition = new Vector3(startPos.x, startPos.y + yOffset, startPos.z);
 
-            // Interpolate rotation
             fish.transform.localRotation = Quaternion.Slerp(startRot, endRot, curveT);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Snap to final state to avoid rounding errors
         fish.transform.localPosition = startPos;
         fish.transform.localRotation = endRot;
     }
 
     void FixedUpdate()
     {
-        //fish stage updater
-        //fish 0
+
         if (playerData.fishTimers[0] > ((56.35024f / 60) * fishTimerLength))
         {
-            playerData.fishStage[0] = 4; //it burned
+            playerData.fishStage[0] = 4; 
         }
         else if (playerData.fishTimers[0] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[0] < (56.35024f / 60) * fishTimerLength)
         {
-            //it's in the green
             if (playerData.fishStage[0] == 0)
             {
                 playerData.fishStage[0] = 1;
@@ -185,14 +172,12 @@ public class fishCookerScript : MonoBehaviour
             }
         }
 
-        //fish 1
         if (playerData.fishTimers[1] > ((56.35024f / 60) * fishTimerLength))
         {
-            playerData.fishStage[1] = 4; //it burned
+            playerData.fishStage[1] = 4;
         }
         else if (playerData.fishTimers[1] > ((49.02712f / 60) * fishTimerLength) && playerData.fishTimers[1] < (56.35024f / 60) * fishTimerLength)
         {
-            //it's in the green
             if (playerData.fishStage[1] == 0)
             {
                 playerData.fishStage[1] = 1;
