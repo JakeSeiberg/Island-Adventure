@@ -62,6 +62,8 @@ public class playerData
     public static bool canSleep;
     public static int sleepScore;
 
+    public static bool toolTipsToggle;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -120,6 +122,8 @@ public class playerData
         sleepScore = 0;
 
         curScene = "MainWorld";
+
+        toolTipsToggle = true;
 
         hungerValue = 100f;
         air = 100f;
