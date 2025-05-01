@@ -27,7 +27,7 @@ public class ChopCounter : MonoBehaviour
 
     }
 
-    public void RegisterHit()
+    public void registerHit()
     {
         hits++;
 
@@ -36,7 +36,7 @@ public class ChopCounter : MonoBehaviour
 
         counterText.text = hits + "/" + hitsNeeded;
 
-        StartCoroutine(FlashCheckmark());
+        StartCoroutine(flashCheckmark());
 
         if (accuracyBarMover != null && hits < hitsNeeded)
         {
@@ -63,26 +63,26 @@ public class ChopCounter : MonoBehaviour
         }    
     }
 
-    public void RegisterMiss()
+    public void registerMiss()
     {
-        StartCoroutine(FlashXMark());
+        StartCoroutine(flashXMark());
     }
 
-    IEnumerator FlashCheckmark()
+    IEnumerator flashCheckmark()
     {
         checkmarkSprite.enabled = true;
         yield return new WaitForSeconds(0.4f);
         checkmarkSprite.enabled = false;
     }
 
-    IEnumerator FlashXMark()
+    IEnumerator flashXMark()
     {
         xmarkSprite.enabled = true;
         yield return new WaitForSeconds(0.4f);
         xmarkSprite.enabled = false;
     }
 
-    private IEnumerator FallTree()
+    private IEnumerator fallTree()
     {
         yield return new WaitForSeconds(1.2f);
 
@@ -114,7 +114,7 @@ public class ChopCounter : MonoBehaviour
 
     IEnumerator DoFallThenChange()
     {
-        yield return StartCoroutine(FallTree());
+        yield return StartCoroutine(fallTree());
         yield return StartCoroutine(SwitchScene());
     }
 

@@ -66,8 +66,6 @@ public class PlayerInteraction : MonoBehaviour
         tempPosition += orientation.forward * 0.25f;
         Ray ray = new Ray(tempPosition, playerCamera.forward);
 
-//        Debug.DrawRay(tempPosition, playerCamera.forward * rayDistance, Color.red, 1f);
-
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
         {
@@ -86,7 +84,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     clickAxe();
                 }
-                if (hit.collider.CompareTag("SpearInteractable"))// && !playerData.canSleep) //playerData.curSkybox != 4)
+                if (hit.collider.CompareTag("SpearInteractable"))
                 {
                     clickSpearFishingSpot();
                 }
@@ -288,7 +286,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void clickTree()
     {
-        if (playerData.hasAxe)// && !playerData.canSleep)
+        if (playerData.hasAxe)
         {
             if (!playerData.canSleep)
             {
