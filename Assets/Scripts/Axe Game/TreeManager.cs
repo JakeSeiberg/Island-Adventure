@@ -53,9 +53,4 @@ public class TreeManager : MonoBehaviour
         playerData.currentTreeID = null;
         playerData.treeChopped = false;
     }
-
-    void Update()
-    {
-        
-    }
 }
