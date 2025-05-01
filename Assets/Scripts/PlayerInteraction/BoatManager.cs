@@ -8,17 +8,16 @@ public class BoatManager : MonoBehaviour
     public GameObject motorPrefab;
     public GameObject gasPrefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hullPrefab.SetActive(false);
         sailPrefab.SetActive(false);
         motorPrefab.SetActive(false);
         gasPrefab.SetActive(false);
-        StartCoroutine(BoatCheck());
+        StartCoroutine(boatCheck());
     }
 
-    private IEnumerator BoatCheck()
+    private IEnumerator boatCheck()
     {
         while (true)
         {

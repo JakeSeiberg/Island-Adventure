@@ -6,7 +6,6 @@ public class spearPickupScript : MonoBehaviour
 
     void Start()
     {
-        //disable spearfishingingrenderer gameobject
         if (playerData.hasSpear)
         {
             spearFishingRenderer.gameObject.SetActive(true);
@@ -24,7 +23,6 @@ public class spearPickupScript : MonoBehaviour
 
     public void hasSpear()
     {
-        // Destroy the GameObject this script is attached to
         playerData.hasSpear = true;
         spearFishingRenderer.gameObject.SetActive(true);
 
