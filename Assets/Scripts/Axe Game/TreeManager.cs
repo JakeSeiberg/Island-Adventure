@@ -49,13 +49,11 @@ public class TreeManager : MonoBehaviour
                 }
             }
 
-            // Clear state
         }
         playerData.currentTreeID = null;
         playerData.treeChopped = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         

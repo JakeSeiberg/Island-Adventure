@@ -20,7 +20,6 @@ public class AxeScript : MonoBehaviour
 
     void Start()
     {
-        // Set starting rotation
         transform.rotation = startRotation;
     }
 
@@ -36,12 +35,10 @@ public class AxeScript : MonoBehaviour
 
             if (barY >= greenMinY && barY <= greenMaxY)
             {
-                // ✅ Successful hit in green
-                StartCoroutine(SwingAxe());
-                chopCounter.RegisterHit();
+                StartCoroutine(swingAxe());
+                chopCounter.registerHit();
 
                 
-                // Move green zone to new random Y position
                 float newY = Random.Range(0.35f, 6.85f);
                 accuracyMeterGreen.position = new Vector3(
                     accuracyMeterGreen.position.x,
@@ -51,14 +48,13 @@ public class AxeScript : MonoBehaviour
             }
             else
             {
-                // ❌ Missed input
-                chopCounter.RegisterMiss();
+                chopCounter.registerMiss();
                 audioManager.playWhiff();
             }
         }
     }
 
-    IEnumerator SwingAxe()
+    IEnumerator swingAxe()
     {
         isSwinging = true;
 
@@ -82,7 +78,6 @@ public class AxeScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        // Return to start rotation
         elapsedTime = 0f;
         while (elapsedTime < swingDuration)
         {
