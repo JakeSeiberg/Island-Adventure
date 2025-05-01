@@ -21,6 +21,18 @@ public class AxeScript : MonoBehaviour
     void Start()
     {
         transform.rotation = startRotation;
+        if (!playerData.hasPlayedTreeGame)
+        {
+            //Startcoroutine toolTIpLate
+            StartCoroutine(treeTip());
+            playerData.hasPlayedTreeGame = true;
+        }
+    }
+
+    private IEnumerator treeTip()
+    {
+        yield return new WaitForSeconds(1f);
+        toolTips.tip("Press Spacebar while the white bar is in the green area to chop the tree",4f);
     }
 
     void Update()
