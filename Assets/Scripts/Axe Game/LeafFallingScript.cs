@@ -18,23 +18,22 @@ public class LeafFallingScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
-        // Random spin direction and speed
         spinAxis = new Vector3(
             Random.Range(-1f, 1f),
             Random.Range(-1f, 1f),
             Random.Range(-1f, 1f)
         ).normalized;
 
-        spinSpeed = Random.Range(20f, 60f); // degrees per second
+        spinSpeed = Random.Range(20f, 60f); 
     }
 
     void FixedUpdate()
     {
         if (hasLanded){
             rb.linearVelocity = new Vector3(
-            Mathf.Sin(Time.time * swaySpeed) * swayAmount, // Swaying on the X-axis
-            -fallSpeed, // Falling downward
-            Mathf.Cos(Time.time * swaySpeed) * swayAmount // Swaying on the Z-axis
+            Mathf.Sin(Time.time * swaySpeed) * swayAmount, 
+            -fallSpeed, 
+            Mathf.Cos(Time.time * swaySpeed) * swayAmount 
         );
         }
         else{
@@ -51,7 +50,6 @@ public class LeafFallingScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // If the leaf hits a terrain object
         if (!hasLanded && collision.gameObject.GetComponent<Terrain>() != null)
         {
             StartCoroutine(DisableKinematicsAfterDelay(3f));

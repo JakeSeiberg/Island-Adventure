@@ -3,8 +3,8 @@ using System.Collections;
 
 public class AxeScript : MonoBehaviour
 {
-    public Transform accuracyBar;             // Moving white bar
-    public Transform accuracyMeterGreen;      // Green zone transform
+    public Transform accuracyBar;             
+    public Transform accuracyMeterGreen;      
 
     public Quaternion startRotation = Quaternion.Euler(-6.18f, -50.66f, 5.63f);
     public Quaternion halfwayRotation = Quaternion.Euler(-56.9f, -38.2f, 5.63f);
@@ -14,7 +14,7 @@ public class AxeScript : MonoBehaviour
 
     private bool isSwinging = false;
 
-    public ChopCounter chopCounter; // Add this in Unity Inspector
+    public ChopCounter chopCounter; 
 
     public AudioManager audioManager;
 

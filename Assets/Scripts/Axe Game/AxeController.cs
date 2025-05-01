@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AxeController : MonoBehaviour
 {
-    public AccuracyBarMover accuracyBar;             // Moving white bar
-    public Transform accuracyMeterGreen;             // Green zone transform
+    public AccuracyBarMover accuracyBar;             
+    public Transform accuracyMeterGreen;             
     public float swingAngle = 45f;
     public float swingSpeed = 5f;
 
@@ -29,12 +29,10 @@ public class AxeController : MonoBehaviour
 
             if (barY >= greenMinY && barY <= greenMaxY)
             {
-                // SUCCESS: Hit green
                 targetRotation = Quaternion.Euler(0, 0, -swingAngle);
                 isSwinging = true;
                 swingingForward = true;
 
-                // Move green zone to random Y between -3 and 3
                 float newY = Random.Range(-3f, 3f);
                 accuracyMeterGreen.position = new Vector3(
                     accuracyMeterGreen.position.x,
