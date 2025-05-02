@@ -1,0 +1,705 @@
+fileFormatVersion: 2
+guid: 9561bfac41c004537910d05528dc19d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2638047369356232621
+    second: kitchens_assembled_0
+  - first:
+      213: -5275845471909640671
+    second: kitchens_assembled_1
+  - first:
+      213: 8468143412021332448
+    second: kitchens_assembled_2
+  - first:
+      213: -1104351973781282093
+    second: kitchens_assembled_3
+  - first:
+      213: -3492383312244791255
+    second: kitchens_assembled_4
+  - first:
+      213: 2111831859511078508
+    second: kitchens_assembled_5
+  - first:
+      213: 6499495982555028256
+    second: kitchens_assembled_6
+  - first:
+      213: 7836355952716861507
+    second: kitchens_assembled_7
+  - first:
+      213: 2166127737951358232
+    second: kitchens_assembled_8
+  - first:
+      213: -5932994112998051012
+    second: kitchens_assembled_9
+  - first:
+      213: 6639881128884675486
+    second: kitchens_assembled_10
+  - first:
+      213: -5653869694113244861
+    second: kitchens_assembled_11
+  - first:
+      213: -377514718145355291
+    second: kitchens_assembled_12
+  - first:
+      213: -7265496478388603851
+    second: kitchens_assembled_13
+  - first:
+      213: 6139391192733888879
+    second: kitchens_assembled_14
+  - first:
+      213: -5388886083443633257
+    second: kitchens_assembled_15
+  - first:
+      213: -6840335765171237640
+    second: kitchens_assembled_16
+  - first:
+      213: -4606783417552115330
+    second: kitchens_assembled_17
+  - first:
+      213: -5664290640651049770
+    second: kitchens_assembled_18
+  - first:
+      213: -4869055554361783730
+    second: kitchens_assembled_19
+  - first:
+      213: -4649223538466402110
+    second: kitchens_assembled_20
+  - first:
+      213: 8116300667756717857
+    second: kitchens_assembled_21
+  - first:
+      213: 8703573478175146936
+    second: kitchens_assembled_22
+  - first:
+      213: 2681329244329779972
+    second: kitchens_assembled_23
+  - first:
+      213: 408580730912274843
+    second: kitchens_assembled_24
+  - first:
+      213: 7154195480710971541
+    second: kitchens_assembled_25
+  - first:
+      213: -8742160848098136996
+    second: kitchens_assembled_26
+  - first:
+      213: -962514026009614592
+    second: kitchens_assembled_27
+  - first:
+      213: -9022657267987328887
+    second: kitchens_assembled_28
+  - first:
+      213: 3667201575101389730
+    second: kitchens_assembled_29
+  - first:
+      213: 1118002964914803769
+    second: kitchens_assembled_30
+  - first:
+      213: 5251991999770760546
+    second: kitchens_assembled_31
+  - first:
+      213: -9155623769060543074
+    second: kitchens_assembled_32
+  - first:
+      213: 8910870996648036088
+    second: kitchens_assembled_33
+  - first:
+      213: -339784099924135694
+    second: kitchens_assembled_34
+  - first:
+      213: -3059411126894472655
+    second: kitchens_assembled_35
+  - first:
+      213: -3474908165781298240
+    second: kitchens_assembled_36
+  - first:
+      213: -991570453287526229
+    second: kitchens_assembled_37
+  - first:
+      213: 7883484662827293791
+    second: kitchens_assembled_38
+  - first:
+      213: -7182080454946438106
+    second: kitchens_assembled_39
+  - first:
+      213: -3980778082643915493
+    second: kitchens_assembled_40
+  - first:
+      213: -3746350820909762168
+    second: kitchens_assembled_41
+  - first:
+      213: -5768487821452457536
+    second: kitchens_assembled_42
+  - first:
+      213: -1101748150891970295
+    second: kitchens_assembled_43
+  - first:
+      213: 1067008531461602952
+    second: kitchens_assembled_44
+  - first:
+      213: 5432813108854716949
+    second: kitchens_assembled_45
+  - first:
+      213: 581490697736144817
+    second: kitchens_assembled_46
+  - first:
+      213: 2087638419598495576
+    second: kitchens_assembled_47
+  - first:
+      213: -2854627154609201305
+    second: kitchens_assembled_48
+  - first:
+      213: -1900961080371493469
+    second: kitchens_assembled_49
+  - first:
+      213: 1179197874284900174
+    second: kitchens_assembled_50
+  - first:
+      213: -1752852950298441332
+    second: kitchens_assembled_51
+  - first:
+      213: -3716066409238358473
+    second: kitchens_assembled_52
+  - first:
+      213: 2448388555148523725
+    second: kitchens_assembled_53
+  - first:
+      213: 5961648953590343331
+    second: kitchens_assembled_54
+  - first:
+      213: -6640038005928314581
+    second: kitchens_assembled_55
+  - first:
+      213: 7079754380337129824
+    second: kitchens_assembled_56
+  - first:
+      213: 4077980941823721580
+    second: kitchens_assembled_57
+  - first:
+      213: 3363132483740028293
+    second: kitchens_assembled_58
+  - first:
+      213: 6185899970994053769
+    second: kitchens_assembled_59
+  - first:
+      213: 6354462221076623336
+    second: kitchens_assembled_60
+  - first:
+      213: -4610480287865164514
+    second: kitchens_assembled_61
+  - first:
+      213: 1371423641316087915
+    second: kitchens_assembled_62
+  - first:
+      213: 739232456021612008
+    second: kitchens_assembled_63
+  - first:
+      213: 197265334536144829
+    second: kitchens_assembled_64
+  - first:
+      213: -3493653481323876925
+    second: kitchens_assembled_65
+  - first:
+      213: 3532140803175802184
+    second: kitchens_assembled_66
+  - first:
+      213: -2973268271670344222
+    second: kitchens_assembled_67
+  - first:
+      213: 2419956099780905185
+    second: kitchens_assembled_68
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kitchens_assembled_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb44f9135cd924613863a94e34f4d0a2
+      internalID: 1617819006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff955c4b1122f4df8a2e1cf65a828c11
+      internalID: -476950897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 144
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58c9b29fa5044e1998b976988e1ce62
+      internalID: 1147528285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7a01ba1de0645acb1e1dc1e4d9a1be
+      internalID: 680687648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5101744671746ed94d0fdbb22260cb
+      internalID: -1312685581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab72b12b181b44a2fa71513a7cb137b5
+      internalID: 38631647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe3640fe297c4c9f8c7441c972c1119
+      internalID: -912288037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de35877bb00e5461f9dfacfd768f2b2b
+      internalID: 1462751654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637e7600c943f4144a0adf2bfc984454
+      internalID: 471659849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c933f3db607428db74aa0c16a5919b
+      internalID: -1996601942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05b57a6d936d41bcac57258158d99f4
+      internalID: -1218137505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7622d5c83e0cb415cb777857c735d7b5
+      internalID: -1112804728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d71212b44bd24809aae9913f26f50ec
+      internalID: -1085208429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548ef976848184a23a76c435a2e2e9ba
+      internalID: 1150496180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b64c4e2095f94b32b15f30013eefe47
+      internalID: 50202799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kitchens_assembled_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aab4a919e53e4c779d45a6f6b75ed6b
+      internalID: -780426236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6b6e6c35b5b5f4af18d6b507d944c504
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      kitchens_assembled_0: 1617819006
+      kitchens_assembled_1: -476950897
+      kitchens_assembled_10: -1218137505
+      kitchens_assembled_11: -1112804728
+      kitchens_assembled_12: -1085208429
+      kitchens_assembled_13: 1150496180
+      kitchens_assembled_14: 50202799
+      kitchens_assembled_15: -780426236
+      kitchens_assembled_2: 1147528285
+      kitchens_assembled_3: 680687648
+      kitchens_assembled_4: -1312685581
+      kitchens_assembled_5: 38631647
+      kitchens_assembled_6: -912288037
+      kitchens_assembled_7: 1462751654
+      kitchens_assembled_8: 471659849
+      kitchens_assembled_9: -1996601942
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
