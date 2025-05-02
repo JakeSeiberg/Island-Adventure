@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
             GameObject destroy = GameObject.FindGameObjectWithTag("DontDestroyOnLoad");
             Destroy(destroy);
         }
+
+        GameObject destroy2 = GameObject.Find("DontDestroyOnLoad");
+        if (destroy2 != null)
+        {
+            Destroy(destroy2);
+        }
     }
     
     public void StartGame()

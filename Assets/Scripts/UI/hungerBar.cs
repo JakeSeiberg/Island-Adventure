@@ -10,7 +10,6 @@ public class hungerBar : MonoBehaviour
     private float physicalHungerLevel;
 
     private float hungerTimer = 0f;
-    private bool hungerActive = false;
 
     void Awake()
     {
@@ -44,30 +43,34 @@ public class hungerBar : MonoBehaviour
 
         hungerBarImage.GetComponent<UnityEngine.UI.Image>().fillAmount = physicalHungerLevel / 100f;
 
-        if (hungerActive)
+        hungerTimer += Time.fixedDeltaTime;
+
+        if (hungerTimer >= 1f)
         {
-            hungerTimer += Time.fixedDeltaTime;
+            hungerTimer = 0f;
 
-            if (hungerTimer >= 1f)
+            if (playerData.hungerValue > 0)
             {
-                hungerTimer = 0f;
-
-                if (playerData.hungerValue > 0)
+                if (playerData.curScene != "HALO")
                 {
-                    if (playerData.curScene != "HALO")
+                    if (playerData.hasGoneFishing)
                     {
                         playerData.hungerValue -= 0.25f;
                     }
+                    else
+                    {
+                        playerData.hungerValue -= 0.1f;
+                    }
                 }
-                else
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                    playerData.hungerValue = 0;
-                    toolTips.changeScene();
-                    playerData.curScene = "DeathScene";
-                    SceneManager.LoadScene("DeathScene");
-                }
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                playerData.hungerValue = 0;
+                toolTips.changeScene();
+                playerData.curScene = "DeathScene";
+                SceneManager.LoadScene("DeathScene");
             }
         }
         
@@ -83,11 +86,6 @@ public class hungerBar : MonoBehaviour
                 playerData.cookedFishCount -= 1;
                 playerData.hasEatenFish = true;
             }
-        }
-
-        if (!hungerActive && playerData.hasGoneFishing)
-        {
-            hungerActive = true;
         }
     }
 }
