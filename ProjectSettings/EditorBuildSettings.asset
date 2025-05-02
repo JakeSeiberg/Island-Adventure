@@ -9,6 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/HALO/Scenes/Menus/Main Menu.unity
+    guid: 599e8811dfc7c482da8658fda098a583
+  - enabled: 1
+    path: Assets/HALO/Scenes/Menus/Level Complete.unity
+    guid: f785d9d3f0fc747f18e048d3e40547fa
+  - enabled: 1
+    path: Assets/HALO/Scenes/Levels/InstructionScene.unity
+    guid: e5e50d023608a41fa922786eac4fe67b
+  - enabled: 1
+    path: Assets/HALO/Scenes/Levels/Tutorial.unity
+    guid: aeaa9286237754ddf9a4271c65d95e81
+  - enabled: 1
+    path: Assets/HALO/Scenes/Levels/LevelOne.unity
+    guid: 4a599bad161e6413b8818c9eb1a555a1
+  - enabled: 1
+    path: Assets/HALO/Scenes/Levels/LevelTwo.unity
+    guid: e007eb25bb69a4757ba84b8a4b473cab
+  - enabled: 1
+    path: Assets/HALO/Scenes/Levels/LevelThree.unity
+    guid: 6e112695057d14e5ebe1715bcf4e1640
+  - enabled: 1
+    path: Assets/HALO/Scenes/Menus/Game Complete.unity
+    guid: c0dc2f6472e4a409d8bb57882eecf4dd
+  - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 3d4fb4d3bdcb645eba8bbbac62a6dbc7
   - enabled: 1

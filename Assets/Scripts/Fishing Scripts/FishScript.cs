@@ -152,7 +152,7 @@ public class FishScript : MonoBehaviour
 
         fishDead = true;
         playerData.fishCount++;
-        playerData.sleepScore += 10;
+        playerData.sleepScore += 20;
         Destroy(gameObject);
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -48,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         currentPlayerPos = rb.position;
 
         canJump = true;
+
+        playerData.justJoinedHALO = true;
     }
 
     void Update()
@@ -61,6 +64,17 @@ public class PlayerMovement : MonoBehaviour
         dragCheck();
         limitSpeed();
         checkAnimation();
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            playerData.playerPosition = PlayerMovement.currentPlayerPos;
+            playerData.playerRotation = PlayerCamera.currentRotation;
+            playerData.hasSlept = true;
+            toolTips.changeScene();
+            playerData.curScene = "SleepScene";
+            SceneManager.LoadScene("SleepScene");
+        }
+
     }
     
     

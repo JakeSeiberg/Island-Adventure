@@ -40,7 +40,6 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         interact();
-        Debug.Log("Radio: " + playerData.radioOn);
     }
 
     void FixedUpdate()

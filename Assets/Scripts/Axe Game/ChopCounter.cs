@@ -108,6 +108,8 @@ public class ChopCounter : MonoBehaviour
         treeToFall.rotation = endRotation;
     }
     private IEnumerator SwitchScene(){
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
         SceneSwitcher.changeScene();
         yield break;
     }

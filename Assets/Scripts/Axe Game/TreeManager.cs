@@ -5,8 +5,8 @@ public class TreeManager : MonoBehaviour
     public GameObject leafPrefab; 
     public GameObject logPrefab;
 
-    private int maxLogPerTree = 10;
-    private int maxLeafPerTree = 10;
+    private int maxLogPerTree = 6;
+    private int maxLeafPerTree = 4;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +24,7 @@ public class TreeManager : MonoBehaviour
 
                     Destroy(tree.gameObject);
                     
-                    for (int i = 0; i < Random.Range(4, maxLeafPerTree); i++)
+                    for (int i = 0; i < Random.Range(3, maxLeafPerTree); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);
@@ -33,7 +33,7 @@ public class TreeManager : MonoBehaviour
                         Instantiate(leafPrefab, leafPosition, Quaternion.identity);
                     }
 
-                    for (int i = 0; i < Random.Range(4, maxLogPerTree); i++)
+                    for (int i = 0; i < Random.Range(2, maxLogPerTree); i++)
                     {
                         float randomX = Random.Range(-3f, 3f);
                         float randomY = Random.Range(4f, 8f);
@@ -41,8 +41,6 @@ public class TreeManager : MonoBehaviour
                         Vector3 logPosition = treePosition + new Vector3(randomX, randomY, randomZ);
                         Instantiate(logPrefab, logPosition, Quaternion.identity);
                     }
-                    //playerData.woodCount += 10;
-                    //playerData.leafCount += 10;
                 }
                 else{
                     Destroy(tree.gameObject);

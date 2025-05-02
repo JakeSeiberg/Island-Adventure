@@ -25,6 +25,9 @@ public class toolTips : MonoBehaviour
 
     public CanvasGroup toolTipCanvas;
 
+    private bool active = false;
+    private bool hasFishedTooltip = false;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,9 +59,10 @@ public class toolTips : MonoBehaviour
 
         StartCoroutine(fishingToolTip());
         StartCoroutine(fadeCanvas());
-
         StartCoroutine(MainWorldTooltips());
+
     }
+
 
     void Update()
     {
@@ -196,7 +200,7 @@ public class toolTips : MonoBehaviour
             while (!playerData.hasEnteredTreeGame)
             {
                 yield return new WaitForSeconds(5f);
-                if (playerData.curScene == "MainWorld") toolTips.tip("Interact with a tree to chop it down", 8f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Interact [E] with a tree to chop it down", 8f);
                 yield return new WaitForSeconds(15f);
             }
 
@@ -224,7 +228,7 @@ public class toolTips : MonoBehaviour
             while (!playerData.hasSpear)
             {
                 yield return new WaitForSeconds(5f);
-                if (playerData.curScene == "MainWorld") toolTips.tip("You need to find something to fish with. Maybe check around the crashed airplane", 7f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("You need to find something to fish with. Maybe check around the pond", 7f);
                 yield return new WaitForSeconds(15f);
             }
 
@@ -239,7 +243,7 @@ public class toolTips : MonoBehaviour
             {
                 yield return new WaitForSeconds(5f);
                 if (playerData.curScene == "MainWorld") toolTips.tip("You need to build a campfire. Gather some wood and go back to the workstation", 7f);
-                yield return new WaitForSeconds(15f);
+                yield return new WaitForSeconds(25f);
             }
 
             while (!playerData.hasPlacedFish)
@@ -261,7 +265,7 @@ public class toolTips : MonoBehaviour
                 yield return new WaitForSeconds(5f);
                 if (playerData.curScene == "MainWorld") toolTips.tip("When the bar gets to the green zone, interact with it to flip it!", 7f);
                 if (playerData.curScene == "MainWorld") toolTips.tip("If you flip it too early or too late, you'll ruin the fish!", 7f);
-                yield return new WaitForSeconds(60f);
+                yield return new WaitForSeconds(35f);
                 if (playerData.curScene == "MainWorld") toolTips.tip("When the bar gets to the green zone, interact to collect it!", 7f);
                 yield return new WaitForSeconds(15f);
             }
@@ -269,7 +273,7 @@ public class toolTips : MonoBehaviour
             while (!playerData.hasEatenFish)
             {
                 yield return new WaitForSeconds(5f);
-                if (playerData.curScene == "MainWorld") toolTips.tip("Press T to eat your fish", 7f);
+                if (playerData.curScene == "MainWorld") toolTips.tip("Press [T] to eat your fish", 7f);
                 yield return new WaitForSeconds(15f);
             }
 
@@ -319,6 +323,7 @@ public class toolTips : MonoBehaviour
 
         while (!playerData.hasThrownStrongSpear)
         {
+            hasFishedTooltip = true;
             toolTips.tip("Aim with your mouse to aim the spear. Hold click to pull back spear, and release to throw it", 8);
             yield return new WaitForSeconds(10f);
             toolTips.tip("Press spacebar to throw your worms. They might attract more fish", 7);
@@ -337,6 +342,16 @@ public class toolTips : MonoBehaviour
         else
         {
             toolTipCanvas.alpha = 0f;
+        }
+
+        if (!playerData.sleepTooltipToggle)
+        {
+            StartCoroutine(MainWorldTooltips());
+            if (!hasFishedTooltip)
+            {
+                StartCoroutine(fishingToolTip());
+            }
+            playerData.sleepTooltipToggle = true;
         }
     }
 

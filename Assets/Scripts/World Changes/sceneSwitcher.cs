@@ -11,12 +11,15 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (playerData.curScene != "CutScene")
+            if (playerData.curScene != "SleepScene")
             {
-                toolTips.changeScene();
+                if (playerData.curScene != "CutScene")
+                {
+                    toolTips.changeScene();
+                }
+                playerData.curScene = "MainWorld";
+                SceneManager.LoadScene("MainWorld");
             }
-            playerData.curScene = "MainWorld";
-            SceneManager.LoadScene("MainWorld");
         }
     }
 

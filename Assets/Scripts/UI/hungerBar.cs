@@ -9,6 +9,9 @@ public class hungerBar : MonoBehaviour
 
     private float physicalHungerLevel;
 
+    private float hungerTimer = 0f;
+    private bool hungerActive = false;
+
     void Awake()
     {
         if (instance != null && instance != this)
@@ -24,7 +27,7 @@ public class hungerBar : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(loseHunger());
+        //StartCoroutine(loseHunger());
     }
 
 
@@ -40,31 +43,34 @@ public class hungerBar : MonoBehaviour
         }
 
         hungerBarImage.GetComponent<UnityEngine.UI.Image>().fillAmount = physicalHungerLevel / 100f;
-        
-        
-    }
 
-    private IEnumerator loseHunger()
-    {
-        yield return new WaitUntil(() => playerData.hasPlacedFish && playerData.hasBurnedWood);
-
-        while (true)
+        if (hungerActive)
         {
-            yield return new WaitForSeconds(1f);
-            if (playerData.hungerValue > 0)
+            hungerTimer += Time.fixedDeltaTime;
+
+            if (hungerTimer >= 1f)
             {
-                playerData.hungerValue -= .25f;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                playerData.hungerValue = 0;
-                toolTips.changeScene();
-                playerData.curScene = "DeathScene";
-                SceneManager.LoadScene("DeathScene");
+                hungerTimer = 0f;
+
+                if (playerData.hungerValue > 0)
+                {
+                    if (playerData.curScene != "HALO")
+                    {
+                        playerData.hungerValue -= 0.25f;
+                    }
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    playerData.hungerValue = 0;
+                    toolTips.changeScene();
+                    playerData.curScene = "DeathScene";
+                    SceneManager.LoadScene("DeathScene");
+                }
             }
         }
+        
     }
 
     void Update()
@@ -77,6 +83,11 @@ public class hungerBar : MonoBehaviour
                 playerData.cookedFishCount -= 1;
                 playerData.hasEatenFish = true;
             }
+        }
+
+        if (!hungerActive && playerData.hasGoneFishing)
+        {
+            hungerActive = true;
         }
     }
 }

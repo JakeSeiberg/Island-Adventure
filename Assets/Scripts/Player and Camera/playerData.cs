@@ -66,6 +66,11 @@ public class playerData
 
     public static bool radioOn = false;
 
+    public static bool justJoinedHALO = true;
+    public static bool hasPlayedHALO = false;
+
+    public static bool sleepTooltipToggle = true;
+
     public static string curScene = "MainWorld";
     //MainWorld, Fishing, Tree, 
 
@@ -131,6 +136,13 @@ public class playerData
 
         hungerValue = 100f;
         air = 100f;
+
+        justJoinedHALO = true;
+        hasPlayedHALO = false;
+        
+        sleepTooltipToggle = true;
+
+
     }
 
     static playerData()

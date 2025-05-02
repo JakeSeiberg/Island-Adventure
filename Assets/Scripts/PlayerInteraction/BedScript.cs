@@ -19,4 +19,5 @@ public class BedScript : MonoBehaviour
             toolTips.tip("It's not night time yet",5);
         }
     }
+    
 }
